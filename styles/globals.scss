@@ -1,0 +1,127 @@
+// dependencies
+// @import "variable";
+// @import "mixins";
+// @import "common";
+// @import "animate";
+
+/*img*/
+img { max-width: 100%; height: auto; }
+* { image-rendering: -webkit-optimize-contrast; }
+
+select, textarea, button {
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  border: none;
+} 
+a, .btn {
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+}
+
+select { cursor: pointer;}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flglistfilter-date .nv, .flgdate-card, .offerdeals-card, .engineexp-text.input-group, a, label, .country-list .country, a:focus, a:hover {
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+::-ms-clear, select::-ms-expand {
+  display: none;
+}
+
+/*body*/
+body {
+  background-color: #ffffff;
+  color: #000;
+  font-size: 14px;
+  font-family:  'Mulish', sans-serif;
+  font-kerning: none;
+  font-display: swap;
+  touch-action: pan-x pan-y;
+  font-style: normal;
+  line-height: normal;
+  word-break: break-word;
+}
+#__next, body, html {
+  height: 100%;
+  margin: 0;
+}
+
+/*webkit-scrollbar*/
+@media(min-width:1200px) {
+  *::-webkit-scrollbar {
+    width: 10px;
+  } 
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  } 
+  *::-webkit-scrollbar-thumb {
+    background-color: #9ca3af;
+    border-radius: 60px;
+    height: 100px; 
+    &:hover {
+      background-color: #7e8593;
+    }
+  } 
+  .container {
+    max-width: 1260px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+@media(min-width:1400px) and (max-width:1500px) { 
+  .container {
+    max-width: 92%;
+  }
+}  
+@media(min-width:1200px) and (max-width:1399px) {  
+  .container {
+    max-width: 100%;
+  }
+}
+
+
+
+// .clac_active {
+//   cursor: pointer;
+// }
+// .clac_disable {
+//   pointer-events: none;
+//   color: red !important;
+// }
+// .slec_date {
+//   color: red !important;
+// }
+
+//=== import scss files ====
+// @import "header";
+// @import "footer";
+// @import "home";
+// @import "engine";
+// @import "blog";
+// @import "contactus";
+// @import "bookingconf";
+// @import "flightlisting";
+// @import "terms";
+// @import "aboutus";
+// @import "airline";
+// @import "checkout";
+// @import "resposnive";

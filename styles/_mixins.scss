@@ -1,0 +1,114 @@
+//min-max-query
+@mixin min-max($min,$max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+//custom-media query
+@mixin mq($screen, $custom) {
+  @if ($screen == 'max') {
+    @media (max-width: $custom) {
+      @content;
+    }
+  } 
+  @else if( $screen == 'min') { 
+    @media (min-width: $custom) {
+      @content;
+    }
+  }
+}
+@mixin mqh($screen, $custom) {
+  @if ($screen == 'max') {
+    @media (max-height: $custom) {
+      @content;
+    }
+  } 
+  @else if( $screen == 'min') { 
+    @media (min-height: $custom) {
+      @content;
+    }
+  }
+}
+
+@mixin bgPath($property) {
+  background-image : url('/images/'+$property)
+}
+
+@mixin columnGrid($property) {
+  -webkit-box-flex: 0; 
+  -ms-flex: 0 0 $property;
+  -moz-flex: 0 0 $property;
+  -o-flex: 0 0 $property;
+  flex: 0 0 $property;
+  max-width: $property;
+  width: $property;
+}
+ 
+//css3-propertisc all browser support
+@mixin css3($property, $value) {
+  @each $prefix in '', -webkit-, -moz-, -ms-, -o- {
+    #{$prefix}#{$property}: $value;
+  }
+}
+//@include css3(transition, 0.5s);
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+} 
+
+@mixin offcanvasnormal() {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  width: 100%;
+  @include css3("transform", none);
+  border: none; 
+}
+
+// full-width
+%full-width {
+  position: relative;
+  width: 100%;
+  float: left;
+}
+
+%commonfilter{
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none; 
+ @include mq("max", 425px) {
+    font-size: 13px;
+ }
+}
+
+%arrowimgAnimated{
+  @include css3('transition', all 0.3s cubic-bezier(0.5, 0, 0, 1.25));
+}
+%arrowimgRotate{
+  @include css3('transform', rotate(180deg));
+}
+%headbtnripple{
+  @include css3('transform-origin', left center);
+  left: -30px;
+  height: 100%;
+  @include css3('transition', all 0.4s cubic-bezier(0.5, 0, 0, 1.25));
+}
+%hoverripple{
+  @include css3('transform', scale(12));
+        -webkit-transition: border-radius 0.9s 0.9s, -webkit-transform .5s;
+        transition: border-radius 0.9s 0.9s, -webkit-transform .5s;
+        -webkit-transition: -webkit-transform .5s, -webkit-border-radius 0.9s 0.9s;
+        transition: -webkit-transform .5s, -webkit-border-radius 0.9s 0.9s;
+        -o-transition: border-radius 0.9s 0.9s, -o-transform .5s;
+        -moz-transition: transform .5s, border-radius 0.9s 0.9s, -moz-transform .5s, -moz-border-radius 0.9s 0.9s;
+        transition: transform .5s, border-radius 0.9s 0.9s;
+        transition: transform .5s, border-radius 0.9s 0.9s, -webkit-transform .5s, -moz-transform .5s, -o-transform .5s, -webkit-border-radius 0.9s 0.9s, -moz-border-radius 0.9s 0.9s;
+        transition: transform .5s, border-radius 0.9s 0.9s, -webkit-transform .5s;
+} 
+// ----- close modal -----//

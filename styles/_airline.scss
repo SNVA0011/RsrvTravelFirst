@@ -1,0 +1,1515 @@
+.airlines-page {
+  @extend %full-width;
+
+  &.airgray-k {
+    background-color: #fbfbfb;
+
+    .findoth-tabs {
+      @include css3("box-shadow", 0 6px 35px rgb(0 0 0 / 4%));
+    }
+  }
+
+  &.sch {
+    .wf-100.spcmb-60:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  .section-heading p {
+    .iconify {
+      font-size: 140%;
+      margin: 0 4px;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  .spcmb-60 {
+    margin-bottom: 60px;
+  }
+}
+
+.airlines-bgplane {
+  @extend %full-width;
+
+  .sort-right .dropdown-toggle {
+    padding: 9px 0px;
+    border-radius: 8px;
+
+    @include mq("max", 575px) {
+      font-size: 13px;
+    }
+  }
+
+  .why-choose-services .faq-site .accordion-item {
+    background-color: $white;
+    @include css3("box-shadow", 0 1px 2px 0 rgb(0 0 0 / 6%));
+    margin-bottom: 12px;
+  }
+}
+
+.airlines-grid {
+  .fbkconf-flg-name img {
+    width: 60px;
+    border-radius: 16px;
+
+    @include mq("max", 991px) {
+      width: 50px;
+    }
+  }
+
+  hr.hr-airline {
+    border-top-color: #cdcdcd;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    @include mq("max", 767px) {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include mq("max", 575px) {
+      max-width: 85%;
+    }
+  }
+
+  .col-grid {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+  }
+
+  .row {
+    margin-bottom: -1.5rem;
+  }
+
+  .flg-airline-card {
+    overflow: visible;
+    position: relative;
+    margin-bottom: 0;
+
+    @include mq("max", 767px) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    &::after,
+    &::before {
+      bottom: -50px;
+      top: auto;
+    }
+
+    .topline {
+      top: -6px;
+      left: 50%;
+      height: 16px;
+      width: 121px;
+      background-color: $white;
+      border-radius: 0 0 60px 60px;
+      position: absolute;
+      @include css3("transform", translateX(-50%));
+
+      @include mq("max", 1199px) {
+        height: 10px;
+        top: -2px;
+      }
+    }
+  }
+
+  .flg-airline-card,
+  .btn.btn-site {
+    letter-spacing: 0.5px;
+  }
+
+  .btn.btn-site {
+    font-size: 14px;
+    font-weight: 600;
+    max-width: 150px;
+    height: 40px;
+  }
+
+  .fbkconf-flg-name h6 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #424141;
+
+    @include mq("max", 991px) {
+      font-size: 16px;
+    }
+
+    @include mq("max", 575px) {
+      font-size: 15px;
+    }
+  }
+
+  .flg-airline-card .taxfees {
+    font-size: 14px;
+    color: #71839b;
+    line-height: normal;
+    margin-top: 10px;
+
+    @include mq("max", 991px) {
+      font-size: 12px;
+    }
+
+    .btn.btn-site {
+      font-size: 14px;
+      font-weight: 600;
+      max-width: 150px;
+      height: 40px;
+    }
+
+    b {
+      color: $davgray;
+    }
+  }
+}
+
+.site-breadcrumb {
+  @extend %full-width;
+  padding: 14px 0;
+  background-color: #233d5c;
+  z-index: 2;
+
+  &,
+  li a,
+  li,
+  p {
+    font-size: 14px;
+    font-family: $fontDefault;
+
+    @include mq("max", 767px) {
+      font-size: 13px;
+    }
+
+    @include mq("max", 575px) {
+      font-size: 12px;
+    }
+  }
+
+  li a {
+    font-weight: 600;
+
+    &.orange-clr {
+      color: $primary;
+    }
+  }
+
+  li p,
+  a {
+    color: $white;
+  }
+
+  li {
+    padding: 4px 0;
+  }
+
+  .icflg {
+    position: relative;
+    top: -2px;
+    margin-right: 4px;
+  }
+
+  .mx-1.iconify {
+    font-size: 90%;
+  }
+}
+
+.fluent-inline {
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+
+  &,
+  .iconify {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .iconify {
+    margin-right: 6px;
+  }
+}
+
+.page-title-airline {
+  background-color: $secondary;
+  padding-top: 46px;
+
+  @include mq("max", 1199px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .section-heading h3 {
+    letter-spacing: 0.2px;
+    text-shadow: 0 4px 4px rgba(15, 41, 77, 0.4);
+    letter-spacing: 0.4px;
+
+    @include mq("max", 1199px) {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    @include mq("max", 575px) {
+      font-size: 14px;
+    }
+
+    @include mq("max", 360px) {
+      text-shadow: 0 2px 2px rgba(15, 41, 77, 0.2);
+    }
+  }
+}
+
+hr.hr-airline-als {
+  margin: 0;
+  border-top-color: #dfdfdf;
+  border-width: 2px;
+}
+
+.airline-breadcrumb,
+.getlow-disc {
+  @extend %full-width;
+}
+
+.airflg-1 {
+  &.sort-right .dropdown-menu {
+    max-width: none;
+    width: 240px;
+    max-height: 350px;
+    overflow-y: auto;
+  }
+}
+
+.sort-right .dropdown-menu .iconify {
+  font-size: 148%;
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+  margin-left: 8px;
+}
+
+.findoth-route {
+  .MuiTabs-indicator {
+    background-color: $primary;
+    height: 3px;
+    display: none;
+  }
+
+  .Mui-disabled {
+    opacity: 0.2;
+  }
+
+  .MuiTabs-scrollButtons {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+
+  .MuiTouchRipple-root {
+    opacity: 0.4;
+    border-radius: 10px;
+
+    @include mq("max", 767px) {
+      border-radius: 10px;
+    }
+  }
+
+  .MuiTabs-scroller button {
+    text-transform: capitalize;
+    font-family: $fontDefault;
+    font-size: 14px;
+    color: #6f7376;
+    font-weight: 500;
+    min-height: 48px;
+    position: relative;
+    z-index: 2;
+    @include css3("transition", all 0.5s);
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    line-height: 1.4;
+    width: 50%;
+
+    @include mq("min", 768px) {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-box-orient: horizontal;
+      -moz-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    @include mq("max", 1199px) {
+      font-size: 13px;
+      padding: 8px;
+    }
+
+    @include mq("max", 767px) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    @include mq("max", 360px) {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    @include mq("max", 425px) {
+      font-size: 12px;
+    }
+
+    &[aria-selected="true"] {
+      color: $primary;
+      font-weight: 600;
+      background: $white;
+      @include css3("border-radius", 10px);
+      @include css3("box-shadow", 0 1px 3px 0 rgba(0, 0, 0, 0.1));
+    }
+
+    .txt {
+      display: block;
+
+      @include mq("max", 425px) {
+        max-width: 77px;
+      }
+    }
+
+    .iconify {
+      margin-right: 7px;
+      position: relative;
+      top: 1px;
+      width: 28px;
+      font-size: 160%;
+
+      @include mq("max", 767px) {
+        display: block;
+        margin-right: 0;
+        font-size: 12px;
+        width: 100%;
+        height: 23px;
+        margin-bottom: 9px;
+      }
+
+      @include mq("max", 360px) {
+        margin-top: 3px;
+      }
+
+      &.flgroute {
+        font-size: 105%;
+
+        @include mq("max", 767px) {
+          height: 17px;
+          margin-bottom: 14px;
+          position: relative;
+          top: 5px;
+        }
+      }
+    }
+  }
+
+  .tabpanel {
+    padding: 28px 12px 28px;
+
+    @include mq("max", 767px) {
+      padding: 11px 6px 20px;
+    }
+
+    a,
+    a.MuiTypography-root {
+      color: #0d6efd;
+      font-family: $fontDefault;
+      font-size: 14px;
+      font-style: normal;
+      line-height: normal;
+      font-weight: 500;
+      text-decoration: none;
+      display: block;
+      line-height: 1.5;
+      @include css3("transition", all 0.2s);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:hover {
+        color: $primary;
+      }
+
+      @include mq("max", 425px) {
+        font-size: 13px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.more {
+        color: $primary;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    ul.row {
+      margin-bottom: -16px;
+
+      @include mq("max", 767px) {
+        margin-bottom: -16px;
+      }
+    }
+
+    ul.row li {
+      margin-bottom: 16px;
+
+      @include mq("max", 767px) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .iconify {
+      font-size: 118%;
+      position: relative;
+      top: -1px;
+      margin-right: 3px;
+    }
+  }
+}
+
+.getlow-disc {
+  hr {
+    border-color: #c4ced9;
+  }
+}
+
+.airplane-hm {
+  font-size: 158%;
+  margin-left: 7px;
+}
+
+.findoth-tabs {
+  @include css3("box-shadow", 0 1px 3px 0 rgb(0 0 0 / 10%));
+  background-color: $white;
+  padding: 2px 2px 0;
+  border-radius: 10px;
+  border: none;
+
+  @include mq("max", 767px) {
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+
+  .MuiTabs-root {
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: none;
+    overflow: visible;
+    padding: 4px;
+
+    @include mq("max", 767px) {
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+    }
+  }
+
+  .MuiTabs-scroller {
+    margin-bottom: 0px;
+    padding: 2px;
+    overflow: visible !important;
+    border: none;
+  }
+}
+
+.modifysort-flighteng {
+  @extend %full-width;
+}
+
+.modfflight-offcanvas {
+
+  @include mq("min", 1200px) {
+    .offcanvas.offcanvas-sidenav.offcanvas-top {
+      @include offcanvasnormal;
+    }
+  }
+
+  .offcanvas-body {
+    overflow: visible;
+  }
+
+
+  @include mq("max", 1199px) {
+    .offcanvas-body {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .offcanvas.offcanvas-top {
+      height: 100%;
+      bottom: 0;
+      visibility: hidden;
+      @include css3("transform", translateY(-130%));
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0)));
+      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      border: none;
+
+      &.offcanvas.showing,
+      &.offcanvas.show:not(.hiding) {
+        @include css3("transform", none);
+        visibility: visible;
+      }
+    }
+
+    .offcanvas-title.h5 {
+      font-size: 14px;
+    }
+
+    .offcanvas-header {
+      background: #213b5b;
+      color: $white;
+      padding-left: 0;
+      padding-right: 0;
+
+      .container {
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .btn-close {
+      background: none;
+      opacity: 1;
+      font-size: 22px;
+      text-shadow: none;
+      box-shadow: none;
+
+      .iconify {
+        margin: auto;
+      }
+    }
+  }
+}
+
+.modifysort-flighteng {
+  @extend %full-width;
+
+  @include mq("max", 1199px) {
+    background-color: $white;
+    border-bottom: solid 1px #f0f4f9;
+
+    &.is-sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 25;
+      -webkit-animation-name: slideInDownhd;
+      animation-name: slideInDownhd;
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      @include css3("box-shadow", 0px 3px 4px 0px rgba(0, 0, 0, 0.04));
+    }
+  }
+}
+
+.modfflight-empt {
+  @include mq("max", 1199px) {
+    min-height: 88.83px;
+  }
+
+  @include mq("max", 991px) {
+    min-height: 76.3px;
+  }
+}
+
+.flighteng-mobile {
+  padding: 16px 0 14px;
+  @include mq('max', 991px) {
+    padding: 13px 0 11px;
+ }
+
+  .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+
+    .iconify {
+      font-size: 140%;
+      margin: 0 8px;
+      position: relative;
+      top: -2px;
+      color: $primary;
+    }
+  }
+
+  .title-2 {
+    border-left: solid 1px #dfdfdf;
+    padding-left: 14px;
+    margin-left: 14px;
+    font-weight: 500;
+    font-size: 12px;
+
+    .iconify {
+      font-size: 120%;
+      position: relative;
+      top: -1px;
+      margin-left: 5px;
+      color: $primary;
+    }
+  }
+
+  ul {
+    font-size: 12px;
+
+    li {
+      display: inline-block;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 500;
+
+      .iconify {
+        font-size: 140%;
+        color: $primary;
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+
+  .edit-icon {
+    font-size: 13px;
+    position: relative;
+    top: -1px;
+    border: solid 1px #ededed;
+    background: transparent;
+    height: 38px;
+    border-radius: 10px;
+    width: auto;
+    padding: 0 5px;
+    color: #181719;
+    font-weight: 500;
+
+    @include mq("min", 576px) {
+      padding: 0 12px;
+    }
+    @include mq("min", 992px) {
+      font-size: 14px;
+    }
+    @include mq("max", 767px) {
+   width: auto;
+   min-width: 36px; 
+    }
+
+    @include mq("max", 375px) {
+      position: relative;
+      right: 8px; 
+    }
+
+    .iconify {
+      font-size: 24px;
+      @include mq("min", 576px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .close.col {
+    width: 62px;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -moz-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+  }
+}
+
+.tpcontainer-1.container {
+  @include mq("min", 1200px) {
+    max-width: none;
+    padding: 0;
+  }
+}
+
+.airlines-details {
+  .getlow-disc {
+    padding: 0;
+    background: transparent;
+  }
+
+  hr.hr-airline-als {
+    border-top-color: #c3c3c3;
+    border-width: 1px;
+  }
+}
+
+.person-txp {
+  font-size: 11px;
+  display: block;
+  margin-top: 6px;
+  color: #8f949b;
+}
+
+.contacts-airline {
+  .inner {
+    margin-right: -1px;
+    overflow: hidden;
+  }
+
+  .row {
+    overflow: hidden;
+    margin-bottom: -1px;
+  }
+
+  .d-inline-flex {
+    width: 65px;
+    min-width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    transition: all 0.3s;
+    background-color: $tintgray;
+
+    @include mq("max", 767px) {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.contacts-airline-info {
+  border-bottom: solid 1px #f1f1f1;
+  border-right: solid 1px #f1f1f1;
+  padding: 31px 20px;
+  position: relative;
+  line-height: 1.6;
+
+  @include mq("max", 767px) {
+    text-align: center;
+  }
+
+  @include mq("max", 575px) {
+    padding: 30px 12px 24px;
+  }
+
+  .flex-grow-1.ps-3 {
+    @include mq("max", 767px) {
+      padding: 0 !important;
+    }
+  }
+
+  h5 {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: $black;
+
+    @include mq("max", 575px) {
+      font-size: 14px;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: #7e7e7e;
+
+    @include mq("max", 575px) {
+      font-size: 13px;
+      max-width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .iconify {
+    font-size: 240%;
+    color: $primary;
+  }
+}
+
+.popular-arlineswipe {
+  @include mq("min", 992px) {
+    overflow: hidden;
+  }
+
+  a.d-flex {
+    height: 120px;
+    border: solid 1px #f3f3f3;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 70px;
+
+    img {
+      width: 60px;
+      border-radius: 16px;
+    }
+
+    span {
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      font-size: 11px;
+      padding: 4px 10px;
+      font-weight: 600;
+      text-align: center;
+      width: 89px;
+      background: #f9f9f9;
+      color: #585858;
+      margin: 0;
+      border-radius: 50px;
+      @include css3("box-shadow", 0 0 0 8px #fff);
+      @include css3("transform", translateX(-50%));
+    }
+  }
+
+  &.flight-offer-deals {
+    .swiper {
+      margin: 0;
+      overflow: visible;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .swiper-slide {
+      padding: 0;
+    }
+  }
+
+  .navswiper-site {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: -65px;
+    }
+
+    .swiper-button-prev {
+      right: 54px;
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+  }
+}
+
+.flgmodf-filter.airline {
+  h5 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .w-100 {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.totalairline-num {
+  line-height: 1.8;
+  font-size: 13px;
+  color: $davgray;
+  font-weight: 400;
+
+  @include mq("min", 768px) {
+    text-align: right;
+  }
+
+  @include mq("max", 767px) {
+    margin-top: 6px;
+
+    br {
+      display: none;
+    }
+  }
+
+  span {
+    color: $primary;
+    font-weight: 700;
+    font-size: 120%;
+    margin-left: 6px;
+  }
+}
+
+.list-fmb-2 {
+  margin-bottom: 25px;
+}
+
+.shw-ao {
+  position: relative;
+  top: -1px;
+  margin-right: 2px;
+  color: #c1c1c1;
+
+  @include mq("max", 575px) {
+    top: -2px;
+  }
+}
+
+.btn.btn-site.grad,.btn.btn-site.grad:hover {
+  background: -webkit-gradient(linear,
+      left top,
+      right top,
+      from(rgba(255, 102, 0, 1)),
+      to(rgba(234, 58, 0, 1)));
+  background: -webkit-linear-gradient(left,
+      rgba(255, 102, 0, 1) 0%,
+      rgba(234, 58, 0, 1) 100%);
+  background: -moz-linear-gradient(left,
+      rgba(255, 102, 0, 1) 0%,
+      rgba(234, 58, 0, 1) 100%);
+  background: -o-linear-gradient(left,
+      rgba(255, 102, 0, 1) 0%,
+      rgba(234, 58, 0, 1) 100%);
+  background: linear-gradient(to right,
+      rgba(255, 102, 0, 1) 0%,
+      rgba(234, 58, 0, 1) 100%);
+}
+
+.flg-list-row.airline {
+  .findoth-route {
+    .tabpanel {
+      padding: 0;
+    }
+
+    .MuiTabs-root {
+      border: none;
+    }
+
+    .MuiTabs-scroller button {
+      color: $charcoal;
+
+      @include mq("min", 992px) {
+        max-width: 220px;
+      }
+
+      &[aria-selected="true"] {
+        color: $primary;
+      }
+    }
+  }
+
+  .sort-right {
+    @include mq("max", 425px) {
+      margin: 6px 0;
+
+      .dropdown .dropdown-toggle {
+        border: solid 1px #e7e7e7;
+        text-align: center;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        width: 100%;
+        @include css3("transform-origin", top center);
+        text-align: center;
+      }
+    }
+  }
+
+  .section-heading {
+    margin-bottom: 0;
+  }
+
+  hr.hr-airline-als {
+    margin: 18px 0;
+    border-top-color: #e7e7e7;
+    border-width: 2px;
+  }
+
+  .findoth-tabs {
+    box-shadow: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    .MuiTabs-root {}
+
+    .g-md-3.row,
+    .g-3.row {
+      margin-top: 18px;
+
+      @include mq("max", 575px) {
+        margin-top: 0;
+      }
+
+      .g-md-3.row,
+      .g-3.row {
+        margin-top: 0;
+      }
+
+      .col-12 {
+        margin: 0;
+      }
+
+      .col-12.column-route {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .findoth-hg {
+    @include mq("min", 768px) {
+      border-radius: 10px;
+    }
+  }
+
+  .fbkconf-flg-name {
+    .pl {
+      padding-left: 17px;
+    }
+
+    h6,
+    p {
+      @include mq("max", 575px) {
+        font-size: 13px;
+      }
+    }
+
+    img {
+      @include mq("max", 575px) {
+        width: 30px;
+      }
+    }
+  }
+
+  .content {
+    &.col {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 24%;
+      flex: 0 0 24%;
+      max-width: 24%;
+      min-width: 72px;
+    }
+  }
+
+  .flg-airline-card {
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-bottom: 0;
+    height: 100%;
+    cursor: pointer;
+
+    @include mq("max", 767px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      width: 38px;
+      height: 38px;
+      bottom: 88px;
+      top: auto;
+      @include css3('transform', none); 
+    }
+
+    .row-2 .btn.btn-site {
+      min-width: 110px;
+
+      @include mq("max", 575px) {
+        font-size: 14px;
+      }
+
+      @include mq("max", 425px) {
+        width: 100%;
+        margin-top: 16px;
+      }
+    }
+
+    .taxfees strong {
+      @include mq("max", 425px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .sort-right .dropdown-toggle {
+    @include mq("max", 575px) {
+      font-size: 13px;
+
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  .showflg-footer {
+    background: transparent;
+    border: solid 1px $davgray;
+    font-weight: 600;
+    width: auto;
+    padding: 13px 20px;
+    margin-top: 15px;
+
+    &:hover {
+      background: $davgray;
+      color: #fff;
+    }
+
+    @include mq("max", 425px) {
+      width: 100%;
+      margin-top: 12px;
+    }
+  }
+}
+
+img.rounded-lg {
+  border-radius: 8px;
+}
+
+.table-striped.tbsed>tbody>tr:nth-of-type(odd)>*,
+.table-striped.tbsed>tbody>tr:nth-of-type(odd)>th,
+.table-striped.tbsed>tbody>tr:nth-of-type(odd)>td {
+  --bs-table-bg-type: #f3f4f6;
+  border-color: #dee2e6;
+}
+
+.table-striped.tbsed {
+  font-size: 14px;
+  margin-bottom: 0;
+
+  td,
+  th {
+    border: none;
+    padding: 12px 16px;
+
+    @include mq("max", 767px) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  th {
+    @include mq("max", 767px) {
+      padding-bottom: 0;
+    }
+  }
+
+  td {
+    @include mq("max", 767px) {
+      padding-top: 2px;
+    }
+  }
+}
+
+.tbsed-row {
+  margin-bottom: -16px;
+
+  @include mq("max", 767px) {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+.arrw-airline-bg {
+  margin-bottom: 10px;
+  @include bgPath("planedir-airline.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  position: relative;
+
+  @include mq("max", 425px) {
+    background-image: none;
+
+    &::before {
+      content: "";
+      border-bottom: dashed 1px #d0d0d2;
+      width: 100%;
+      display: block;
+      position: relative;
+      top: 10px;
+    }
+  }
+
+  img {
+    width: 15px;
+    position: relative;
+    top: -1px;
+
+    @include mq("max", 425px) {
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+
+.aeroplanewr-drico {
+  min-width: 42px;
+
+  @include mq('max', 767px) {
+    min-width: 32px;
+  }
+
+  .iconify {
+    font-size: 26px;
+    color: #8d8d8d;
+    margin-top: 2px;
+
+    @include mq('max', 767px) {
+      font-size: 24px;
+    }
+
+    @include mq('max', 575px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.seachbycity-3 {
+  text-align: right;
+
+  .iconify {
+    border-radius: 4px;
+    font-size: 20px;
+
+    @include mq('max', 767px) {
+      font-size: 18px;
+    }
+
+    @include mq('max', 575px) {
+      font-size: 16px;
+    }
+  }
+
+  span {
+    background-color: #f7f7f7;
+    width: 32px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    padding: 4px 0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+}
+
+.seachbycity-wrp {
+  cursor: pointer;
+  line-height: 1.4;
+  font-size: 12px;
+  border-left: solid 3px transparent;
+  border-bottom: solid 1px #f7f7f7;
+
+  @include mq('max', 425px) {
+    font-size: 11px;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    border-left-color: $primary;
+    border-bottom-color: #fff8f4;
+    background-color: #fff8f4;
+
+    .aeroplanewr-drico .iconify {
+      color: $primary;
+    }
+
+    .seachbycity-code {
+      background-color: $primary;
+      color: $white;
+    }
+
+    .seachbycity-2 {
+      color: #91684e;
+    }
+
+  }
+
+  .seachbycity-code {
+    font-size: 10px;
+    margin-top: 6px;
+    display: block;
+    color: $charcoal;
+    background-color: #f7f7f7;
+    padding: 4px 0;
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  &,
+  .seachbycity-code,
+  .iconify {
+    @include css3('transition', all 0.2s);
+  }
+}
+
+.seachbycity-1 {
+  font-size: 14px;
+  margin-bottom: 4px;
+
+  @include mq('max', 425px) {
+    font-size: 12px;
+  }
+}
+
+.seachbycity-2 {
+  font-weight: 400;
+  color: #777777
+}
+
+.suggest-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  background-color: #f9f9f9;
+  padding: 8px 15px;
+  font-weight: 500;
+  color: $black;
+}
+
+.seachbycity-wrp,
+.suggest-text {
+  padding: 10px 15px;
+
+  @include mq('max', 767px) {
+    padding: 10px;
+  }
+}
+
+
+.flight-listing.mdf {
+  .flgmodf-engine {
+    @include mq("min", 992px) {
+      padding-top: 28px;
+    }
+
+    @include mq("min", 1200px) {
+      padding-top: 19px;
+    }
+  }
+}
+
+.dropdown-menu.suggest-cities {
+  width: 380px;
+  max-height: 350px;
+  overflow: auto;
+  @include css3('border-radius', 0 6px 6px 6px);
+
+  @include mq('max', 991px) {
+    width: 355px;
+  }
+
+  @include mq('max', 767px) {
+    width: 100%;
+    z-index: 12;
+    @include css3('border-radius', 6px);
+  }
+
+  .flex-grow-1 {
+    padding: 0 15px;
+
+    @include mq('max', 767px) {
+      padding: 0 10px;
+    }
+  }
+}
+
+.flgmodf-engine .travellers-class .dropdown-menu {
+  @include mq("min", 768px) {
+    width: 340px;
+  }
+}
+
+hr.my-done-mladv {
+  margin-top: 8px;
+  margin-bottom: 13px;
+  border-color: #dddddd;
+}
+
+.flgmodf-engine {
+  .travellers-class {
+    &.trvmodify {
+      @include mq("min", 768px) {
+        .show.dropdown {
+          z-index: 12;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      margin-top: 4px;
+      @include mq("min", 768px) {
+        left: 2px !important;
+      }
+      @include mq("max", 991px) {
+        @include css3('transform-origin', top center);
+      }
+    }
+
+    .dropdown {
+      @include mq("min", 768px) {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+
+    .dropdown,
+    .dropdown-menu { 
+      @include mq("min", 768px) {
+        @include css3('border-radius', 6px);
+      }
+    }
+  }
+
+
+  .dropdown-menu.suggest-cities {
+    @include mq('max', 1199px) {
+      width: 100%;
+      z-index: 12;
+      @include css3('border-radius', 6px);
+    }
+  }
+
+  .exp-menustv .dropdown-menu.calender-mdr.show,
+  .exp-menustv .dropdown-menu.calender-mdr,
+  .dropdown-menu.calender-mdr {
+    inset: auto !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+
+    @include mq('max', 1199px) {
+      left: 0 !important;
+      right: auto !important;
+    }
+
+    @include mq('max', 991px) {
+      top: -249px !important;
+      width: 100%;
+    }
+    @include mq('max', 767px) {
+      top: auto !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100%;
+    }
+  }
+}

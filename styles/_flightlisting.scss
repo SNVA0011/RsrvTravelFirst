@@ -1,0 +1,3915 @@
+// flightlisting
+.flgmodf-engine {
+   @extend %full-width;
+   background-color: $secondary;
+   padding: 50px 0;
+
+   @include mq('max', 1199px) {
+      @include css3('border-radius', 0 0 25px 25px);
+   }
+
+   @include mq('max', 991px) {
+      padding: 42px 0 50px;
+      @include css3('border-radius', 0 0 15px 15px);
+   }
+
+   @include mqh('max', 640px) {
+      @include css3('border-radius', 0);
+   }
+
+   .engineexp-radio.light {
+      @include mq('min', 768px) {
+         margin-bottom: 0;
+      }
+   }
+
+   @include mq('min', 1400px) {
+      z-index: 3;
+   }
+
+   @include mq('min', 1200px) {
+
+      .engineexp-radio,
+      .engineexp-fields .col-12 {
+         margin-bottom: 0;
+      }
+
+      .MuiPaper-root.both-fielderr,
+      .both-fielderr {
+         position: absolute;
+         top: 100%;
+      }
+   }
+
+   @include mq('max', 991px) {
+      img.swap-desg {
+         right: 7px;
+         top: 36px;
+         width: 65px;
+         height: 65px;
+      }
+
+      .swap-desg {
+         @include css3('transform', rotate(90deg));
+
+         &.active {
+            @include css3('transform', rotate(-90deg));
+         }
+      }
+
+   }
+
+
+   .engineexp-right {
+      @include mq('min', 1200px) {
+         right: 4%;
+         width: 221px;
+         text-align: right;
+         opacity: 0.3;
+         right: 17%;
+      }
+
+      @include mq('min', 1400px) {
+         right: 8%;
+      }
+
+      @include mq('min', 1500px) {
+         right: 16%;
+      }
+
+      @include mq('min', 1900px) {
+         right: 18%;
+      }
+
+      @include mq('min', 2200px) {
+         right: 21%;
+      }
+
+      @include mq('max', 767px) {
+         opacity: 0.1;
+      }
+
+
+   }
+
+
+   .container {
+      position: relative;
+      z-index: 2;
+   }
+
+   .col-12.engineexp-btn {
+      @include mq('min', 768px) {
+         text-align: right;
+         -webkit-box-flex: 0;
+         -ms-flex: 0 0 20.5%;
+         flex: 0 0 20.5%;
+         max-width: 20.5%;
+      }
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   .col-12.engineexp-btn.searchmodf {
+      @include min-max(992px, 1199px) {
+         text-align: right;
+         -webkit-box-flex: 0;
+         -ms-flex: 0 0 33%;
+         flex: 0 0 33%;
+         max-width: 33%;
+      }
+
+      @include mq('max', 1199px) {
+         &:last-child {
+            margin-bottom: auto;
+         }
+      }
+
+      @include mq('max', 991px) {
+         -webkit-box-flex: 0;
+         -ms-flex: 0 0 100%;
+         flex: 0 0 100%;
+         max-width: 100%;
+      }
+
+   }
+
+   .engineexp-btn {
+
+      .btn.btn-site {
+         @include min-max(768px, 1199px) {
+            width: 210px;
+            max-width: none;
+         }
+
+         .iconify {
+            font-size: 155%;
+            margin-top: -8px;
+            position: relative;
+            top: 3px;
+            margin-left: 1px;
+
+            @include mq('max', 768px) {
+               margin-left: 3px;
+            }
+         }
+      }
+
+      &.searchmodf {
+         .btn.btn-site {
+            @include min-max(768px, 1199px) {
+               width: 100%;
+               max-width: none;
+            }
+
+            @include min-max(992px, 1199px) {
+               height: 50px;
+               margin-top: 4px;
+            }
+
+            @include mq("max", 991px) {
+               height: 50px;
+               font-size: 15px;
+            }
+         }
+      }
+   }
+
+   .row-id-1 {
+      margin-bottom: 28px;
+
+      @include mq('max', 767px) {
+         margin-bottom: 16px;
+      }
+
+      @include mq('min', 768px) {
+         .form-label {
+            display: none;
+         }
+
+         .input-group-text {
+            &.first {
+               padding-left: 0;
+            }
+
+            &.last {
+               padding-right: 0;
+            }
+         }
+
+         .engineexp-text {
+            &.input-group {
+               background: transparent
+            }
+
+            .form-control {
+               padding-top: 6px;
+               padding-bottom: 6px;
+               height: 32px;
+               color: $white;
+               font-weight: 400;
+               overflow: hidden;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+            }
+         }
+
+      }
+   }
+
+   .trvmodify {
+      @include mq('min', 768px) {
+         width: 284px;
+         display: inline-block;
+      }
+   }
+
+}
+
+.flightlist-wrapper {
+   @extend %full-width;
+
+   @include mq('min', 1200px) {
+      z-index: 2;
+   }
+}
+
+// flgmodf-filter
+.flgmodf-filter {
+   @extend %commonfilter;
+   line-height: normal;
+   border-radius: 10px;
+   background: $tintgray;
+   color: $davgray;
+
+   hr {
+      border-color: #e6edf9;
+      opacity: 1;
+      margin: 0;
+   }
+
+   .ptmy-20 {
+      padding: 20px 0;
+
+      @include mq("max", 575px) {
+         padding: 16px 0;
+      }
+   }
+
+   .row {
+      margin: 0;
+
+      .col-12,
+      .col-6 {
+         padding: 0 20px;
+
+         @include min-max(1200px, 1299px) {
+            padding: 0 12px;
+         }
+
+         @include mq("max", 575px) {
+            padding: 0 16px;
+         }
+      }
+   }
+
+   h4 {
+      color: $charcoal;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 0;
+
+      @include mq("max", 575px) {
+         font-size: 14px;
+      }
+
+      @include mq("max", 425px) {
+         font-size: 13px;
+      }
+   }
+
+   .btn.fi-btn {
+      color: $primary;
+      @extend %commonfilter;
+      border: none;
+
+
+      &:hover {
+         background-color: $primary;
+         color: $white;
+      }
+
+      &:active,
+      &:focus {
+         outline: none;
+         box-shadow: none;
+      }
+   }
+
+   .heading-row {
+      .btn.fi-btn {
+         margin-top: -12px;
+         margin-bottom: -12px;
+
+         @include mq('max', 1299px) {
+            margin-left: -12px;
+            margin-right: -12px;
+         }
+      }
+   }
+
+   .checkbox-custom-site .checkbox {
+      margin-bottom: 12px;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+}
+
+
+
+.muslide-md {
+   .MuiSlider-valueLabel {
+      background-color: $charcoal;
+      border-radius: 4px;
+      top: -14px;
+      font-size: 13px;
+      padding: 1px 6px;
+      font-family: $fontDefault;
+      letter-spacing: 0.4px;
+   }
+
+   .MuiSlider-rail {
+      color: $davgray;
+      opacity: 1;
+      -webkit-box-shadow: -10px 0 0 $davgray, 10px 0 0 $davgray;
+      -o-box-shadow: -10px 0 0 $davgray, 10px 0 0 $davgray;
+      -ms-box-shadow: -10px 0 0 $davgray, 10px 0 0 $davgray;
+      -moz-box-shadow: -10px 0 0 $davgray, 10px 0 0 $davgray;
+      box-shadow: -10px 0 0 $davgray, 10px 0 0 $davgray;
+   }
+
+   .MuiSlider-colorPrimary,
+   .css-187mznn-MuiSlider-root {
+      color: $primary
+   }
+
+   .MuiSlider-thumb {
+      color: $white;
+      border-radius: 4px;
+      border: solid 4px $primary;
+
+      &::before {
+         box-shadow: none;
+      }
+   }
+
+   .css-eg0mwd-MuiSlider-thumb:hover,
+   .css-eg0mwd-MuiSlider-thumb.Mui-focusVisible {
+      @include css3('box-shadow', 0px 0px 0px 8px rgb(255 102 0 / 15%));
+   }
+}
+
+
+.ptm-checkbox {
+   margin-top: 16px;
+}
+
+
+.btn-footer.btn {
+   width: 100%;
+   padding: 14px 0;
+   color: $primary;
+   font-size: 14px;
+   font-weight: 500;
+   text-align: left;
+   outline: none;
+   border: none;
+   margin-top: -18px;
+
+   &:hover {
+      opacity: 0.6;
+   }
+
+   &:active,
+   &:focus {
+      outline: none;
+      box-shadow: none;
+      color: $primary;
+   }
+
+   img {
+      width: 16px;
+      height: 16px;
+   }
+}
+
+.muslide-md {
+   margin-top: 5px;
+   padding: 0 10px;
+}
+
+// .flgmodf-time.row
+.flgmodf-time.row {
+   color: $davgray;
+   text-align: center;
+   font-size: 10px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+
+   .icon {
+      border-radius: 4px;
+      border: 1px solid #2B4462;
+      width: 46px;
+      height: 46px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 6px;
+
+      img {
+         width: 30px;
+         height: 30px;
+      }
+   }
+
+   .flgmodftime-btn,
+   .icon {
+      @include css3('transition', all 0.5s cubic-bezier(0.5, 0, 0, 1.25));
+
+   }
+
+   label.title {
+      display: block;
+   }
+}
+
+.flgmodftime-btn {
+   cursor: pointer;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   padding: 6px;
+   border-radius: 6px;
+
+   &.active {
+      background-color: $secondary;
+      color: $white;
+
+      .icon {
+         background-color: rgb(255 255 255 / 9%);
+
+         img {
+            -webkit-animation-name: bounceIn;
+            animation-name: bounceIn;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+         }
+      }
+   }
+
+}
+
+.flgmodf-filter .flgmodf-time.row {
+   margin: 16px -6px 0;
+
+   .col-12,
+   .col-6 {
+      padding: 0 6px 6px;
+   }
+}
+
+.row.muslide-price {
+   margin: 0 -16px;
+   color: $davgray;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+
+   @include mq("max", 425px) {
+      font-size: 13px;
+   }
+
+   .col-6 {
+      padding: 0 6px;
+   }
+}
+
+.timeoffer-ends {
+   border-radius: 10px;
+   background: $primaryoff;
+   padding: 12px;
+   text-align: center;
+   display: block;
+
+   @include mq('max', 575px) {
+      padding: 26px 24px;
+   }
+
+   .row {
+      min-height: 96px;
+   }
+
+   .time-ticking-red {
+      margin-left: auto;
+      margin-right: auto;
+
+      .icon {
+         img {
+            width: 50px;
+
+            @include mq('max', 991px) {
+               width: 40px;
+            }
+
+            @include mq('max', 575px) {
+               width: 30px;
+            }
+         }
+      }
+
+      .time {
+         padding-left: 30px;
+
+         @include mq('max', 991px) {
+            padding-left: 24px;
+         }
+
+         @include mq('max', 767px) {
+            padding-left: 18px;
+         }
+      }
+   }
+
+   h4 {
+      color: $secondary;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 8px;
+
+      @include mq('max', 991px) {
+         font-size: 16px;
+      }
+
+      @include mq('max', 767px) {
+         font-size: 14px;
+      }
+
+      @include mq('max', 575px) {
+         margin-top: 12px;
+         margin-bottom: 12px;
+         font-size: 12px;
+      }
+   }
+
+   .badge-lg {
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 14px 20.3px;
+
+      @include mq('max', 991px) {
+         font-size: 12px;
+      }
+
+      @include mq('max', 767px) {
+         padding: 7px 12px;
+      }
+
+      .ends {
+         font-weight: 400;
+      }
+   }
+
+   .badge-sm {
+      font-size: 12px;
+      font-weight: 400;
+      border-radius: 4px;
+      padding: 2.5px 10px;
+
+      @include mq('max', 575px) {
+         font-size: 10px;
+      }
+   }
+
+   .badge-sm,
+   .badge-lg {
+      font-style: normal;
+      line-height: normal;
+      background-color: $secondary;
+      color: $white;
+      display: inline-block;
+   }
+}
+
+.timeoffer-ends .badge-lg .time-jk {
+   min-width: 84px;
+   display: inline-block;
+   letter-spacing: 0.6px;
+}
+
+
+
+
+// flatdisc-comfortable
+.flatdisc-comfortable {
+   background: $secondary;
+   text-align: center;
+   display: block;
+   color: $white;
+   border-radius: 10px;
+   font-style: normal;
+   line-height: normal;
+   overflow: hidden;
+   position: relative;
+   padding-right: 30px;
+
+   @include mq('max', 575px) {
+      padding-right: 0px;
+   }
+
+   &:hover {
+      .btn.btn-site {
+         &::before {
+            @include css3('transform', scale(12));
+            -webkit-transition: border-radius 0.9s 0.9s, -webkit-transform .5s;
+            transition: border-radius 0.9s 0.9s, -webkit-transform .5s;
+            -webkit-transition: -webkit-transform .5s, -webkit-border-radius 0.9s 0.9s;
+            transition: -webkit-transform .5s, -webkit-border-radius 0.9s 0.9s;
+            -o-transition: border-radius 0.9s 0.9s, -o-transform .5s;
+            -moz-transition: transform .5s, border-radius 0.9s 0.9s, -moz-transform .5s, -moz-border-radius 0.9s 0.9s;
+            transition: transform .5s, border-radius 0.9s 0.9s;
+            transition: transform .5s, border-radius 0.9s 0.9s, -webkit-transform .5s, -moz-transform .5s, -o-transform .5s, -webkit-border-radius 0.9s 0.9s, -moz-border-radius 0.9s 0.9s;
+            transition: transform .5s, border-radius 0.9s 0.9s, -webkit-transform .5s;
+         }
+
+         &::after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            @include css3('transform', translateX(-50%));
+         }
+      }
+   }
+
+   .bg-bck {
+      border-radius: 10px 0 0 10px;
+   }
+
+   .flatdics-bx-1 {
+      position: relative;
+
+      @include mq('min', 1200px) {
+         @include columnGrid(34.75%);
+      }
+
+
+      &::after {
+         @include mq('min', 576px) {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            margin-left: -11px;
+            left: 100%;
+            background: $secondary;
+            border-left: solid 10px #ff6600;
+            @include css3('transform', skewX(23deg));
+            @include css3('transform-origin', bottom);
+         }
+      }
+   }
+
+   .flatdics-bx-2 {
+      position: relative;
+      z-index: 2;
+   }
+
+   .bg-bck {
+      min-height: 120px;
+      background-position: top center;
+      background-size: cover;
+
+      @include mq('max', 575px) {
+         min-height: 90px;
+      }
+   }
+
+   h4 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 0;
+
+      @include mq('max', 767px) {
+         font-size: 14px;
+      }
+   }
+
+   .flat-off {
+      font-size: 14px;
+      font-weight: 500;
+      border-top: solid 1px $primary;
+      padding-top: 6px;
+      margin-top: 6px;
+      display: inline-block;
+
+      @include mq('max', 767px) {
+         font-size: 12px;
+      }
+   }
+
+   .terms {
+      font-size: 10px;
+      font-weight: 400;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: -22px;
+   }
+
+   .btn.btn-site {
+      width: auto;
+      min-width: 137px; 
+      @include mq('max', 767px) {
+         font-size: 12px;
+         min-width: 120px;
+         height: 36px;
+         min-width: 127px; 
+      }
+   }
+}
+
+
+.timeoffer-ends,
+.flatdisc-comfortable {
+   margin-bottom: 20px;
+}
+
+.stay-flx {
+   .left {
+      @include mq('max', 575px) {
+         padding-top: 15px;
+         padding-bottom: 15px;
+      }
+   }
+
+   .right {
+      padding-left: 44px;
+
+      @include mq('max', 1199px) {
+         padding-left: 20px;
+         margin-left: auto;
+      }
+
+      @include mq('max', 575px) {
+         padding-left: 0;
+         margin-left: 0;
+         padding-bottom: 40px;
+      }
+   }
+}
+
+.showflg-footer {
+   color: $davgray;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   border-radius: 10px;
+   background: $tintgray;
+   padding: 13px 6px;
+   width: 100%;
+
+   @include mq("max", 575px) {
+      font-size: 13px;
+   }
+
+   @include mq("max", 375px) {
+      font-size: 12px;
+   }
+
+   &:hover {
+      color: var(--bs-btn-active-color);
+      background-color: #ddecff;
+      border-color: #ddecff;
+   }
+
+   img {
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+      position: relative;
+      top: -2px;
+   }
+}
+
+.itinerary-badge {
+   border-radius: 4px;
+   background: #1f1f1f;
+   color: $white;
+   font-size: 12px;
+   font-style: normal;
+   line-height: normal;
+   padding: 7px 11px;
+
+   img {
+      width: 20px;
+      height: 20px;
+      margin-right: 2px;
+   }
+}
+
+
+
+.sort-right {
+   text-align: right;
+
+   .btn-check:checked+.btn:focus-visible,
+   :not(.btn-check)+.btn:active:focus-visible,
+   .btn:first-child:active:focus-visible,
+   .btn.active:focus-visible,
+   .btn.show:focus-visible {
+      @include css3('box-shadow', none);
+
+   }
+
+   .dropdown-toggle {
+      color: $davgray;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+      padding-left: 0;
+      padding-right: 0;
+      @include css3('box-shadow', none);
+
+      @include mq('max', 575px) {
+         font-size: 13px;
+      }
+
+      @include mq('max', 425px) {
+         font-size: 12px;
+      }
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+         background: transparent;
+         border: none;
+      }
+
+      &::after {
+         display: none;
+      }
+
+      img {
+         width: 15px;
+         height: 15px;
+         margin-left: 6px;
+         @extend %arrowimgAnimated;
+      }
+
+      &.show {
+         img {
+            @extend %arrowimgRotate;
+         }
+      }
+   }
+
+
+   .dropdown-item {
+      border-bottom: solid 1px $primaryoff;
+      padding: 10px 0;
+      color: $davgray;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      @include css3('transition', all 0.4s);
+
+      @include mq('max', 575px) {
+         font-size: 13px;
+      }
+
+      /* 157.143% */
+      &:last-child {
+         border-bottom: 0;
+      }
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+         background: transparent;
+      }
+
+      &.active {
+         font-weight: 600;
+         color: $primary;
+      }
+
+      &:hover {
+         opacity: 0.6;
+      }
+   }
+
+   .dropdown-menu {
+      right: 0 !important;
+      left: auto !important;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      animation-duration: 0.5s;
+      -webkit-animation-duration: 0.5s;
+      animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+      -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+      @include css3('animation-name', fadeInUpperx);
+      @include css3('animation-fill-mode', both);
+      @include css3('transform-origin', top right);
+      @include css3('box-shadow', 0px 10px 39px 0.8px rgba(0, 0, 0, 0.1));
+      top: 100% !important;
+      margin-top: 4px;
+      max-width: 204px;
+      min-width: 204px;
+      padding: 3px 10px;
+   }
+}
+
+
+.flglistfilter-date {
+   position: relative;
+   width: 100%;
+   min-height: 60px;
+   margin-bottom: 20px;
+   margin-top: 15px;
+   padding: 0 43px;
+
+   @include mq('max', 991px) {
+      padding: 0 40px;
+   }
+
+   @include mq("max", 575px) {
+      margin-left: -5px;
+      margin-right: -5px;
+      width: auto;
+   }
+
+   @include mq('max', 425px) {
+      padding: 0 38px;
+   }
+
+
+   .ripple-wv {
+      &::before {
+         background-color: rgb(0 0 0 / 4%);
+         @include css3('transition', all 0.25s ease-in);
+      }
+
+      .m-auto {
+         position: relative;
+         z-index: 3;
+      }
+   }
+
+   .nv {
+      border-radius: 10px;
+      background: $tintgray;
+      width: 30px;
+      height: 100%;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      @include css3('transition', all 0.4s);
+
+      img {
+         width: 16px;
+         height: 16px;
+         max-width: none;
+      }
+
+      &:hover {
+         background: darken($tintgray, 3%);
+      }
+   }
+
+   .nav-prev {
+      left: 0;
+   }
+
+   .nav-next {
+      right: 0;
+   }
+
+   .flglistfilter-slide {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      text-align: center;
+      font-style: normal;
+      line-height: normal;
+      overflow: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      padding-left: 3px;
+
+      & {
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+      }
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
+
+      &::-webkit-scrollbar {
+         width: 0;
+         background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background: transparent;
+      }
+   }
+
+   ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+         @include columnGrid(11%);
+         margin-right: 13px;
+
+         @include mq('max', 1299px) {
+            margin-right: 10px;
+            @include columnGrid(13%);
+         }
+
+         @include mq('max', 1199px) {
+            margin-right: 8px;
+            @include columnGrid(15.8%);
+         }
+
+         @include mq('max', 991px) {
+            @include columnGrid(18.9%);
+         }
+
+         @include mq('max', 767px) {
+            @include columnGrid(23.5%);
+         }
+
+         @include mq('max', 575px) {
+            @include columnGrid(31.6%);
+         }
+
+         @include mq('max', 425px) {
+            @include columnGrid(47.5%);
+         }
+
+
+         &:last-child {
+            margin-right: 2px;
+         }
+      }
+   }
+
+   .flgdate-card {
+      border-radius: 10px;
+      background: $tintgray;
+      min-height: 60px;
+      width: 100%;
+      color: $charcoal;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px;
+      cursor: pointer;
+      @include css3('transition', all 0.3s);
+      letter-spacing: 0.2px;
+
+      &:hover {
+         background: darken($tintgray, 4%);
+      }
+
+      span {
+         color: $davgray;
+         text-align: center;
+         font-size: 11px;
+         font-style: normal;
+         font-weight: 600;
+         line-height: normal;
+         display: block;
+         margin-bottom: 7px;
+      }
+
+      &.active {
+         background: $primary;
+
+         &,
+         span {
+            color: $white;
+         }
+      }
+
+   }
+}
+
+// flg-airline-card
+.flg-airline-card {
+   margin-bottom: 20px;
+   background-color: $tintgray;
+   padding: 26px 35px;
+   border-radius: 10px;
+   position: relative;
+   overflow: hidden;
+
+   .wrap-inner {
+      position: relative;
+      z-index: 2;
+   }
+
+   &::after,
+   &::before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      background-color: $white;
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      @include css3('transform', translateY(-50%));
+   }
+
+   &::before {
+      left: -25px;
+   }
+
+   &::after {
+      right: -25px;
+   }
+
+   .taxfees {
+      color: $davgray;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+
+      strong {
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 600;
+         display: inline-block;
+      }
+   }
+
+   .taxfees-2 {
+      text-align: right;
+   }
+
+   .row-1 {
+      .fbkconf-fromto .content p:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   .row-2 {
+      .btn.btn-site {
+         width: auto;
+         min-width: 154px;
+         font-weight: 600;
+      }
+   }
+}
+
+hr.hr-airline {
+   border-top: dashed 2px #97abc3;
+   margin: 20px 0;
+}
+
+// flgairline-arrw
+.flgairline-arrw {
+   .arrw-sp-2 {
+      padding-left: 11px;
+
+      img {
+         width: 16px;
+         min-width: 16px;
+         max-width: none;
+      }
+
+      .btn {
+         border: none;
+         margin-top: -18px;
+         margin-right: -19px;
+         padding: 6px;
+         width: 50px;
+         height: 50px;
+
+         &,
+         &:active,
+         &:focus {
+            outline: none;
+            box-shadow: none;
+         }
+
+         img {
+            @extend %arrowimgAnimated;
+         }
+
+         &.active {
+            img {
+               @extend %arrowimgRotate;
+            }
+         }
+      }
+   }
+
+}
+
+.icvfaresub {
+   position: absolute;
+   bottom: -10px;
+   left: 50%;
+   @include css3('transform', translateX(-50%));
+   z-index: 3;
+   background-color: $tintgray;
+   color: #647b99;
+   font-size: 10px;
+   border-radius: 10px;
+   padding: 2px 9px;
+   white-space: nowrap;
+   min-width: 50px;
+   font-weight: 600;
+   display: inline-block;
+   @include css3("box-shadow", 0 -2px 3px 0 rgb(0 0 0 / 4%));
+
+   span {
+      display: block;
+   }
+}
+
+
+
+// flight-luggage-info
+.flight-luggage-info {
+   .tab-pane {
+      -webkit-animation-name: anfadeInUp;
+      animation-name: anfadeInUp;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      transform-origin: top center;
+      -webkit-transform-origin: top center;
+   }
+
+   .nav-tabs {
+      margin-top: 20px;
+      margin-bottom: 23px;
+      border-radius: 6px;
+      background: $white;
+      border: none;
+      padding: 3px;
+
+      .nav-item {
+         margin-right: 10px;
+
+         &:last-child {
+            margin-right: 0;
+         }
+      }
+
+      .nav-link {
+         border: none;
+         color: $davgray;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+         border-radius: 6px;
+         padding: 4px;
+         min-width: 160px;
+         @include css3('transition', all 0.2s);
+
+         &.active {
+            background-color: $secondary;
+            color: $white;
+            -webkit-backface-visibility: visible !important;
+            backface-visibility: visible !important;
+            -webkit-animation-name: flipInXlaggue;
+            animation-name: flipInXlaggue;
+            -webkit-animation-duration: 600ms;
+            animation-duration: 600ms;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+         }
+
+         b {
+            font-weight: inherit;
+
+            @include mq("max", 425px) {
+               display: none;
+            }
+         }
+
+         img {
+            margin-right: 6px;
+            width: 16px;
+         }
+      }
+   }
+
+   .content {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: $davgray;
+
+      @include mq("max", 425px) {
+         font-size: 13px;
+      }
+
+      @include mq("max", 375px) {
+         font-size: 12px;
+      }
+   }
+
+   .fbkconf-fromto {
+      .content h6 {
+         color: #8f8f8f;
+         font-weight: 400;
+      }
+
+      .center span {
+         color: #5a5a5a;
+      }
+   }
+
+}
+
+
+
+.tab-farerule {
+   h6 {
+      font-size: 14px;
+      color: $davgray;
+      font-weight: 600;
+      margin-bottom: 7px;
+
+      @include mq("max", 425px) {
+         font-size: 13px;
+      }
+
+      @include mq("max", 375px) {
+         font-size: 12px;
+      }
+   }
+
+   p {
+      margin-bottom: 0;
+   }
+
+   hr {
+      border-top: 2px solid #ffd4b8;
+      margin: 20px 0;
+
+      @include mq("max", 767px) {
+         margin: 28px 0;
+      }
+   }
+}
+
+.tab-importantinfo {
+   h6 {
+      font-weight: 600;
+      font-size: 14px;
+      color: $davgray;
+      margin-bottom: 10px;
+   }
+
+   ul {
+      padding-left: 26px;
+
+      li {
+         list-style: disc;
+         margin-bottom: 10px;
+      }
+   }
+
+   p {
+      font-weight: 400;
+      margin-bottom: 0;
+      margin-top: 6px;
+   }
+}
+
+.tab-luggageinfo {
+   p.operated {
+      margin-bottom: 0;
+      margin-top: 13px;
+   }
+
+   .col-12 {
+      @include mq("max", 767px) {
+         border-bottom: 2px dashed #f7f7f7;
+         padding-bottom: 22px;
+         margin-bottom: 22px;
+      }
+
+      @include mq("max", 375px) {
+         &.dutch-kl {
+            text-align: center;
+         }
+      }
+   }
+}
+
+.luggageinfo-card {
+   img {
+      width: 20px;
+   }
+
+   p {
+      margin: 10px 0;
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+}
+
+.flight-loaderr {
+   text-align: center;
+   padding: 80px 0;
+   letter-spacing: 0.2px;
+   overflow: hidden;
+   line-height: 1.4;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-wrap: nowrap;
+   flex-wrap: nowrap;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+   text-align: center;
+   font-style: normal;
+   line-height: normal;
+   overflow: auto;
+   overflow-y: hidden;
+   scroll-behavior: smooth;
+   -webkit-box-pack: start;
+   -ms-flex-pack: start;
+   justify-content: flex-start;
+   -webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;
+   min-height: 44vh; 
+   @include mq('max', 1199px) {
+      padding: 60px 0;
+      min-height: 62vh; 
+   }
+   @include mq('max', 767px) {
+      min-height: 65vh;
+   }
+   .container {
+      max-width: 500px;
+      margin: auto;
+
+      @include mq('max', 1199px) {
+         max-width: 400px;
+      }
+
+
+      @include mq('max', 991px) {
+         max-width: 350px;
+      }
+
+      @include mq('max', 575px) {
+         max-width: 300px;
+      }
+   }
+
+   .brand-logo {
+      width: 110px;
+      margin-top: 8px;
+      image-rendering: auto;
+   }
+
+   .loader-pic {
+      width: 190px;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mq('max', 767px) {
+         width: 180px;
+      }
+
+      @include mq('max', 575px) {
+         width: 160px;
+      }
+
+      @include mq('max', 325px) {
+         width: 140px;
+      }
+   }
+
+   h4 {
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: 8px; 
+      @include mq('max', 991px) {
+         font-size: 18px;
+      }
+
+      @include mq('max', 325px) {
+         font-size: 16px;
+      }
+   }
+
+   p {
+      font-size: 14px;
+      color: #777777;
+      text-transform: capitalize;
+      line-height: 2;
+      border-top: solid 1px #e7e7e7;
+      padding-top: 20px;
+      &.fnt-12{
+         font-size: 12px;
+         max-width: 380px;
+         margin-left: auto;
+         margin-right: auto; 
+      } 
+      @include mq('max', 991px) {
+         font-size: 12px;
+      }
+   }
+
+   .swap,
+   .thin {
+      color: #ff6e00;
+      font-size: 140%;
+      margin: 0 8px;
+      position: relative;
+      top: -2px;
+   }
+
+   .thin {
+      margin: 0 14px;
+   }
+
+   h5 {
+      color: #ff6e00;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 23px;
+      margin-top: 30px;
+      line-height: 1.6;
+      &.blue{
+         color: #0076ed;
+      }
+
+      &.ver-2 {
+         text-transform: capitalize;
+      }
+   }
+
+   h6 {
+      font-size: 12px;
+      margin: 13px 0 22px;
+      font-weight: 600;
+
+      &.ver-2 {
+         font-size: 14px;
+      }
+   }
+
+   .loader-bgb {
+      overflow: hidden;
+      height: 53px;
+   }
+
+   .noflight {
+      img {
+         width: 380px;
+      }
+   }
+}
+
+
+.layovertime-between {
+   text-align: center;
+   position: relative;
+   margin: 15px 0;
+
+   &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      right: 0;
+      border-top: 1px solid #e2ebf9;
+      margin: 0 auto;
+   }
+
+   .badge-gray {
+      display: inline-block;
+      background-color: $primaryoff;
+      position: relative;
+      z-index: 2;
+      padding: 6px 17px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #72462a;
+
+      b {
+         font-weight: 800;
+      }
+   }
+}
+
+
+.sort-roundway {
+   margin-bottom: 20px;
+}
+
+hr.hr-airline-round {
+   border-color: #c6ced5;
+   margin: 18px 0;
+}
+
+
+
+.icvfare-title {
+   b {
+      margin-bottom: 3px;
+      font-size: 14px;
+      color: #101010;
+      font-weight: 600;
+      line-height: 20px;
+
+      @include mq("max", 425px) {
+         font-size: 13px;
+      }
+   }
+
+   span {
+      font-size: 11px;
+      color: #647b99;
+      margin-bottom: 12px;
+   }
+}
+
+.flight-luggage-info .tab-flginfo .icvfare-tab,
+.icvfare-tab {
+   &.inbfalse {
+      .nav-tabs {
+         display: none;
+      }
+   }
+
+   .iconify {
+      margin: 0 8px;
+      position: relative;
+      top: -2px;
+      color: $primary;
+   }
+}
+
+.flight-luggage-info .tab-flginfo,
+.tab-flginfo {
+   .nav-tabs {
+      background: #eff6ff;
+      padding: 0;
+      border-bottom: solid 1px #e2ebf9;
+      border-radius: 10px;
+      margin-top: 0;
+      margin-bottom: 35px;
+
+      .nav-link {
+         border-bottom: solid 2px transparent;
+         border-radius: 12px;
+         padding: 14px 12px 20px;
+         min-width: 146px;
+         position: relative;
+
+         &.active {
+            background: $white;
+            border-color: $primary;
+            @include css3("box-shadow", 0 2px 4px 0 rgba(0, 0, 0, 0.1));
+            @include css3('animation-name', none);
+
+            .icvfaresub {
+               background-color: $primary;
+               color: $white;
+
+               span {
+                  animation-duration: 1s;
+                  -webkit-animation-duration: 1s;
+                  animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+                  -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+                  @include css3('animation-name', flipInXlaggue);
+                  @include css3('animation-fill-mode', both);
+                  @include css3('transform-origin', top left);
+               }
+            }
+
+            .icvfare-title {
+               animation-duration: 0.25s;
+               -webkit-animation-duration: 0.25s;
+               @include css3('transform-origin', bottom center);
+
+               &.tab-1 {
+                  @include css3('animation-name', fadeInLeft);
+               }
+
+               &.tab-2 {
+                  @include css3('animation-name', fadeInRight);
+               }
+            }
+         }
+      }
+   }
+
+}
+
+.flgdomestic-row {
+   border-radius: 10px;
+   overflow-y: auto;
+   overflow-x: hidden;
+   max-height: 1170px;
+   margin-bottom: 20px;
+   scroll-behavior: smooth;
+}
+
+hr.hr-airline.int {
+   margin: 12px 0;
+   border-color: #bfcbd9;
+}
+
+.route-headby-sort {
+   z-index: 3;
+   background-color: $white;
+   position: -moz-sticky;
+   position: -ms-sticky;
+   position: -o-sticky;
+   position: sticky;
+   top: 78px;
+   padding-top: 15px;
+   padding-bottom: 12px;
+
+   @include mq('max', 1199px) {
+      padding-top: 0;
+   }
+
+   &.is-sticky {
+      @include mq('max', 1199px) {
+         position: fixed;
+         padding-top: 15px;
+         width: 457px;
+         top: 69px;
+         z-index: 4;
+         -webkit-animation-name: slideInDownhd;
+         animation-name: slideInDownhd;
+         -webkit-animation-duration: 0.4s;
+         animation-duration: 0.4s;
+         -webkit-animation-fill-mode: both;
+         animation-fill-mode: both;
+         -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+         transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      @include mq('max', 991px) {
+         width: 336px;
+         top: 65px;
+         padding-bottom: 7px;
+      }
+
+      @include mq('max', 767px) {
+         width: 255px;
+         top: 65px;
+         padding-bottom: 7px;
+      }
+
+      @include mq('max', 575px) {
+         width: 50%;
+         top: 61px;
+         padding-bottom: 7px;
+         padding-right: 8px;
+      }
+   }
+
+   .route-dt {
+      font-size: 14px;
+
+      @include mq('max', 1199px) {
+         font-size: 12px;
+         margin-bottom: 8px !important;
+      }
+
+      @include mq('max', 767px) {
+         font-size: 11px;
+         background: #f7f7f7;
+         padding: 8px 5px;
+         border-radius: 10px;
+      }
+
+      @include mq('max', 575px) {
+         font-size: 11px;
+      }
+
+      .iconify {
+         position: relative;
+         top: -1px;
+         color: #b3b3b3;
+      }
+
+      li {
+         display: block;
+
+         @include mq('min', 768px) {
+            border-right: solid 1px #dee1e7;
+            @include css3("transform", skewX(-16deg));
+            margin-right: 16px;
+            padding-right: 16px;
+            display: inline-block;
+         }
+
+         @include mq('max', 767px) {
+            text-align: center;
+            color: #7e7e7e;
+
+            &.fw-bold {
+               margin-bottom: 2px;
+               color: $black;
+            }
+         }
+
+         span {
+            display: block;
+
+            @include mq('min', 768px) {
+               @include css3("transform", skewX(16deg));
+            }
+         }
+
+         &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: 0;
+         }
+      }
+   }
+
+   .filter-prc {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 10px;
+      @include css3("user-select", none);
+      @include css3("box-shadow", 0px 2px 4px 2px rgb(0 0 0 / 4%));
+      border-radius: 10px;
+
+      @include mq('max', 991px) {
+         padding: 6px 8px;
+      }
+
+      li {
+         font-size: 12px;
+         color: $charcoal;
+         font-weight: 500;
+         line-height: 18px;
+         display: -ms-flexbox;
+         display: flex;
+         -ms-flex-align: center;
+         align-items: center;
+         cursor: pointer;
+         @include css3('transition', all 0.3s);
+
+         @include mq('max', 991px) {
+            font-size: 11px;
+         }
+
+         @include mq('max', 575px) {
+            font-size: 10px;
+         }
+
+         &:hover {
+            color: $primary;
+         }
+
+         &.active {
+            font-weight: 700;
+            color: $black;
+
+            .iconify {
+               display: inline-block;
+            }
+         }
+
+         .iconify {
+            color: $primary;
+            margin-left: 4px;
+            font-size: 18px;
+            display: none;
+
+            @include mq('max', 991px) {
+               font-size: 16px;
+            }
+
+            @include mq('max', 767px) {
+               font-size: 14px;
+            }
+
+            @include mq('max', 575px) {
+               font-size: 13px;
+               margin-left: 2px;
+            }
+         }
+      }
+   }
+}
+
+
+.flg-list-row.round-dom {
+   .fbkconf-flg-name {
+      img {
+         border-radius: 8px;
+      }
+
+      .pl {
+         padding-left: 14px;
+      }
+   }
+
+   .flg-airline-card {
+      cursor: pointer; 
+      padding: 21px;
+      margin-bottom: 14px;
+      overflow: visible;
+      border: solid 1px transparent;
+      @include mq('max', 991px) {
+         padding: 16px;
+      }
+
+      &:hover {
+         background-color: #ebf4ff;
+      }
+
+      &:last-child {
+         margin-bottom: 0;
+      }
+
+      &.active {
+         background-color: $primaryoff;
+         border-color: $primary;
+
+         hr.hr-airline {
+            border-color: #c5a28b;
+         }
+
+         &::before {
+            border-right-color: $primary
+         }
+
+         &::after {
+            border-left-color: $primary
+         }
+      }
+
+      &::after,
+      &::before {
+         width: 44px;
+         height: 44px;
+         top: 56px;
+         bottom: auto;
+         @include css3('transform', none);
+         border: solid 1px transparent;
+
+         @include mq('max', 991px) {
+            top: 49px;
+         }
+      }
+
+      &::before {
+         left: -39px;
+      }
+
+      &::after {
+         right: -39px
+      }
+
+      .taxfees strong {
+         font-weight: 800;
+         color: $black;
+         font-size: 18px;
+      }
+   }
+
+   .fbkconf-fromto .content.col {
+      min-width: 100px;
+   }
+
+   .fbkconf-flg-name h6 {
+      color: $black;
+   }
+
+
+   .fbkconf-flg-name h6,
+   .fbkconf-flg-name p {
+      font-size: 12px;
+   }
+
+   .fbkconf-fromto .content h5 {
+      font-size: 13px;
+   }
+
+   .countrycode {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1b55a5;
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+   }
+}
+
+.listingbox-domestic {
+   position: fixed;
+   bottom: 10px;
+   width: 895px;
+   z-index: 12;
+   background-color: $secondary;
+   border-radius: 10px;
+   color: $white;
+   margin-left: -5px;
+   outline: 1px dashed #426997;
+   outline-offset: -6px;
+   letter-spacing: 0.4px;
+
+   @include min-max(1400px, 1500px) {
+      width: 64.8%;
+      margin-left: 0;
+   }
+
+   @include min-max(1200px, 1399px) {
+      width: 70.3%;
+      margin-left: 0;
+   }
+
+   @include mq('max', 1199px) {
+      margin-left: 0;
+      width: 937px;
+   }
+
+   @include mq('max', 991px) {
+      width: 696px;
+      padding: 15px 11px;
+      outline-offset: -5px;
+   }
+
+   @include mq('max', 767px) {
+      width: 516px;
+      padding: 10px 8px;
+   }
+
+   @include mq('max', 575px) {
+      width: 96%;
+      left: 2%;
+      outline-offset: -4px;
+   }
+
+   .airline-img {
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      position: relative;
+      top: -2px;
+
+      @include mq("max", 991px) {
+         width: 35px;
+         min-width: 35px;
+         height: 35px;
+      }
+
+      @include mq("max", 575px) {
+         width: 24px;
+         min-width: 24px;
+         height: 24px;
+         position: relative;
+         left: -4px;
+         top: 2px;
+      }
+
+      @include mq("max", 425px) {
+         width: 22px;
+         min-width: 22px;
+         height: 22px;
+      }
+   }
+
+   .colp.brd-light.col-lg-4 {
+      @include mq("max", 767px) {
+         width: auto;
+         padding-right: 0;
+      }
+   }
+
+   .colp.book {
+      @include mq("max", 991px) {
+         width: 40%;
+         padding-right: 7px;
+      }
+
+      @include mq("max", 767px) {
+         width: auto;
+         padding-right: 0;
+      }
+   }
+
+   ul.layovers,
+   p.mr-price {
+      font-size: 16px;
+      font-weight: 700;
+
+      @include mq("max", 1399px) {
+         font-size: 15px;
+      }
+
+      @include mq("max", 1199px) {
+         font-size: 14px;
+      }
+
+      @include mq("max", 991px) {
+         font-size: 13px;
+      }
+   }
+
+   .summary-list-item {
+      position: relative;
+      z-index: 5;
+   }
+
+   ul.layovers {
+      li {
+         display: inline-block;
+         vertical-align: middle;
+      }
+
+      .iconify {
+         vertical-align: middle;
+         position: relative;
+         top: -2px;
+      }
+   }
+
+   p.airline-name {
+      margin-bottom: 6px;
+      font-size: 11px;
+
+      @include mq('max', 575px) {
+         font-size: 9px;
+         margin-bottom: 4px;
+      }
+
+      strong {
+         font-weight: inherit;
+         color: #b6d3f7;
+
+         @include mq("max", 991px) {
+            display: block;
+         }
+
+         .iconify {
+            font-size: 120%;
+            margin-left: 3px;
+         }
+      }
+   }
+
+   .btn.btn-site {
+      @include mq("max", 991px) {
+         font-size: 14px;
+         font-weight: 600;
+      }
+
+      @include mq("max", 767px) {
+         font-size: 12px;
+         height: 32px;
+         position: relative;
+         z-index: 4;
+         max-width: 90px;
+      }
+
+      @include mq("max", 575px) {
+         margin-top: 13px;
+      }
+   }
+
+   .brd-light {
+      @include mq("min", 768px) {
+         border-right: solid 2px #243a55;
+      }
+
+      @include mq("max", 767px) {
+         width: 36%
+      }
+   }
+
+   p.mr-n,
+   p.mr-price {
+      margin-bottom: 2px;
+
+      @include mq("max", 767px) {
+         margin-bottom: 4px;
+      }
+   }
+
+   p.mr-price {
+      @include mq("max", 767px) {
+         margin-bottom: 0;
+      }
+   }
+
+   .summary-details-item.flex-grow-1.px-2 {
+      @include mq("max", 767px) {
+         padding-right: 0 !important;
+      }
+
+      @include mq("max", 575px) {
+         padding-left: 0 !important;
+         padding-top: 6px;
+      }
+   }
+
+   .mr-n {
+      font-size: 13px;
+
+      @include mq('max', 991px) {
+         font-size: 12px;
+      }
+
+      @include mq('max', 575px) {
+         font-size: 10px;
+      }
+   }
+
+   @include mq('min', 992px) {
+      .row {
+         margin-left: -18px;
+         margin-right: -18px;
+         padding: 18px;
+
+         .colp {
+            padding-left: 18px;
+            padding-right: 18px;
+         }
+      }
+   }
+
+   .row {
+      @include mq('max', 991px) {
+         margin: 0;
+      }
+
+      @include mq('max', 767px) {
+         margin: 0 -5px;
+
+         .colp {
+            padding-left: 5px;
+            padding-right: 5px;
+         }
+      }
+   }
+
+   .fare-for {
+      font-size: 9px;
+      color: rgb(255 255 255 / 70%); 
+      @include mq("max", 767px) {
+         position: relative;
+         top: -3px;
+      }
+   }
+
+   .btn-full {
+      width: 100px;
+
+      @include mq("max", 767px) {
+         width: 100%;
+         text-align: right;
+      }
+
+      .btn {
+         font-weight: 700;
+
+         &::after {
+            background-color: rgba(255, 255, 255, 0.2);
+            width: 40%;
+         }
+      }
+   }
+
+   .link-u {
+      font-size: 12px;
+      text-decoration: underline;
+      cursor: pointer;
+      color: $primary;
+      font-weight: 500;
+
+      @include mq('max', 767px) {
+         font-size: 11px;
+      }
+
+      b {
+         position: relative;
+         z-index: 2;
+
+         .iconify {
+            margin-right: 0;
+            font-size: 160%;
+         }
+      }
+
+      @include mq('max', 991px) {
+         position: absolute;
+         left: 8px;
+         top: -26px;
+         z-index: 3;
+         background: $secondary;
+         padding: 5px 11px 5px 15px;
+         border-radius: 10px 10px 0 10px;
+
+         &::after {
+            content: "";
+            position: absolute;
+            @include bgPath('wavebread.png');
+            position: absolute;
+            height: 100%;
+            width: 47px;
+            top: 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            left: 100%;
+            margin-left: -9px;
+         }
+      }
+
+      .iconify {
+         margin-right: 6px;
+         font-size: 190%;
+      }
+   }
+
+   .ar-price {
+      @include mq("max", 767px) {
+         position: absolute;
+         right: -8px;
+         top: -27px;
+         z-index: 3;
+         background: #2b4462;
+         padding: 8px 11px 5px 15px;
+         border-radius: 10px 10px 0 0;
+
+         &::before {
+            content: "";
+            position: absolute;
+            @include bgPath('wavebread.png');
+            position: absolute;
+            height: 100%;
+            width: 60px;
+            top: 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            right: 100%;
+            margin-right: -9px;
+            @include css3('transform', scaleX(-1));
+         }
+      }
+
+      @include mq("max", 575px) {
+         padding-top: 10px;
+      }
+   }
+
+}
+
+.summary-price-details.ar {
+   @include mq("max", 767px) {
+      position: absolute;
+      right: 8px;
+      top: 0px;
+      z-index: 3;
+      width: 100%;
+   }
+}
+
+.summary-pricedom {
+   font-size: 24px;
+   font-weight: 800;
+   letter-spacing: 0.4px;
+   margin-bottom: 4px;
+
+   @include mq("max", 1399px) {
+      font-size: 22px;
+   }
+
+   @include mq("max", 1199px) {
+      font-size: 20px;
+   }
+
+   @include mq("max", 991px) {
+      font-size: 17px;
+      text-align: center;
+   }
+
+   @include mq("max", 767px) {
+      font-size: 14px;
+      text-align: right;
+   }
+}
+
+.listingbox-domestic-empty {
+   min-height: 90px;
+   @extend %full-width;
+
+   @include mq("max", 1199px) {
+      min-height: 120px;
+   }
+
+   @include mq("max", 991px) {
+      min-height: 100px;
+   }
+}
+
+
+
+.flgway-title {
+   font-weight: 600;
+   display: inline-block;
+   padding: 8px 10px 8px 15px;
+   background: #0f488d;
+   color: #fff;
+   position: relative;
+   z-index: 2;
+   margin-left: -9px;
+   font-size: 13px;
+   @include css3('transform', skewX(-20deg));
+   border-radius: 10px 4px 10px 4px;
+   top: 3px;
+   @include mq('max', 767px) {
+      font-size: 12px;
+      margin-left: -6px;
+      @include css3('transform', skewX(-10deg));
+   }
+
+   @include mq('max', 575px) {
+      font-size: 11px;
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 100%;
+      width: 0;
+      height: 0;
+      border-color: #0f488d #0f488d transparent transparent;
+      border-style: solid;
+      border-width: 5px;
+      z-index: 0;
+      margin-top: -1px;
+      @include mq('max', 767px) {
+         border-width: 3px;
+         margin-top: -1px;
+         left: 3px;
+      }
+   }
+
+   span,
+   &::after {
+      @include css3('transform', skewX(20deg));
+      display: inline-block;
+      @include mq('max', 767px) {
+         @include css3('transform', skewX(10deg));
+      }
+   }
+
+   .iconify {
+      margin-right: 8px;
+      font-size: 90%;
+      position: relative;
+      top: -2px;
+      color: $primary;
+
+      &.iconify--ic {
+         font-size: 120%;
+      }
+
+      &.iconify--fluent {
+         font-size: 90%;
+      }
+   }
+}
+
+.flight-luggage-info.filter {
+   .tab-flginfo {
+      overflow: hidden;
+   }
+
+   .tab-flginfo .nav-tabs {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 10px;
+      padding: 6px 6px 0;
+      border-radius: 20px;
+
+      &.fil-domint {
+         @include mq("max", 1199px) {
+            border-radius: 0;
+            border-bottom: 0;
+            background: #f7f7f7;
+
+            .icvfaresub {
+               background-color: $white;
+            }
+
+            .nav-link.active .icvfaresub {
+               background-color: $primary;
+            }
+         }
+      }
+
+      .nav-item {
+         margin-right: 0;
+         width: 50%;
+
+         .nav-link {
+            width: 100%;
+            min-width: auto
+         }
+      }
+   }
+}
+
+
+.arrw-airline-bg.custom {
+   background: none;
+   position: relative;
+
+   &::before {
+      content: '';
+      width: 100%;
+      left: 0;
+      top: 50%;
+      position: absolute;
+      border-bottom: dashed 1px #a5a5a5;
+      margin-top: -0.5px;
+   }
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      background: url('../public/images/start-fh.png'), url('../public/images/end-fh.png');
+      background-repeat: no-repeat;
+      background-position: left -2px top 4px, right 0 top 4px;
+      z-index: 2;
+   }
+}
+
+
+.button-fxn {
+   position: fixed;
+   right: 30px;
+   bottom: 30px;
+   border-radius: 50px;
+   padding: 0;
+   width: 45px;
+   height: 45px;
+   background: $white;
+   z-index: 22;
+   -webkit-animation-name: fadeInRight;
+   animation-name: fadeInRight;
+   -webkit-animation-duration: 0.3s;
+   animation-duration: 0.3s;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+   transform-origin: top center;
+   -webkit-transform-origin: top center;
+   @include css3('box-shadow', 0px 3px 10px rgb(0 0 0 / 8%));
+   overflow: hidden;
+
+   @include mq("max", 1199px) {
+      right: 16px;
+      bottom: 16px;
+   }
+
+   @include mq("max", 991px) {
+      right: 16px;
+      bottom: 16px;
+      width: 43px;
+      height: 43px;
+   }
+
+   @include mq("max", 575px) {
+      right: 20px;
+      bottom: 20px;
+   }
+
+   .iconify {
+      font-size: 34px;
+      color: $primary;
+      -webkit-animation-name: shake;
+      animation-name: shake;
+      -webkit-animation-duration: 800ms;
+      animation-duration: 800ms;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+
+      @include mq("max", 991px) {
+         font-size: 32px;
+      }
+   }
+}
+
+.spcmy-60.container .flight-loaderr {
+   padding: 20px 0;
+}
+
+.modal-open {
+   overflow: hidden;
+}
+
+// onewayfilter-off
+.onewayfilter-off {
+
+   &.domestic {
+      @include mq("max", 1199px) {
+
+         .flight-luggage-info .tab-flginfo .nav-tabs,
+         .tab-flginfo .nav-tabs {
+
+            .nav-link.active,
+            .nav-tabs .nav-link.active {
+               background: $secondary;
+               color: $white;
+
+               .icvfare-title {
+                  b {
+                     color: $white;
+                  }
+
+                  span {
+                     color: #b0c4dc;
+                  }
+               }
+            }
+         }
+
+
+      }
+   }
+
+
+   .offcanvas {
+      @include mq("min", 1200px) {
+         @include offcanvasnormal;
+         display: inline;
+      }
+
+      @include mq("max", 1199px) {
+         border: none;
+         height: 90%;
+         @include css3('border-radius', 15px 15px 0 0);
+         width: 448px;
+         max-width: 96%;
+         margin-left: auto;
+         margin-right: auto; 
+         &,
+         .flgmodf-filter {
+            background-color: $white;
+         }
+      }
+
+      @include mq("max", 575px) {
+         height: 92%;
+         max-width: 98%;
+      }
+   }
+
+   .offcanvas-title { 
+      @include mq("max", 1199px) {
+         font-size: 18px;
+         font-weight: 600;
+         text-align: center;
+     } 
+     @include mq("max", 767px) {
+         font-size: 16px;
+     }
+     @include mq("max", 575px) {
+         font-size: 15px;
+     }
+
+   }
+
+
+   .offcanvas-header {
+      border-bottom: solid 1px #e6edf9;
+
+      .btn-close {
+         margin-left: auto;
+      }
+   }
+
+   .fi-btn-heads {
+      position: relative;
+      top: 2px;
+      font-weight: 600;
+      border: none;
+      border-radius: 0;
+      margin-right: 16px;
+      padding-right: 10px;
+      color: $primary;
+      height: 46px;
+      margin-left: 0;
+      width: 100px;
+      font-size: 15px;
+      border-radius: 6px;
+      background-color: #fff7f2;
+
+      @include mq("max", 575px) {
+         font-size: 14px;
+      }
+
+      .iconify {
+         margin-left: 4px;
+      }
+
+      &:hover {
+         color: $primary;
+      }
+
+      &::before {
+         background-color: rgb(255 242 233);
+      }
+   }
+
+   .footer-btn {
+      padding: 1rem;
+      border-top: solid 1px #e6edf9;
+
+      .btn.btn-site {
+         width: 143px;
+         font-size: 15px;
+         font-weight: 600;
+         letter-spacing: 0.4px;
+
+         @include mq("max", 575px) {
+            font-size: 14px;
+         }
+      }
+   }
+}
+
+ 
+.cil-fil {
+   font-size: 120%;
+}
+
+.editfilter-icon {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   bottom: 12px;
+   z-index: 10;
+   background: $charcoal;
+   color: $white;
+   padding: 12px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10px;
+   width: 125px;
+   letter-spacing: 0.6px;
+   font-size: 14px;
+   @include css3("box-shadow", 0px 3px 10px rgb(0 0 0 / 25%));
+   text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+
+   @include mq('max', 575px) {
+      right: auto;
+      margin-left: 20px;
+      bottom: 20px;
+      background: -webkit-gradient(linear,
+            left top,
+            right top,
+            from(rgba(255, 102, 0, 1)),
+            to(rgba(234, 58, 0, 1)));
+      background: -webkit-linear-gradient(left,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      background: -moz-linear-gradient(left,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      background: -o-linear-gradient(left,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      background: linear-gradient(to right,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      @include css3("box-shadow", 0px 5px 12px rgb(236 62 0 / 37%));
+   }
+
+   @include mq("max", 425px) {
+      font-size: 13px;
+   }
+
+   &.round-dom {
+      bottom: 124px;
+      background: -webkit-gradient(linear,
+            left top,
+            right top,
+            from(rgba(255, 102, 0, 1)),
+            to(rgba(234, 58, 0, 1)));
+      background: -webkit-linear-gradient(left,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      background: -moz-linear-gradient(left,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      background: -o-linear-gradient(left,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      background: linear-gradient(to right,
+            rgba(255, 102, 0, 1) 0%,
+            rgba(234, 58, 0, 1) 100%);
+      text-shadow: 0 1px 2px rgb(0 0 0 / 40%);
+      @include css3("box-shadow", 0px 5px 12px rgb(236 62 0 / 37%));
+
+      @include mq('max', 991px) {
+         bottom: 110px;
+      }
+
+      @include mq('max', 767px) {
+         bottom: 105px;
+      }
+
+      @include mq('max', 575px) {
+         bottom: 130px;
+         left: auto;
+         right: 12px;
+         margin-left: 0;
+      }
+
+   }
+
+   @include min-max(992px, 1199px) {
+      bottom: 16px;
+   }
+
+   &::after {
+      width: 40%;
+      background-color: rgba(255, 255, 255, 0.2);
+
+      @include mq("max", 575px) {
+         background-color: rgba(255, 255, 255, 0.25);
+      }
+   }
+
+   @include mq("max", 575px) {
+      font-size: 14px;
+      width: 46px;
+   }
+
+   .iconify {
+      font-size: 120%;
+      position: relative;
+      top: -1px;
+      display: inline-block;
+
+      @include mq("min", 576px) {
+         margin-right: 12px;
+      }
+   }
+
+   span,
+   .iconify {
+      vertical-align: middle;
+   }
+
+   span {
+      display: inline-block;
+
+      @include mq("max", 575px) {
+         display: none;
+      }
+   }
+}
+
+
+.flightlist-wrapper.h-fullvh {
+   .spcmy-60.container {
+      @include mq("max", 1199px) {
+         margin-top: 30px;
+         margin-bottom: 30px;
+      }
+
+      @include mq("max", 575px) {
+         margin-top: 25px;
+         margin-bottom: 25px;
+      }
+
+      @include mq("max", 475px) {
+         margin-top: 20px;
+         margin-bottom: 20px;
+      }
+   }
+}
+
+
+.lsc-currency {
+   vertical-align: middle;
+   display: inline-block;
+   position: relative;
+   top: -3px;
+   margin-right: 6px;
+}
+
+
+.rowflight-g-3 {
+   padding-bottom: 35px;
+
+   @include mq("max", 1199px) {
+      padding-bottom: 65px;
+   }
+}
+
+.flg-list-row.oneway {
+
+   .flg-airline-card {
+
+      &::after,
+      &::before {
+         @include mq("max", 767px) {
+            display: none;
+         }
+      }
+   }
+
+   .ms-4s {
+      margin-left: 44px;
+   }
+
+   .fbkconf-flg-name {
+      min-width: 36px;
+
+      @include mq("max", 991px) {
+         -webkit-box-orient: vertical;
+         -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+         flex-direction: column;
+      }
+
+      img {
+         min-width: 36px;
+         width: 36px;
+         border-radius: 8px;
+
+         @include mq("max", 767px) {
+            min-width: 42px;
+            width: 42px;
+         }
+
+         @include mq("max", 375px) {
+            min-width: 38px;
+            width: 38px;
+         }
+      }
+
+      .pl {
+         padding-left: 14px;
+
+         @include mq("max", 991px) {
+            padding-left: 0;
+            padding-top: 10px;
+         }
+      }
+   }
+
+   .row-1.row {
+      @include mq("max", 991px) {
+         -webkit-box-align: center;
+         -ms-flex-align: center;
+         align-items: center;
+      }
+   }
+
+   .flgairline-arrw .arrw-sp-2 .btn {
+      @include mq("max", 991px) {
+         margin-right: -13px;
+         margin-left: -10px;
+         margin-top: -30px;
+      }
+   }
+}
+
+
+.flg-list-row.round-int,
+.flg-list-row.oneway {
+   .flg-airline-card {
+      @include mq("max", 767px) {
+         margin-bottom: 16px;
+      }
+
+      &::after,
+      &::before {
+         top: auto;
+         bottom: 68px;
+         @include css3('transform', none);
+
+         @include mq("max", 991px) {
+            width: 36px;
+            height: 36px;
+            bottom: 76px;
+         }
+      }
+
+      @include mq("max", 991px) {
+         padding: 23px 21px;
+      }
+
+      @include mq("max", 767px) {
+         padding: 18px;
+      }
+
+      @include mq("max", 575px) {
+         padding: 12px;
+      }
+   }
+
+   .fbkconf-fromto .content.col {
+      min-width: 116px; 
+      @include mq("max", 575px) {
+         margin-top: 11px;
+      } 
+   }
+
+   .flight-luggage-info {
+      .nav-tabs.inptab {
+         .nav-item {
+            @include mq("max", 991px) {
+               width: 25%;
+               margin-right: 0;
+            }
+         }
+
+         .nav-link {
+            @include mq("max", 991px) {
+               padding-top: 12px;
+               padding-bottom: 12px;
+            }
+
+            img {
+               @include mq("max", 991px) {
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                  margin-bottom: 8px;
+                  width: 20px;
+               }
+            }
+         }
+      }
+   }
+}
+
+
+.flg-list-row.round-int {
+   .flg-airline-card {
+
+      &::after,
+      &::before {
+         @include mq("max", 767px) {
+            bottom: 60px;
+         }
+
+         @include mq("max", 575px) {
+            bottom: 55px;
+         }
+
+         @include mq("max", 425px) {
+            bottom: 50px;
+         }
+      }
+   }
+}
+
+
+.head-oneway-mobile {
+   margin-top: 0;
+   margin-bottom: 0;
+   cursor: pointer;
+
+   .mb-sltd {
+      margin-bottom: 12px;
+   }
+
+   .fbkconf-flg-name h6,
+   .fbkconf-flg-name p {
+      font-size: 10px;
+   }
+
+   .way-to {
+      color: $charcoal;
+      font-size: 14px;
+      font-weight: 800;
+
+      @include mq("max", 767px) {
+         font-weight: 700;
+      }
+
+      @include mq("max", 425px) {
+         font-size: 12px;
+      }
+
+      .iconify {
+         color: $primary;
+         position: relative;
+         top: -1px;
+         font-size: 19px;
+      }
+   }
+
+   .arrw-sp-1.flex-grow-1.ps-3 {
+      @include mq("max", 425px) {
+         padding-left: 0.6rem !important;
+      }
+   }
+
+   .arrw-airline-bg {
+      min-width: 50px;
+      margin-bottom: 0;
+
+      img {
+         width: 13px;
+      }
+   }
+
+   .stops,
+   .way-tocode {
+      font-size: 12px;
+      font-weight: 500;
+   }
+
+   .way-tocode {
+      margin: 6px 0;
+      color: #1b55a5;
+      font-weight: 800;
+
+      @include mq("max", 991px) {
+         margin: 4px 0;
+      }
+
+      @include mq("max", 575px) {
+         margin: 2px 0;
+      }
+
+      @include mq("max", 425px) {
+         font-size: 11px;
+      }
+
+      .first {
+         min-width: 71px;
+         padding-right: 12px;
+
+         @include mq("max", 425px) {
+            min-width: 61px;
+         }
+      }
+   }
+
+   .stops {
+      padding-top: 4px;
+      color: #7e7e7e;
+      display: inline-block;
+      line-height: 1.6;
+
+      @include mq("max", 425px) {
+         font-size: 10px;
+      }
+
+      b {
+         font-weight: 500;
+         display: inline-block
+      }
+
+      .sltd {
+         @include css3('transform', skewX(-14deg));
+         display: inline-block;
+         margin: 0 8px;
+         opacity: 0.4;
+      }
+   }
+
+   .slcol {
+      margin-top: 0;
+      margin-bottom: 0;
+   }
+
+   .lsc-currency {
+      top: -3px;
+      margin-right: 4px;
+      font-size: 90%;
+
+      @include mq("max", 425px) {
+         top: -2px;
+         margin-right: 2px;
+      }
+   }
+
+   .airline-pic {
+      width: 40px;
+      border-radius: 8px;
+
+      @include mq("max", 575px) {
+         width: 36px;
+         min-width: 36px;
+      }
+
+      @include mq("max", 425px) {
+         width: 34px;
+         min-width: 34px;
+      }
+   }
+
+   .airline-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 14px;
+
+      @include mq("max", 575px) {
+         font-size: 12px;
+         margin-bottom: 12px;
+      }
+
+      @include mq("max", 375px) {
+         font-size: 11px;
+      }
+   }
+}
+
+
+.price-subprice-nk {
+   color: #191e3b;
+   font-size: 10px;
+   line-height: 1.285;
+   margin-top: 3px;
+   position: relative;
+}
+
+.price-nk {
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 600;
+   display: inline-block;
+
+   @include mq("max", 425px) {
+      font-size: 16px;
+   }
+
+   @include mq("max", 375px) {
+      font-size: 14px;
+   }
+}
+
+img.ret-intplane {
+   width: 13px;
+   position: relative;
+   z-index: 2;
+   right: -6px;
+   top: 2px;
+}
+
+.price-subprice-nk.rt {
+   margin-top: 0;
+   padding-left: 18px;
+
+   @include mq("max", 425px) {
+      padding-left: 13px;
+   }
+
+   span {
+      display: block;
+      @include css3('transform', rotate(90deg));
+      @include css3('transform-origin', bottom right);
+      position: absolute;
+      right: 30px;
+      top: 25px;
+      white-space: nowrap;
+      background: #eaf4ff;
+      padding: 3px 2px;
+      border-radius: 10px;
+      min-width: 55px;
+      text-align: center;
+      color: #556f91;
+
+      @include mq("max", 425px) {
+         font-size: 9px;
+         right: 28px;
+      }
+   }
+
+   &.dep {
+      span {
+         top: 24px;
+      }
+
+      img.ret-intplane {
+         top: 1px;
+      }
+   }
+}
+
+
+.review-onewaypopup {
+   .modal-title.h4 {
+      font-size: 16px;
+      font-weight: 700;
+
+      @include mq("max", 425px) {
+         font-size: 15px;
+      }
+
+      .btn {
+         margin: -17px 2px 0 -12px;
+         position: relative;
+         top: 5px;
+         outline: none;
+         border: none;
+         font-size: 18px;
+
+         @include mq("min", 576px) {
+            margin-left: -18px;
+         }
+
+      }
+   }
+
+   .price-nk {
+      font-size: 18px;
+
+      @include mq("max", 425px) {
+         font-size: 16px;
+      }
+
+   }
+
+   .lsc-currency {
+      margin-right: 4px;
+      top: -2px;
+   }
+
+   .flight-luggage-info {
+      .nav-tabs.inptab {
+         background-color: #f6f9ff;
+         margin: 0 -6px 20px;
+         color: #515969;
+         padding: 4px;
+
+         .nav-link {
+            min-width: auto;
+            width: 100%;
+            padding-left: 6px;
+            padding-right: 6px;
+            height: 84px;
+            font-size: 12px;
+            color: #2e4064;
+
+            @include mq("max", 425px) {
+               font-size: 11px;
+               height: 76px;
+            }
+
+            span {
+               display: block;
+               margin-left: auto;
+               margin-right: auto;
+
+               @include mq("max", 575px) {
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-align: center;
+                  -ms-flex-align: center;
+                  align-items: center;
+                  -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                  justify-content: center;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column;
+               }
+
+            }
+
+            &.active {
+               font-weight: 600;
+               @include css3("border-radius", 10px);
+               @include css3("box-shadow", 0 1px 3px 0 rgba(0, 0, 0, 0.1));
+               color: $white;
+            }
+         }
+      }
+   }
+
+   .fbkconf-fromto {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+
+      .content.col {
+         min-width: 124px;
+      }
+
+      .center.col {
+         padding: 0;
+      }
+   }
+
+   .onewayfilter-off .footer-btn {
+      padding: 0;
+      border: none;
+      margin: 0;
+      width: 100%;
+   }
+
+
+   .modal-footer {
+      .price-subprice-nk {
+         margin-top: 0;
+         font-size: 12px;
+         margin-bottom: 1px;
+         color: #959595;
+      }
+   }
+
+   .icvfare-tab {
+      overflow: hidden;
+   }
+
+   .flight-luggage-info .tab-flginfo .nav-tabs.domint-tab,
+   .tab-flginfo .nav-tabs.domint-tab {
+      background: #f7f7f7;
+      padding: 6px 6px 0;
+      border-radius: 20px;
+
+      .icvfaresub {
+         background-color: $white;
+      }
+
+      .nav-link.active .icvfaresub {
+         background-color: $primary;
+      }
+
+      .nav-item {
+         width: 50%;
+         margin: 0;
+
+         .nav-link {
+            width: 100%;
+            min-width: auto;
+         }
+      }
+   }
+
+   .modal-header,
+   .modal-body,
+   .modal-footer {
+      padding-left: 0;
+      padding-right: 0;
+   }
+
+   .modal-header {
+      @include css3('box-shadow', 0px 2px 3px 0px rgba(0, 0, 0, 0.04));
+   }
+
+   .modal-footer {
+      @include css3('box-shadow', 0px -2px 3px 0px rgba(0, 0, 0, 0.04));
+   }
+
+   .modal-header,
+   .modal-footer {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border: none;
+
+      .container {
+         margin: 0;
+      }
+   }
+
+   .flg-list-row.oneway .fbkconf-flg-name {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      margin-bottom: 18px;
+
+      .pl {
+         padding-left: 14px;
+         padding-top: 6px;
+         text-align: left;
+
+         @include mq("max", 767px) {
+            padding-top: 3px;
+         }
+      }
+   }
+
+   .fbkconf-flg-name {
+      h6 {
+         margin-bottom: 2px;
+      }
+
+      p {
+         display: inline-block;
+         border-right: solid 1px #e1e1e1;
+         padding-right: 14px;
+         margin-right: 14px;
+         @include css3('transform', skewX(-12deg));
+         color: #8f8f8f;
+         font-weight: 400;
+         font-size: 12px;
+         @include mq("max", 575px) {
+            font-size: 11px;
+         }
+
+         span {
+            display: block;
+            @include css3('transform', skewX(12deg));
+         }
+      }
+   }
+
+   .arrw-airline-bg {
+      @include mq("max", 425px) {
+         background-image: none;
+
+         &::before {
+            content: "";
+            border-bottom: dashed 1px #d0d0d2;
+            width: 100%;
+            display: block;
+            position: relative;
+            top: 10px;
+         }
+      }
+   }
+}
+
+.scrolltop-spc {
+   scroll-margin-top: 95px;
+}
+
+.flglistfilter-slide-ds {
+   overflow-y: auto;
+   max-height: 500px;
+}
+
+
+.empty-headbysort {
+   min-height: 88px;
+}
+
+
+
+.review-onewaypopup.faremodal-domestic,
+.faremodal-domestic {
+
+   .container {
+      padding: 0;
+   }
+
+   .modal-header,
+   .modal-body,
+   .modal-footer {
+      padding: 18px 24px;
+
+      @include mq('max', 1199px) {
+         padding: 16px 20px;
+      }
+
+      @include mq('max', 991px) {
+         padding: 14px 12px;
+      }
+   }
+
+   .modal-header {
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+      @include mq('max', 1399px) {
+         padding-top: 20px;
+         padding-bottom: 20px;
+      }
+
+      @include mq('max', 1199px) {
+         padding-top: 16px;
+         padding-bottom: 16px;
+      }
+   }
+
+   .flg-airline-card::after,
+   .flg-airline-card::before {
+      display: none;
+   }
+
+   .flg-airline-card {
+      padding: 12px 2px 2px;
+      margin-bottom: 35px;
+      background: transparent;
+      border: solid 1px #e2ebf9;
+      border-radius: 0 10px 10px 10px;
+
+      &:last-child {
+         margin-bottom: 20px;
+      }
+
+      .arrw-sp-2 .btn {
+         margin-right: -7px;
+      }
+   }
+
+   .fluent-inline {
+      top: 0px;
+   }
+
+   .fbkconf-fromto .content.col {
+      min-width: 100px;
+   }
+
+   .row-1.row {
+      margin-top: 14px;
+   }
+
+   .flight-luggage-info {
+      background: $tintgray;
+      padding: 0;
+      margin-top: 22px;
+      border-radius: 10px;
+
+      .nav-tabs {
+         margin-top: 0;
+         background: #ebf4ff;
+         margin-left: 0;
+         margin-right: 0; 
+      @include mq('min', 1200px) { 
+         padding: 7px 7px 8px
+      }
+      }
+   }
+
+   .tab-farerule,
+   .tab-importantinfo,
+   .tab-luggageinfo,
+   .rtrip-departure {
+      padding: 0 12px 12px;
+   }
+
+
+   .modal-title {
+      font-weight: 700;
+      font-size: 18px;
+
+      @include mq('max', 991px) {
+         font-size: 16px;
+      }
+
+      @include mq('max', 575px) {
+         font-size: 14px;
+      }
+   }
+
+   .flight-luggage-info .nav-tabs {
+      .nav-item {
+         width: 25%;
+         margin-right: 0;
+      }
+
+      .nav-link {
+         padding: 8px;
+         width: 100%;
+
+         @include mq('min', 992px) {
+            height: auto;
+         }
+
+         @include mq('min', 768px) {
+            font-size: 14px;
+         }
+
+         &.active {
+            background: $white;
+            border-color: $primary;
+            @include css3("box-shadow", 0 2px 4px 0 rgba(0, 0, 0, 0.1));
+            @include css3('animation-name', none);
+            color: #101010;
+            font-weight: 600;
+         }
+
+         span {
+            @include mq('min', 992px) {
+               display: inline-block;
+            }
+         }
+
+         img {
+            margin-right: 0;
+            margin-bottom: 8px;
+            width: 20px;
+
+            @include mq('min', 992px) {
+               margin-right: 6px;
+               margin-bottom: 0;
+               width: 16px;
+               top: -2px;
+               position: relative;
+            }
+         }
+      }
+   }
+
+
+   .modal-header {
+      border: none;
+      @include css3('box-shadow', 0px 2px 3px 0px rgba(0, 0, 0, 0.04));
+   }
+
+   .modal-footer {
+      @include css3('box-shadow', 0px -2px 3px 0px rgba(0, 0, 0, 0.04));
+      border: none;
+   }
+
+   .btn.btn-site {
+      min-width: 120px;
+   }
+
+
+
+   .btn-close {
+      border: solid 1px #7f7f7f;
+      border-radius: 50px;
+      opacity: 1;
+      background-size: 12px;
+   }
+
+   .arrw-sp-1 {
+      width: 100%;
+   }
+
+   .row-wrp,
+   .head-oneway-mobile {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      @include mq('max', 767px) {
+         padding-top: 10px;
+      }
+   }
+
+   .row-2.row,
+   hr.hr-airline.sep,
+   .arrw-sp-2 {
+      display: none;
+   }
+}
+
+.rowmob-rdom.row {
+   @include mq('max', 767px) {
+      .arrw-airline-bg.custom::after {
+         background-position: left -2px top 4px, right 0 top 3px;
+      }
+
+      .flg-airline-card {
+         margin-bottom: 6px;
+         border: 1px solid transparent;
+         padding: 10px 8px 12px;
+
+         &.active {
+            background-color: $primaryoff;
+            border-color: $primary;
+         }
+      }
+
+      margin-left: -3px;
+      margin-right: -3px;
+
+      .col-6 {
+         padding-left: 3px;
+         padding-right: 3px;
+      }
+
+      .colway {
+         width: 44px;
+      }
+
+
+      .price-nk {
+         font-size: 15px;
+      }
+
+      .head-oneway-mobile {
+         .airline-pic {
+            width: 24px;
+            min-width: 24px;
+            border-radius: 4px;
+         }
+
+         .airline-title {
+            font-size: 12px;
+         }
+
+         .stops,
+         .way-tocode {
+            font-size: 10px;
+         }
+      }
+   }
+
+   @include mq('max', 575px) {
+      .arrw-airline-bg.custom::after {
+         background-position: left -1px top 6px, right 0 top 6px;
+         background-size: 5px;
+      }
+
+      .flg-airline-card {
+         margin-bottom: 4px;
+
+         &.active {}
+      }
+
+      margin-left: -10px;
+      margin-right: -10px;
+
+      .col-6 {
+         padding-left: 2px;
+         padding-right: 2px;
+      }
+
+      .colway {
+         width: 38px;
+      }
+
+
+      .price-nk {
+         font-size: 14px;
+      }
+
+      .head-oneway-mobile {
+         .airline-pic {}
+
+         .airline-title {
+            font-size: 10px;
+         }
+
+         .stops,
+         .way-tocode {
+            font-size: 9px;
+         }
+      }
+   }
+
+   @include mq('max', 425px) {
+      .price-nk {
+         font-size: 13px;
+      }
+   }
+}

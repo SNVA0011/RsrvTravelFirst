@@ -1,0 +1,927 @@
+// flgbooking-cofirm
+.flightbook-confirm {
+    @extend %full-width;
+    background-color: #fafbff;
+    min-height: 100%;
+
+    @include mq('min', 1250px) {
+        .container {
+            max-width: 1056px;
+        }
+    }
+
+    .spcmy-60.container {
+        @include mq('max', 991px) {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+
+.fbkconf-blue {
+    @extend %full-width;
+    border-radius: 10px;
+    background-color: $secondary;
+    border-top: solid 10px $primary;
+    border-bottom: solid 10px $primary;
+    color: $white;
+    font-style: normal;
+    line-height: 1.6;
+
+    &.pending {
+        background-color: $white;
+        border-color: $errorred;
+        color: $black;
+        border-top-width: 4px;
+        border-bottom-width: 4px;
+
+        .badge {
+            background-color: $errorred;
+            @include css3('box-shadow', 0px 20px 20px rgba(255, 62, 87, 0.15));
+        }
+
+        h3,
+        .pendingicon-label {
+            color: $errorred;
+        }
+
+        .col-12.right {
+            @include mq('min', 768px) {
+                &::before {
+                    border-bottom: solid 1px $errorred;
+                }
+
+                &::after {
+                    border-top: solid 1px $errorred;
+                }
+            }
+
+            @include mq('max', 767px) {
+                &::before {
+                    border-right: solid 1px $errorred;
+                }
+
+                &::after {
+                    border-left: solid 1px $errorred;
+                }
+            }
+
+        }
+
+
+        .col-12 {
+            @include mq('min', 1200px) {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        &,
+        ul li strong {
+            color: $black;
+        }
+
+        ul li {
+            color: #919191;
+        }
+
+        p a {
+            color: #0d6efd;
+
+            img {
+                display: none;
+            }
+        }
+
+        .col-12.right {
+            border-color: #ededed;
+        }
+
+        .confirm-img {
+            width: 138px; 
+            @include mq('max', 575px) {
+                width: 125px;
+            }
+        }
+
+        .total {
+            border-top-color: #ededed;
+        }
+    }
+
+    @include mq('max', 1199px) {
+        border-top-width: 6px;
+        border-bottom-width: 6px;
+    }
+
+    @include mq('max', 767px) {
+        border-top-width: 4px;
+        border-bottom-width: 4px;
+    }
+
+    .col-12 {
+        padding: 30px 20px;
+        position: relative;
+        letter-spacing: 0.4px;
+
+        @include mq('max', 767px) {
+            padding: 50px 20px;
+        }
+
+        @include mq('max', 575px) {
+            padding: 30px 12px;
+        }
+
+        &.success {
+            @include bgPath('output-party.gif');
+            background-size: 260px;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        &.right {
+            border-left: dashed 2px #3b5d85;
+            letter-spacing: 0.2px;
+
+            @include mq('min', 1200px) {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 37%;
+                flex: 0 0 37%;
+                max-width: 37%;
+            }
+
+            @include mq('max', 767px) {
+                border-left: none;
+                border-top: dashed 2px #3b5d85;
+                text-align: center;
+            }
+
+
+            &::after,
+            &::before {
+                content: '';
+                width: 50px;
+                height: 50px;
+                background-color: #fafbff;
+                position: absolute;
+                border-radius: 50%;
+                left: -25px;
+
+                @include mq('max', 767px) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                @include mq('max', 575px) {
+                    width: 31px;
+                    height: 31px;
+                }
+            }
+
+            &::before {
+                top: -30px;
+
+                @include mq('max', 767px) {
+                    top: -17px;
+                    left: -15px;
+                    border-right: solid 3px $primary;
+                }
+            }
+
+            &::after {
+                bottom: -30px;
+
+                @include mq('max', 767px) {
+                    bottom: auto;
+                    top: -17px;
+                    right: -15px;
+                    left: auto;
+                    border-left: solid 3px $primary;
+                }
+            }
+        }
+    }
+
+    .confirm-img {
+        width: 70px;
+        -webkit-animation-name: shake;
+        animation-name: shake;
+        -webkit-animation-duration: 900ms;
+        animation-duration: 900ms;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-iteration-count: 4;
+        animation-iteration-count: 4; 
+        @include mq('max', 1199px) {
+            width: 60px;
+        }
+
+        @include mq('max', 991px) {
+            width: 55px;
+        } 
+    }
+
+    .row {
+        min-height: 394px;
+    }
+
+    h3,
+    .badge {
+        font-size: 22px;
+        font-weight: 600;
+
+        @include mq('max', 1199px) {
+            font-size: 22px;
+        }
+
+        @include mq('max', 991px) {
+            font-size: 20px;
+        }
+
+        @include mq('max', 767px) {
+            font-size: 18px;
+        }
+
+        @include mq('max', 575px) {
+            font-size: 17px;
+        }
+    }
+
+    h3 {
+        margin-bottom: 0;
+        margin-top: 20px;
+        font-weight: 700;
+
+        @include mq('max', 1199px) {
+            margin-top: 25px;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        margin: 25px auto 30px;
+        max-width: 500px;
+        line-height: 1.8;
+
+        @include mq('max', 1199px) {
+            margin: 20px auto 24px;
+        }
+
+        .icon {
+            margin-right: 8px;
+            width: 18px;
+        }
+
+        a {
+            color: $primary;
+            text-decoration: underline;
+        }
+    }
+
+    p,
+    .total {
+        font-size: 15px;
+
+        @include mq('max', 1199px) {
+            font-size: 14px;
+        }
+
+        @include mq("max", 425px) {
+            font-size: 13px;
+        }
+    }
+
+    .total {
+        @include mq("max", 425px) {
+            font-size: 14px;
+        }
+    }
+
+    .total {
+        font-weight: 700;
+        border-top: solid 1px #95a1b0;
+        margin-top: 20px;
+        padding-top: 20px;
+
+        @include mq('max', 575px) {
+            border-top-color: #35577f;
+            margin-top: 20px;
+            padding-top: 30px;
+        }
+    }
+
+    .badge {
+        display: inline-block;
+        background: $primary;
+        padding: 13px 29px;
+        position: relative;
+        outline: 1px dashed rgb(255 255 255 / 45%);
+        outline-offset: -4px;
+
+        @include mq('max', 1199px) {
+            padding: 11px 25px;
+        }
+
+        @include mq('max', 575px) {
+            line-height: 1.5;
+            padding: 11px 25px;
+            @include css3('box-shadow', 0px 4px 6px 1px rgb(0 0 0 / 20%));
+            font-size: 14px;
+        }
+
+        @include mq("max", 425px) {
+            font-size: 13px;
+            outline-offset: -3px;
+        }
+
+        strong {
+            letter-spacing: 0.6px;
+            @include css3('text-shadow', 2px 1px 0px rgb(0 0 0 / 10%));
+
+            @include mq('max', 575px) {
+                font-size: 110%;
+            }
+        }
+    }
+
+    ul {
+        @include mq('max', 767px) {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            text-align: left;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-left: -6px;
+            margin-right: -6px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 10px;
+
+            @include mq('max', 767px) {
+                margin-bottom: 25px;
+                color: #c1dcff;
+                font-weight: 500;
+                letter-spacing: 0.4px;
+                @include columnGrid(50%);
+                font-size: 13px;
+                padding-left: 6px;
+                padding-right: 6px;
+            }
+
+
+            @include mq("max", 425px) {
+                font-size: 11px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            strong {
+                font-weight: 600;
+
+                @include mq('max', 767px) {
+                    display: block;
+                    color: $white;
+                    font-size: 14px;
+                    border-radius: 10px;
+                    margin-top: 2px;
+                    line-height: 1.6;
+                }
+
+                @include mq("max", 425px) {
+                    font-size: 13px;
+                }
+
+                @include mq("max", 375px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.arrow-thn.iconify {
+    font-size: 120%;
+    margin: 3px 0 8px;
+    @include css3('animation', bounce 1200ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95));
+
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+// travel-dbk-details 
+.travel-dbk-details {
+    @extend %full-width;
+
+    .travel-dbk-subhead {
+        margin-bottom: 10px;
+    }
+
+    .table {
+        thead {
+            th {
+                padding-top: 0;
+            }
+
+            @include mq('max', 991px) {
+                display: none;
+            }
+        }
+
+        th,
+        td {
+            font-size: 14px;
+            padding: 10px;
+
+            @include mq("max", 425px) {
+                font-size: 13px;
+            }
+
+            @include mq("max", 375px) {
+                font-size: 12px;
+            }
+        }
+
+        th {
+            padding-bottom: 4px;
+        }
+
+        th {
+            color: $charcoal;
+            font-weight: 700;
+        }
+
+        tr {
+            @include mq('max', 991px) {
+                display: block;
+                margin-bottom: 20px;
+                background-color: $white;
+                padding: 5px 11px;
+                border-radius: 8px;
+                @include css3("box-shadow", 0px 2px 4px 0px rgba(0, 0, 0, 0.04));
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        td {
+            color: $davgray;
+            font-weight: 500;
+
+            @include mq('max', 991px) {
+                color: $black;
+                border-bottom: 1px solid #f0f3ff;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                -moz-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: justify;
+                -webkit-justify-content: space-between;
+                -moz-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                text-align: right;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &::before {
+                    content: attr(data-label);
+                    text-transform: capitalize;
+                    margin-right: 20px;
+                    white-space: nowrap;
+                    color: #818796;
+                }
+            }
+        }
+    }
+}
+
+.ripple-wv.print-fbk {
+    width: auto;
+    min-width: 137px;
+    font-weight: 600;
+
+    @include mq('max', 1199px) {
+        font-size: 15px;
+    }
+
+    @include mq("max", 425px) {
+        font-size: 14px;
+    }
+
+    .iconify {
+        font-size: 120%;
+        position: relative;
+        top: -2px;
+    }
+
+    &.green {
+        background-color: #34a853;
+
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: #259543;
+        }
+    }
+}
+
+.travel-dbk-heading {
+    color: $white;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 9px 20px;
+    background-color: $secondary;
+    border-radius: 5px;
+    margin-bottom: 26px;
+
+    @include mq('max', 991px) {
+        margin-bottom: 24px;
+    }
+
+    @include mq('max', 767px) {
+        margin-bottom: 22px;
+    }
+
+    @include mq('max', 575px) {
+        margin-bottom: 20px;
+    }
+
+    @include mq('max', 425px) {
+        margin-bottom: 18px;
+    }
+}
+
+.travel-dbk-subhead {
+    color: $charcoal;
+
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.travel-dbk-heading,
+.travel-dbk-subhead {
+    font-size: 16px;
+
+    @include mq('max', 1199px) {
+        font-size: 15px;
+    }
+
+    @include mq("max", 425px) {
+        font-size: 14px;
+    }
+}
+
+.e-ticket-desc {
+    p {
+        color: $davgray;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            font-weight: 600
+        }
+    }
+}
+
+
+.travel-price-details,
+.travel-dbk-details {
+
+    th,
+    td {
+        background: transparent;
+        border: none;
+    }
+}
+
+// travel-price-details
+.travel-price-details {
+    @extend %full-width;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    .travel-dbk-subhead {
+
+        td,
+        th {
+            color: $charcoal;
+        }
+    }
+
+    .table {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        @include mq("max", 425px) {
+            font-size: 13px;
+        }
+
+        @include mq("max", 375px) {
+            font-size: 12px;
+        }
+
+        td,
+        th {
+            padding: 6px 20px;
+
+            @include mq('max', 767px) {
+                padding: 6px 12px;
+            }
+
+            @include mq('max', 575px) {
+                padding: 6px 8px;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+
+        td {
+            &.note {
+                font-size: 12px;
+                font-weight: 400;
+                text-align: left;
+                color: $davgray;
+                padding-bottom: 0;
+            }
+        }
+
+        thead {
+            th {
+                padding-top: 0;
+                font-weight: inherit;
+            }
+        }
+
+        tbody {
+            td {
+                color: $davgray;
+            }
+        }
+
+        tfoot {
+            .travel-dbk-subhead {
+                td {
+                    padding-top: 9px;
+                    padding-bottom: 9px;
+                    background: $primaryoff;
+
+                    &.first {
+                        border-radius: 5px 0 0 5px;
+                    }
+
+                    &.last {
+                        border-radius: 0 5px 5px 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+// fbkconf-summary
+.fbkconf-summary {
+    @extend %full-width;
+
+    @include mq('max', 767px) {
+        .flg-list-row {
+            margin-top: 14px;
+        }
+
+        .fbkconf-fromto .content.col {
+            min-width: 120px;
+        }
+
+        p.eco-aa {
+            display: inline-block;
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: solid 1px #d7e2ef;
+
+            &:last-child {
+                margin-right: 0;
+                padding-right: 0;
+                border-right: none;
+            }
+        }
+    }
+}
+
+.fbkconf-flg-name {
+    img {
+        width: 36px;
+    }
+
+    .pl {
+        padding-left: 10px;
+        padding-top: 4px;
+    }
+
+    h6,
+    p {
+        color: $davgray;
+        font-size: 14px;
+
+        @include mq("max", 425px) {
+            font-size: 13px;
+        }
+
+        @include mq("max", 375px) {
+            font-size: 12px;
+        }
+    }
+
+    h6 {
+        font-weight: 600;
+        margin: 0;
+    }
+
+    p {
+        font-weight: 500;
+        margin: 3px 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// fbkconf-fromto
+.fbkconf-fromto {
+    .content {
+        &.col {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 28%;
+            flex: 0 0 28%;
+            max-width: 28%;
+            min-width: 180px;
+        }
+
+        &.right {
+            text-align: right;
+        }
+
+        p,
+        span {
+            color: $davgray;
+            font-size: 12px;
+
+            @include mq("max", 575px) {
+                font-size: 11px;
+            }
+        }
+
+        p {
+            font-weight: 600;
+            margin-bottom: 6px;
+
+            &.time {
+                font-size: 14px;
+
+                @include mq("max", 425px) {
+                    font-size: 13px;
+                }
+
+                @include mq("max", 375px) {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        span {
+            font-weight: 500;
+        }
+
+        h5 {
+            color: $charcoal;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+
+            @include mq('max', 575px) {
+                font-size: 15px;
+            }
+
+            @include mq("max", 425px) {
+                font-size: 13px;
+            }
+        }
+
+        h6 {
+            color: #878787;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 6px;
+
+            @include mq("max", 575px) {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .center {
+        text-align: center;
+
+        span {
+            color: $charcoal;
+            font-size: 12px;
+            font-weight: 600;
+            display: block;
+            margin-top: 4px;
+
+            @include mq("max", 575px) {
+                font-size: 10px;
+            }
+
+            &.esstop {
+                font-weight: 500;
+                color: #8f8f8f;
+            }
+        }
+
+        .dir {
+            width: 282px;
+        }
+    }
+}
+
+// fbkconf-status
+.fbkconf-status {
+    @extend %full-width;
+    margin-top: 45px;
+    margin-bottom: 45px;
+
+    .travel-dbk-subhead {
+        margin-bottom: 10px;
+    }
+}
+
+
+.conf-for {
+    max-width: 370px;
+    margin: 0 auto;
+
+    @include mq('max', 1199px) {
+        max-width: 300px;
+    }
+
+    @include mq('max', 767px) {
+        margin: 0 auto 10px;
+    }
+}
+
+.pendingicon-label {
+    font-size: 13px;
+    margin-top: 7px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+
+    @include mq('max', 1199px) {
+        font-size: 11px;
+    }
+
+    @include mq('max', 991px) {
+        font-size: 10px;
+    }
+}
