@@ -22,9 +22,9 @@ export default function Header() {
 
     return (
         <>
-            <header className={`bg-light py-4 ${sticky ? 'fixed' : ''}`}>
+            <header className={`bg-light py-2 ${sticky ? 'fixed' : ''}`}>
                 <Container>
-                    <p>Header</p>
+                    <p className='m-0'>Header</p>
                 </Container>
             </header>
 

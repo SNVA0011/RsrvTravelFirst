@@ -1,0 +1,41 @@
+//min-max-query
+@mixin min-max($min,$max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+  
+  //custom-media query
+  @mixin mq($screen, $custom) {
+    @if ($screen == 'max') {
+      @media (max-width: $custom) {
+        @content;
+      }
+    } 
+    @else if( $screen == 'min') { 
+      @media (min-width: $custom) {
+        @content;
+      }
+    }
+  }
+  @mixin mqh($screen, $custom) {
+    @if ($screen == 'max') {
+      @media (max-height: $custom) {
+        @content;
+      }
+    } 
+    @else if( $screen == 'min') { 
+      @media (min-height: $custom) {
+        @content;
+      }
+    }
+  }
+  
+  @mixin bgPath($property) {
+    background-image : url('/images/'+$property)
+  }
+  @mixin css3($property, $value) {
+    @each $prefix in '', -webkit-, -moz-, -ms-, -o- {
+      #{$prefix}#{$property}: $value;
+    }
+  }

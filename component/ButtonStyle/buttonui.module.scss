@@ -1,0 +1,33 @@
+@import "../../styles/variable";
+
+.FlightOfdealBtn {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px; 
+    &.OutlineClr {
+        border-color: $primary;
+        color: $white;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $primary;
+        }
+    }
+
+    &.FillClr {
+        background-color: $primary;
+        border-color: $primary; 
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: darken($primary, 8%);
+            background-color: darken($primary, 8%);
+        }
+    }
+}

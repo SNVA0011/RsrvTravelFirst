@@ -1,0 +1,122 @@
+@import "../../styles/variable";
+@import "../../styles/mediaprefix";
+
+.AdventureStart {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.AdventureCont {
+  @include bgPath('adv-start-bg.webp');
+  background-color: #fffafa;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  border-radius: 20px;
+  padding: 0;
+  max-width: 995px;
+  overflow: hidden;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 20%;
+    height: 300%;
+    position: absolute;
+    top: -60%;
+    left: -50%;
+    background-color: rgb(255 233 229 / 18%);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    -webkit-animation-name: flashattradv;
+    animation-name: flashattradv;
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -ms-filter: blur(8px);
+    -o-filter: blur(8px);
+  }
+}
+
+// flashattradv
+@-webkit-keyframes flashattradv {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes flashattradv {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+
+.AdvThRow {
+  min-height: 160px;
+}
+
+.AdvTh {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+
+  span {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+}
+
+.BtnStartAdv {
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: normal;
+  display: inline-block;
+  background-color: $primary;
+  border-radius: 6px;
+  padding: 5px 30px;
+}
+
+.BtnStartTrs {
+  color: $charcoal;
+  text-align: center;
+  font-family: Overlock;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin: 15px 0 10px;
+}
+
+.BtnStart {
+  color: $white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: inline-block;
+  background-color: $primary;
+  border-radius: 10px;
+  padding: 5px 30px;
+}

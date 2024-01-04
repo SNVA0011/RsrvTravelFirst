@@ -1,0 +1,30 @@
+@import "../../styles/mediaprefix";
+   
+.BrandsSection {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.BrandsCardInner {
+    position: relative;
+    width: 75px;
+    height: 60px;
+    @include css3(transition, all 0.3s cubic-bezier(0.5, 0, 0, 1.25));
+    @include css3(filter, grayscale(100%)); 
+    opacity: 0.35;
+    &:hover{
+        @include css3(filter, none); 
+        @include css3(transform, scale(1.06)); 
+        opacity: 1;
+    }
+}
+
+.BrandsCard {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px;
+}
+
+.BrandsCardRow {
+    margin: 0 -20px;
+}

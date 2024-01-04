@@ -548,8 +548,7 @@ input[type="number"] {
 
 .flashsanimated {
   overflow: hidden;
-  position: relative;
-
+  position: relative; 
   &:after {
     content: "";
     display: inline-block;
@@ -570,8 +569,7 @@ input[type="number"] {
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     @include css3("filter", blur(5px));
-  }
-
+  } 
 }
 
 

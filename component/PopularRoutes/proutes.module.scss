@@ -1,0 +1,153 @@
+@import "../../styles/variable";
+@import "../../styles/mediaprefix";
+
+
+.PopularRtsCard {
+    @include css3(transition, all 0.4s cubic-bezier(0.5, 0, 0, 1.25));
+}
+ 
+.PopularRtsImg {
+    @include css3(transition, all 0.6s cubic-bezier(0.5, 0, 0, 1.25));
+}
+ 
+
+.PopularRts {
+    padding-bottom: 60px;
+}
+
+.PopularRtsWrp {
+    position: relative;
+    z-index: 2;
+}
+
+.PopularRtsCard {
+    border-radius: 10px;
+    background: $white;
+    @include css3(box-shadow, 0px 0px 10px 0px rgba(0, 0, 0, 0.04));
+    padding: 16px 15px 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        position: absolute;
+        @include css3(transition, all 340ms cubic-bezier(0.5, 0, 0, 1.25));
+    }
+
+    &::before,
+    &::after {
+        transition-delay: 0s;
+    }
+
+    &::before {
+        right: 0;
+        top: 0;
+        border-right: solid 2px $primary;
+        border-top: solid 2px $primary;
+    }
+
+    &::after {
+        left: 0;
+        bottom: 0;
+        border-left: solid 2px $primary;
+        border-bottom: solid 2px $primary;
+    }
+
+
+    &:hover {
+        @include css3(transform, scale(1.07));
+        @include css3(box-shadow, 0 25px 50px -12px rgb(220 57 27 / 25%));
+        border-radius: 0;
+
+        &::before,
+        &::after {
+            transition-delay: 0.2s;
+        }
+
+        &::before,
+        &::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        .PopularRtsImg{
+            @include css3(transform, rotateY(180deg)); 
+        }
+    }
+
+
+    hr {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-color: #d9d9d9;
+        opacity: 1;
+    }
+}
+
+.PopularRtsRow {
+    margin: 0 -15px;
+}
+
+.PopularRtsCol {
+    padding: 0 15px;
+}
+
+.PopularRtsImg {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+
+.PFootRtsPrice,
+.PFootRtsFrom,
+.PFootRtsDate {
+    color: $charcoal;
+    font-style: normal;
+    line-height: normal;
+}
+
+.PFootRtsDate {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.PFootRtsFrom {
+    font-size: 16px;
+    font-weight: 700;
+
+    span {
+        display: inline-block;
+        margin: 0 12px;
+    }
+}
+
+.PFootRtsClass {
+    color: $primary;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.PFootRtsPrice {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.PFootRtsRow {
+    margin: 0 -4px;
+}
+
+.PFootRtsCol {
+    padding: 0 4px;
+}

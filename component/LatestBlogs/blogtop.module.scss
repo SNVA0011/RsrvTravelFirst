@@ -1,0 +1,87 @@
+@import "../../styles/variable";
+@import "../../styles/mediaprefix";
+
+.TopBlogWave {
+    @include bgPath('top-airline-lgred.webp');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 85px;
+    background-size: 100%;
+}
+
+.TopBlogBlock {
+    position: relative;
+    padding: 40px 0 35px; 
+    &::before {
+        content: '';
+        background-color: $primaryoff;
+        width: 100%;
+        height: 228px;
+        position: absolute;
+        top: -2px;
+        z-index: 0;
+    }
+}
+
+.TopBlogThumb {
+    position: relative;
+    padding-top: 79%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    img {
+        @include css3(transition, all 0.6s cubic-bezier(0.5, 0, 0, 1.25));
+    }
+}
+ 
+
+.TopBlogCard {
+    @include css3(transition, all 0.4s cubic-bezier(0.5, 0, 0, 1.25));
+    &:hover {
+        .TopBlogThumb {
+            img {
+                @include css3(transform, scale(1.2));
+            }
+        }
+    }
+}
+
+.TopBlogCont {
+    position: relative;
+    z-index: 2;
+}
+
+
+.TopBlogRow {
+    margin: 0 -15px;
+}
+
+.TopBlogCol {
+    padding: 0 15px;
+}
+
+.BlogDate, .BlogTitle{
+    font-size: 16px;
+    font-style: normal;
+}
+
+.BlogDate {
+    color: $charcoal; 
+    font-weight: 500;
+    line-height: normal;
+}
+
+.BlogTitle {
+    color: $lightgray; 
+    font-weight: 500;
+    line-height: 26px;
+    margin-top: 6px;
+}
+
+.BlogDateImg {
+    margin-right: 12px;
+    display: inline-block;
+    vertical-align: middle;
+}

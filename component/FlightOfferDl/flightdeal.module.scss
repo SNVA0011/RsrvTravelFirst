@@ -1,0 +1,146 @@
+@import "../../styles/variable";
+@import "../../styles/mediaprefix";
+
+.FlightOCardInr,
+.FlightOfdealCard {
+    position: relative;
+}
+.FlightOfdeal{
+    padding-bottom: 60px;
+}
+.FlightOCardInr {
+    z-index: 2;
+    width: 100%;
+}
+
+.FlgdtSrcImg { 
+    @include css3(transition, all 0.6s cubic-bezier(0.5, 0, 0, 1.25)); 
+} 
+
+.FlightOfdealCard {
+    min-height: 230px;
+    border-radius: 19px;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover{
+        .FlightCardGrow{
+            &::before{
+                width: 100%;
+            }
+        }
+        .FlgdtSrcImg {
+            @include css3(transform, scale(1.2)); 
+        }  
+        .FldealBtn{
+            background-color: $primary;
+        }
+    }
+}
+
+.FlightCGrowIn{
+    position: relative;
+    z-index: 2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+       -moz-box-orient: vertical;
+       -moz-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+}
+
+
+.emptySpace {
+    width: 37%;
+    height: 100%;
+}
+
+.FlightCardGrow { 
+    padding: 25px 20px;
+    color: $white;
+    position: relative;
+    background: rgba(17, 17, 17, 0.80);
+    &::before{
+        content: "";
+        background: rgba(17, 17, 17, 0.50);
+        width: 0; 
+        position: absolute;
+        height: 100%;
+        bottom:0;
+        right: 0;
+        z-index: 1;
+        transition: all 400ms ease-in-out;
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;  
+    }
+}
+
+.Destination { 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.DateField { 
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 11px;
+}
+
+.Class {
+    color: $primary;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; 
+}
+
+.Offerapply {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 6px;
+    background-color: $primary;
+    color: $white;
+    padding: 2.5px 4px;
+    min-width: 86px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.Price {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 14px 0 20px; 
+}
+
+
+
+.FlightOfdealRow {
+    margin: 0 -15px;
+}
+
+.FlightOfdealCol {
+    padding: 0 15px;
+}

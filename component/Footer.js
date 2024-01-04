@@ -8,9 +8,9 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-light py-4">
+      <footer className="bg-light py-2">
         <Container>
-          <p>Footer</p>
+          <p className="m-0">Footer</p>
         </Container> 
       </footer> 
     </>
