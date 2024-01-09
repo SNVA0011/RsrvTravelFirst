@@ -1,0 +1,498 @@
+@import "../../styles/variable";
+@import "../../styles/mixins";
+
+.navDark {
+  background-color: #111111;
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  a {
+    color: $white;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    &:hover {
+      color: lighten($primary, 15%);
+    }
+  }
+
+  .IconMini {
+    color: $primary;
+    margin-right: 8px;
+    font-size: 20px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.headerClassic {
+  background-color: #111111;
+
+  &.headerClsFix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    -webkit-animation-name: slideInHeaderfx;
+    animation-name: slideInHeaderfx;
+    -webkit-animation-duration: 0.20s;
+    animation-duration: 0.20s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+    .mainMenu li a::after {
+      margin-top: 14px;
+      height: 5px;
+    }
+
+    .headerClsNavbar {
+      min-height: 70px;
+
+      @include mq('max', 1199px) {
+        min-height: 72px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+  }
+}
+
+
+// slideInHeaderfx
+@-webkit-keyframes slideInHeaderfx {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInHeaderfx {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+.SignInBtn {
+  min-width: 145px;
+  padding-left: 12px;
+  padding-right: 12px; 
+  .accountIcon {
+    font-size: 24px;
+    color: $primary;
+    position: relative;
+    margin-right: 10px;
+    margin-top: -8px;
+    top: 2px;
+    margin-right: 10px;
+  }
+
+  &:hover,&:focus {
+    .accountIcon {
+      color: $white;
+    }
+  }
+}
+
+
+
+.mainMenu {
+  li {
+    display: inline-block;
+    padding: 0 20px;
+
+    a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: $white;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      position: relative;
+      min-width: 80px;
+      text-align: center;
+
+      &::after {
+        content: "";
+        height: 3px;
+        background: $primary;
+        border-radius: 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        @include css3('transition', all 150ms cubic-bezier(.4, 0, .2, 1));
+        width: 0;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.NavbarLinkAct,
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+    }
+  }
+}
+
+.DisableNav {
+  opacity: 0.4;
+  filter: gray;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+
+  a {
+    pointer-events: none;
+  }
+}
+
+
+.borderFlgcurrency {
+  padding: 0;
+  width: auto;
+  position: relative;
+
+  &[aria-expanded="true"] {
+    z-index: 1001;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:first-child:active {
+    background: transparent !important;
+    border: none;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.langFlag,
+.currencyName {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+.headerCurrencyMenu,
+.headerLangMenu {
+  display: inline-block;
+
+  .dropdownMenu {
+    right: 0;
+    left: auto;
+    border-radius: 2px;
+    border: none;
+    width: 750px;
+    padding: 30px;
+    @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.50));
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    border-radius: 5px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+    @include css3('animation-name', fadeInUpperxPhoneHg);
+    @include css3('animation-fill-mode', both);
+    @include css3('transform-origin', top right);
+    margin-top: 22px;
+    border-top: solid 3px $primary;
+
+    &::after {
+      content: "";
+      top: -20px;
+      right: 5px;
+      position: absolute;
+      border: 9px solid transparent;
+      border-bottom-color: $primary;
+    }
+  }
+
+  .dropItem {
+    padding: 7px 10px;
+    background: transparent;
+    color: $charcoal;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 6px;
+
+    &.rippleWvActive {
+      font-weight: 700;
+
+      &::before {
+        @extend %hoverripple;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        @include css3('transform', translateX(-50%));
+      }
+    }
+
+    &.rippleWvActive,
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .rippleWv::before {
+    @extend %headbtnripple;
+  }
+}
+
+.rippleWv {
+  position: relative;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    z-index: 3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: lighten($primary, 46%);
+    width: 10%;
+    height: 40%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 1;
+    top: 35%;
+    left: 45%;
+    @include css3('transform', scale(0));
+  }
+
+  &:hover::before {
+    @extend %hoverripple;
+  }
+
+  &:hover::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    @include css3('transform', translateX(-50%));
+  }
+}
+
+
+// fadeInUpperxPhoneHg (dropdown-menu)
+@-webkit-keyframes fadeInUpperxPhoneHg {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateX(-10deg) scale(0.98);
+    transform: rotateX(-10deg) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpperxPhoneHg {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateX(-10deg) scale(0.98);
+    transform: rotateX(-10deg) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+
+
+.headerLangMenu {
+  .dropItem {
+    position: relative;
+    padding-right: 79px;
+    padding-left: 6px;
+    white-space: normal;
+
+    svg {
+      margin-right: 10px;
+      border-radius: 5px;
+      top: 0
+    }
+
+    .FlexGrow {
+      position: absolute;
+      right: 6px;
+    }
+
+    .FlexGrowBtn {
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: 12px;
+      color: #a5a5a5;
+      margin-left: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        color: $charcoal;
+      }
+    }
+  }
+
+  .FlexGrowRow {
+    margin: 0 -13px -10px;
+
+    .FlexGrowCol {
+      margin-bottom: 10px;
+      padding: 0 6px;
+    }
+  }
+}
+
+
+.headerCurrencyMenu {
+  h5 {
+    color: $charcoal;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
+
+  .wFullw {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .dropItem {
+    svg {
+      margin-right: 16px;
+      font-size: 110%;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .row {
+    margin: 0 -16px -9px;
+
+    .col-12 {
+      margin-bottom: 9px;
+      padding: 0 6px;
+    }
+  }
+}
+
+
+
+.headerLangMenu {
+  top: -2px;
+  margin-right: 20px;
+}
+
+
+.currencyName {
+  border-radius: 2px;
+  background-color: #FFE8D9;
+  min-width: 24px;
+  text-align: center;
+  font-size: 13px;
+  padding: 1.5px 0;
+  line-height: normal;
+
+  svg {
+    font-size: 12px;
+  }
+}
+
+
+.langFlag svg {
+  width: 24px;
+  border-radius: 2px;
+}
+
+.typenameAts {
+  display: none;
+  color: $black;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 8px;
+  position: relative;
+  top: 1px;
+}
+
+.navCurrencyHead {
+  li {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.accountIconMr {
+  margin-right: 30px;
+}
+
+.headerClsNavbar {
+  min-height: 90px;
+}
+
+.Classicempty {
+  min-height: 90px;
+  display: none;
+
+  &.BlockEmpt {
+    display: block;
+  }
+}

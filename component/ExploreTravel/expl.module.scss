@@ -1,0 +1,76 @@
+@import "../../styles/variable";
+@import "../../styles/_mediaprefix";
+
+
+.Trv {
+    margin: 0 12px;
+}
+
+.TrvImg {
+    position: absolute;
+    bottom: -23px;
+    left: -7px;
+    min-width: 164px;
+}
+
+.TrvWrp {
+    color: $white;
+
+    h1 {
+        max-width: 497px;
+        font-family: 'Overlock', sans-serif;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+}
+
+.ExploreTravel {
+    background-color: #111111;
+    padding: 50px 0 66px;
+}
+
+.TrvWrpRight,
+.Trv {
+    display: inline-block;
+    position: relative;
+}
+
+.TrvWrpRightBck {
+    position: absolute;
+    top: 23px;
+    left: -10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #4e3b10;
+    z-index: 0;
+    @include css3('box-shadow', 0px 0px 50px 52px rgb(79 61 21));
+}
+
+.TrvEngWrp {
+    margin-top: -184px;
+    position: relative;
+    z-index: 2;
+    max-width: 1091px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        background-color: #291612;
+        z-index: 0;
+        left: -50px;
+        top: 60px;
+        @include css3('box-shadow', 0px 0px 60px 2px rgba(220, 57, 27, 0.22));
+    }
+}

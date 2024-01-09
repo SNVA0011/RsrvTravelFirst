@@ -3,13 +3,11 @@
   padding: 0;
 }
 
-@media print {
-
+@media print { 
   body,
   .screen-full {
     margin: 0;
-  }
-
+  } 
   .header-classic-empty,
   .nav-dark,
   .header-classic-empty.is-sticky,
@@ -116,31 +114,34 @@ input[type="number"] {
 // ripple-wv
 .ripple-wv {
   position: relative;
-  overflow: hidden;
-
+  overflow: hidden; 
   span {
     position: relative;
     z-index: 3;
-  }
-
-  &::before {
-    content: "";
+  } 
+  &:after {
+    content: '';
     position: absolute;
-    background-color: rgb(0 0 0 / 09%);
-    width: 10%;
-    height: 40%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    z-index: 1;
-    top: 35%;
-    left: 45%;
-    @include css3('transform', scale(0));
-  }
-
-  &:hover::before {
-    @extend %hoverripple;
-  }
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none; 
+    @include css3('transform', skewX(-20deg));
+    @include css3('transform-origin', top left);
+    @include css3('filter', blur(4px));  
+} 
+&:hover:after {
+    width: 150%;
+    background-color: rgba(255, 255, 255, 0); 
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    @include css3('transition-delay', 0.14s);
+}
 
   &:hover::after {
     content: "";
@@ -787,4 +788,48 @@ input[type="number"] {
   &:active {
     cursor: grabbing;
   }
+}
+
+
+
+ // fadeInUpperxPhone (dropdown-menu)
+ @-webkit-keyframes fadeInUpperxPhone {
+  0% {
+      opacity: 0;
+      -webkit-transform: rotateX(-10deg) scale(0.98) translateY(-10px);
+      transform: rotateX(-10deg) scale(0.98) translateY(-10px);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+}
+
+@keyframes fadeInUpperxPhone {
+  0% {
+      opacity: 0;
+      -webkit-transform: rotateX(-10deg) scale(0.98) translateY(-10px);
+      transform: rotateX(-10deg) scale(0.98) translateY(-10px);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+}
+
+
+.mainLogoArea{
+  width: 146px;
+  display: inline-block;
+}
+.travellers-class {
+  .btn.btn-site.applyBtn{
+    &:hover{
+     background-color: lighten($primary, 47%);
+    }
+   }
 }

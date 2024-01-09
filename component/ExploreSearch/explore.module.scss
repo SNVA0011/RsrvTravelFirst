@@ -1,4 +1,5 @@
 @import "../../styles/variable";
+@import "../../styles/mediaprefix";
 
 .ExploreSrcBlock {
     padding: 60px 0;
@@ -58,6 +59,11 @@
 .ExploreSrcCard {
     cursor: pointer;
     position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
     &::before{
         content: "";
         background-color: $primaryoff;
@@ -82,14 +88,7 @@
     &::before{
         width: 100%; 
         border-right: solid 2px $primary; 
-    }
-    .ExploreSrcImg {
-        transform: scale(1.12);
-        -webkit-transform: scale(1.12);
-        -moz-transform: scale(1.12);
-        -ms-transform: scale(1.12);
-        -o-transform: scale(1.12);
-    }
+    } 
 
     .ExploreSrcDes {
         color: $primary;
@@ -99,11 +98,41 @@
         -webkit-box-shadow: 0px 14px 23px 2px rgba(0, 0, 0, 0.27);
         -moz-box-shadow: 0px 14px 23px 2px rgba(0, 0, 0, 0.27);
         box-shadow: 0px 14px 23px 2px rgba(0, 0, 0, 0.27);
+        @include css3('transform', scale(1.15));
+        img{
+            @include css3('transform', scale(1.15)); 
+        }
+
+        &:after {
+            width: 150%;
+            background-color: rgba(255, 255, 255, 0); 
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            @include css3('transition-delay', 0.24s);
+        }
     }
 }
 
 
 .ExploreSrcThumb {
+    position: relative; 
+    overflow: hidden;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.60);
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none; 
+        @include css3('transform', skewX(-20deg));
+        @include css3('transform-origin', top left);
+        @include css3('filter', blur(4px));  
+    }  
     span {
         display: block;
         float: left;

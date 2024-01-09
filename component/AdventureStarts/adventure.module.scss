@@ -19,6 +19,11 @@
   cursor: pointer;
   overflow: hidden;
   position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
 
   &:after {
     content: "";
@@ -28,13 +33,13 @@
     position: absolute;
     top: -60%;
     left: -50%;
-    background-color: rgb(255 233 229 / 18%);
+    background-color: rgb(255 233 229 / 20%);
     -webkit-transform: rotate(30deg);
     transform: rotate(30deg);
     -webkit-animation-name: flashattradv;
     animation-name: flashattradv;
-    -webkit-animation-duration: 1.3s;
-    animation-duration: 1.3s;
+    -webkit-animation-duration: 1.8s;
+    animation-duration: 1.8s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-iteration-count: infinite;

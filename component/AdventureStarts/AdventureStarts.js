@@ -15,6 +15,7 @@ const AdventureStarts = ({Title, SubTitle, BtnTitle}) => {
                             width={261.5}
                             height={160}
                             className={BtnTitle}
+                            alt={Title}
                         />
                         </div>
                     </Col>
@@ -30,6 +31,7 @@ const AdventureStarts = ({Title, SubTitle, BtnTitle}) => {
                         <Image src={"/images/adv-start-right.png"}
                             width={224}
                             height={134}
+                            alt={BtnTitle}
                         />
                         </div>
                     </Col>

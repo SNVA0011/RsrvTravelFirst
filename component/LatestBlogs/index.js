@@ -29,7 +29,7 @@ const LatestBlogs = ({ Title, BlogsItems }) => {
                                             </div>
                                             <div className={styles.BlogDate}>
                                                 <span className={styles.BlogDateImg}>
-                                                    <Image src={`/images/date-iconblog.png`} width={20} height={20} />
+                                                    <Image src={`/images/date-iconblog.png`} width={20} height={20} alt='date-icon' />
                                                 </span>
                                                 {item.date}
                                             </div>

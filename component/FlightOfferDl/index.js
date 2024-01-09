@@ -42,7 +42,7 @@ const FlightOfferDl = ({ Title, Routes }) => {
                                                         content={'Book Now'}
                                                         outline={true}
                                                         fullwidth={false}
-                                                        onClick={''}
+                                                        onClick={()=>{console.log("Click Event")}}
                                                         className={styles.FldealBtn}
                                                     />
                                                 </div>

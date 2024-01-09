@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react'; 
-import Container from 'react-bootstrap/Container'  
-import { PageStaicJson } from '../static/StaticJson'; 
-
-
-export default function Header() { 
-    const HeaderUrl = PageStaicJson('header'); 
- 
+import Container from 'react-bootstrap/Container'   
+export default function Header() {  
     // sticky header
     const [sticky, setSticky] = useState(false);
     useEffect(() => {

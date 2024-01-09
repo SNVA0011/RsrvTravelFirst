@@ -1,4 +1,5 @@
 @import "../../styles/variable";
+@import "../../styles/mediaprefix";
 
 .FlightOfdealBtn {
     font-size: 16px;
@@ -9,10 +10,34 @@
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px; 
+    position: relative; 
+    overflow: hidden;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.50);
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none; 
+        @include css3('transform', skewX(-20deg));
+        @include css3('transform-origin', top left);
+        @include css3('filter', blur(4px));  
+    } 
+    &:hover:after {
+        width: 150%;
+        background-color: rgba(255, 255, 255, 0); 
+        -webkit-transition: all 0.4s ease-in-out;
+        -moz-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        @include css3('transition-delay', 0.12s);
+    }
     &.OutlineClr {
         border-color: $primary;
-        color: $white;
-
+        color: $white; 
         &:hover,
         &:active,
         &:focus {
@@ -22,12 +47,6 @@
 
     &.FillClr {
         background-color: $primary;
-        border-color: $primary; 
-        &:hover,
-        &:active,
-        &:focus {
-            border-color: darken($primary, 8%);
-            background-color: darken($primary, 8%);
-        }
+        border-color: $primary;  
     }
 }

@@ -685,7 +685,7 @@
             margin-left: -11px;
             left: 100%;
             background: $secondary;
-            border-left: solid 10px #ff6600;
+            border-left: solid 10px #dc391b;
             @include css3('transform', skewX(23deg));
             @include css3('transform-origin', bottom);
          }
@@ -852,8 +852,7 @@
       line-height: 22px;
       padding-left: 0;
       padding-right: 0;
-      @include css3('box-shadow', none);
-
+      @include css3('box-shadow', none); 
       @include mq('max', 575px) {
          font-size: 13px;
       }

@@ -479,6 +479,9 @@
         line-height: 1.8;
         font-size: 15px;
         padding-left: 51px;
+        .tab-content { 
+            padding-left: 0;
+        }
         @include mq('max', 575px) {
             font-size: 14px;
     padding-left: 46px;

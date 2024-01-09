@@ -14,31 +14,30 @@ const PopularRoutes = ({ Title, Routes }) => {
             return (
               <Col xs={12} md={2} key={index} className={styles.PopularRtsCol}>
                 <div className={`text-center ${styles.PopularRtsCard}`}>
-                 
-                 <div className={styles.PopularRtsWrp}>
-                 <div className={styles.PopularRtsImg}>
-                    <Image src={`/images/${item.thumbnail}`} width={100} height={100} alt={`${item.from}-${item.to}`}/>
-                  </div>
 
-                 <div className={styles.PFootRtsDate}>
-                 {item.date}
-                 </div>
+                  <div className={styles.PopularRtsWrp}>
+                    <div className={styles.PopularRtsImg}>
+                      <Image src={`/images/${item.thumbnail}`} width={100} height={100} alt={`${item.from}-${item.to}`} />
+                    </div>
 
-                  <div className={`d-flex align-items-center justify-content-center ${styles.PFootRtsFrom}`}>
-                    {item.from}
-                   <span>
-                   <Image src={`/images/switch-route.png`} width={30} height={30} />
-                   </span>
-                    {item.to}
-                  </div>
+                    <div className={styles.PFootRtsDate}>
+                      {item.date}
+                    </div>
 
-                  <hr></hr>
-                  <Row className={styles.PFootRtsRow}>
-                    <Col xs={6} className={`text-start ${styles.PFootRtsClass} ${styles.PFootRtsCol}`}>{item.class}</Col>
-                    <Col xs={6} className={`text-end ${styles.PFootRtsPrice} ${styles.PFootRtsCol}`}>{item.price}</Col>
-                  </Row>
-                 </div>
+                    <div className={`d-flex align-items-center justify-content-center ${styles.PFootRtsFrom}`}>
+                      {item.from}
+                      <span>
+                        <Image src={`/images/switch-route.png`} width={30} height={30} alt='swap-icon' />
+                      </span>
+                      {item.to}
+                    </div>
 
+                    <hr></hr>
+                    <Row className={styles.PFootRtsRow}>
+                      <Col xs={6} className={`text-start ${styles.PFootRtsClass} ${styles.PFootRtsCol}`}>{item.class}</Col>
+                      <Col xs={6} className={`text-end ${styles.PFootRtsPrice} ${styles.PFootRtsCol}`}>{item.price}</Col>
+                    </Row>
+                  </div> 
 
                 </div>
               </Col>

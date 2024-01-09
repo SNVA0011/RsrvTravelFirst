@@ -1,7 +1,7 @@
 
-import { useRouter } from 'next/router'
-import Footer from './Footer'
-import Header from './Header'
+import { useRouter } from 'next/router'  
+import FooterSection from './FooterSection'
+import HeaderSection from './HeaderSection'
 
 export default function Layout({ children }) {
     const router = useRouter()
@@ -10,9 +10,9 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {HdrVisiblity && <Header />}
+            {HdrVisiblity && <HeaderSection />}
             <>{children}</>
-            {FtrVisiblity && <Footer />}
+            {FtrVisiblity && <FooterSection />}
         </>
     )
 }

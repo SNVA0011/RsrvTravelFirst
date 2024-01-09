@@ -8,6 +8,9 @@ import FlightOfferDl from '../component/FlightOfferDl'
 import PopularRoutes from '../component/PopularRoutes/PopularRoutes'
 import PartnerBrands from '../component/PartnerBrands/PartnerBrands'
 import LatestBlogs from '../component/LatestBlogs'
+import DownloadApp from '../component/DownloadApp'
+import ExploreTravel from '../component/ExploreTravel'
+import Image from 'next/image'
 
 
 const index = () => {
@@ -18,6 +21,7 @@ const index = () => {
         description={``}
         keywords={``} />
 
+      <ExploreTravel />
 
       <RecentSearch
         Title="Top / Recent Searches"
@@ -72,35 +76,21 @@ const index = () => {
       />
 
 
+      <DownloadApp
+        Title={'Download Travomint App Now!'}
+        SubTitle={<>Use code <span>TRAVOMINT</span> and get <span>FLAT 15%</span> off* on your first domestic flight booking</>}
+        AppTitle={<>Experience a fresh way to manage <span>flight booking!</span></>}
+        PlayStoreUrl="https://play.google.com/store/search?q="
+        AppleStoreUrl="https://apps.apple.com/in/app/"
+      />
+
+
       <LatestBlogs
         Title="Blogs"
         BlogsItems={[
-          {
-            'thumbnail': 'blog-src-1.webp',
-            'date': '12 Dec 2023',
-            'title': 'How can I download my flight ticket from the PNR number?',
-            'url': 'test'
-          },
-          {
-            'thumbnail': 'blog-src-2.webp',
-            'date': '12 Dec 2023',
-            'title': 'How can I download my flight ticket from the PNR number?',
-            'url': 'test'
-          },
-          {
-            'thumbnail': 'blog-src-3.webp',
-            'date': '12 Dec 2023',
-            'title': 'How can I download my flight ticket from the PNR number?',
-            'url': 'test'
-          },
-          {
-            'thumbnail': 'blog-src-4.webp',
-            'date': '12 Dec 2023',
-            'title': 'How can I download my flight ticket from the PNR number?',
-            'url': 'test'
-          }]}
+          { 'thumbnail': 'blog-src-1.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-2.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-3.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-4.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }
+        ]}
       />
-
 
       <PartnerBrands BrandsImage={[
         'sabre-brand.webp', 'iata-brand.webp', 'sabre-brand.webp', 'iata-brand.webp', 'sabre-brand.webp', 'iata-brand.webp', 'sabre-brand.webp', 'iata-brand.webp',

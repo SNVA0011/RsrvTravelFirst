@@ -5,11 +5,11 @@
 .PopularRtsCard {
     @include css3(transition, all 0.4s cubic-bezier(0.5, 0, 0, 1.25));
 }
- 
+
 .PopularRtsImg {
     @include css3(transition, all 0.6s cubic-bezier(0.5, 0, 0, 1.25));
 }
- 
+
 
 .PopularRts {
     padding-bottom: 60px;
@@ -28,19 +28,24 @@
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
 
     &::before,
     &::after {
         content: "";
         width: 0;
-        height: 2px;
+        height: 0;
         position: absolute;
-        @include css3(transition, all 340ms cubic-bezier(0.5, 0, 0, 1.25));
+        @include css3(transition, all 350ms cubic-bezier(0.5, 0, 0, 1.25));
     }
 
     &::before,
     &::after {
-        transition-delay: 0s;
+        @include css3(transition-delay, 0s);
     }
 
     &::before {
@@ -57,15 +62,14 @@
         border-bottom: solid 2px $primary;
     }
 
-
     &:hover {
-        @include css3(transform, scale(1.07));
-        @include css3(box-shadow, 0 25px 50px -12px rgb(220 57 27 / 25%));
-        border-radius: 0;
+        @include css3(transform, scale(1.08));
+        @include css3(box-shadow, 0 25px 30px -12px rgb(0 0 0 / 20%));
 
         &::before,
         &::after {
-            transition-delay: 0.2s;
+            @include css3(transition-delay, 180ms);
+            border-radius: 10px;
         }
 
         &::before,
@@ -74,8 +78,20 @@
             height: 100%;
         }
 
-        .PopularRtsImg{
-            @include css3(transform, rotateY(180deg)); 
+        .PopularRtsImg {
+            @include css3(transition-delay, 100ms);
+            @include css3(transform, rotateY(-180deg));
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+                width: 150%;
+                background-color: rgba(255, 255, 255, 0);
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+                @include css3('transition-delay', 0.23s);
+            }
         }
     }
 
@@ -90,10 +106,24 @@
 
 .PopularRtsRow {
     margin: 0 -15px;
+      @include mq('max', 1299px) {
+        margin: 0 -12px;
+    }
+
+    @include mq('max', 1299px) {
+        margin: 0 -10px;
+    } 
 }
 
 .PopularRtsCol {
     padding: 0 15px;
+       @include mq('max', 1299px) {
+        padding: 0 12px;
+    }
+
+    @include mq('max', 1299px) {
+        padding: 0 10px;
+    }
 }
 
 .PopularRtsImg {
@@ -102,7 +132,24 @@
     width: 100px;
     height: 100px;
     display: inline-block;
-    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px; 
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.60); 
+        @include css3('filter', blur(6px)); 
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+        @include css3('transform', skewX(-20deg));
+        @include css3('transform-origin', top right);
+    }
 }
 
 

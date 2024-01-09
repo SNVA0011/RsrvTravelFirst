@@ -1,8 +1,8 @@
 // dependencies
-// @import "variable";
-// @import "mixins";
-// @import "common";
-// @import "animate";
+@import "variable";
+@import "mixins";
+@import "common";
+@import "animate";
 
 /*img*/
 img { max-width: 100%; height: auto; }
@@ -17,7 +17,7 @@ select, textarea, button {
   -o-appearance: none;
   border: none;
 } 
-a, .btn {
+a, .btn,.iconify {
   transition: all .3s;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -66,18 +66,19 @@ body {
 /*webkit-scrollbar*/
 @media(min-width:1200px) {
   *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
   } 
   *::-webkit-scrollbar-track {
     background: #ffffff;
   } 
   *::-webkit-scrollbar-thumb {
-    background-color: #9ca3af;
+    background-color: #dee1e7;
     border-radius: 60px;
+    border: 2px solid #ffffff; 
     height: 100px; 
     &:hover {
-      background-color: #7e8593;
+      background-color: #cfd4dc;
     }
   } 
   .container {
@@ -99,30 +100,26 @@ body {
   }
 }
 
+.clac_active {
+  cursor: pointer;
+}
+.clac_disable {
+  pointer-events: none;
+  color: red !important;
+}
+.slec_date {
+  color: red !important;
+}
 
-
-// .clac_active {
-//   cursor: pointer;
-// }
-// .clac_disable {
-//   pointer-events: none;
-//   color: red !important;
-// }
-// .slec_date {
-//   color: red !important;
-// }
-
-//=== import scss files ====
-// @import "header";
-// @import "footer";
-// @import "home";
-// @import "engine";
-// @import "blog";
-// @import "contactus";
-// @import "bookingconf";
-// @import "flightlisting";
-// @import "terms";
-// @import "aboutus";
-// @import "airline";
-// @import "checkout";
-// @import "resposnive";
+//=== import scss files ==== 
+@import "home";
+@import "engine";
+@import "blog";
+@import "contactus";
+@import "bookingconf";
+@import "flightlisting";
+@import "terms";
+@import "aboutus";
+@import "airline";
+@import "checkout";
+@import "resposnive";
