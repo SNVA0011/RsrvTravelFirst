@@ -84,9 +84,9 @@ const HeaderSection = () => {
             <header className={`${styles.headerClassic}  ${sticky ? styles.headerClsFix : ''}`}>
                 <Navbar expand="lg" className={`${styles.headerClsNavbar}`}>
                     <Container>
-                        <div className="d-flex align-items-center"> 
+                        <div className="d-flex align-items-center">
                             <Link href={BrandLogo.url}>
-                                <a className={`navbar-brand mainLogoArea`}>
+                                <a className={`navbar-brand mainLogoArea me-0 py-0`}>
                                     <Image
                                         src={BrandLogo.imgPath}
                                         alt={BrandLogo.imgAlt}
@@ -97,7 +97,7 @@ const HeaderSection = () => {
                             </Link>
                         </div>
 
-                        <nav className='d-none d-xl-block mx-auto'>
+                        <nav className='d-none d-lg-block mx-auto'>
                             <ul className={styles.mainMenu}>
                                 {headerUrl.main &&
                                     headerUrl.main.map((item, index) => {
@@ -121,7 +121,7 @@ const HeaderSection = () => {
 
 
                         <ul className={styles.navCurrencyHead}>
-                            <li className={styles.accountIconMr}> 
+                            <li className={styles.accountIconMr}>
                                 <ButtonStyle
                                     content={<>
                                         <Icon icon={'ic:sharp-account-circle'} className={styles.accountIcon} />
@@ -129,11 +129,11 @@ const HeaderSection = () => {
                                     </>}
                                     outline={true}
                                     fullwidth={false}
-                                    onClick={()=>{console.log("Click Event")}}
+                                    onClick={() => { console.log("Click Event") }}
                                     className={styles.SignInBtn}
                                 />
                             </li>
-                            {size.width >= 992 && (
+                            {size.width >= 992 ? (
                                 <li className="list-2">
                                     <HeaderLang deglang={deglang} setDeglang={setDeglang} />
 
@@ -142,7 +142,19 @@ const HeaderSection = () => {
                                         setAllcurrency={setAllcurrency}
                                     />
                                 </li>
-                            )}
+                            )
+                                :
+                                (
+                                    <li className="list-2">
+                                        <button className={`btn sidenav-btn ${show ? "visible" : ""}`}
+                                            onClick={MenuShow}>
+                                            <span className="nvt-1" onClick={MenuShow}></span>
+                                            <span className="nvt-2" onClick={MenuShow}></span>
+                                            <span className="nvt-3" onClick={MenuShow}></span>
+                                        </button>
+                                    </li>
+                                )
+                            }
                         </ul>
                     </Container>
                 </Navbar>
@@ -150,25 +162,18 @@ const HeaderSection = () => {
             <div className={`${styles.Classicempty} ${sticky ? styles.BlockEmpt : ''}`}></div>
 
 
-            {/* 
-            <button
-                className={`btn sidenav-btn ${show ? "visible" : ""}`}
-                onClick={MenuShow}>
-                ssssssssssss
-                <span className="nvt-1" onClick={MenuShow}></span>
-                <span className="nvt-2" onClick={MenuShow}></span>
-                <span className="nvt-3" onClick={MenuShow}></span>
-            </button>
 
             <Offcanvas show={show} onHide={MenuClose} className="sidenav-offcanvas">
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>
-                        <Image
-                            src="/images/travomint-logo.webp"
-                            className="navmain-logo"
-                            width={168}
-                            height={35}
-                        />
+                        <div className={`mainLogoArea`}>
+                            <Image
+                                src={BrandLogo.imgPath}
+                                alt={BrandLogo.imgAlt}
+                                width={146}
+                                height={30}
+                            />
+                        </div>
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -183,6 +188,7 @@ const HeaderSection = () => {
                                         <Link href={item.url}>
                                             <a className="ripple-wv" onClick={MenuClose}>
                                                 <span>
+                                                    <Icon icon={item.icon} />
                                                     {item.title}
                                                 </span>
                                             </a>
@@ -191,7 +197,7 @@ const HeaderSection = () => {
                                 );
                             })}
                     </ul>
-                    <hr></hr> 
+                    <hr></hr>
 
                     {size.width <= 991 && (
                         <div className="ft-supportsocial">
@@ -206,8 +212,8 @@ const HeaderSection = () => {
                                                         onClick={MenuClose}
                                                     >
                                                         <span>
-                                                             <Icon icon={item.icon} />
-                                                    {item.title}
+                                                            <Icon icon={item.icon} />
+                                                            {item.title}
                                                         </span>
                                                     </a>
                                                 </Link>
@@ -236,7 +242,7 @@ const HeaderSection = () => {
                         </div>
                     </div>
                 )}
-            </Offcanvas> */}
+            </Offcanvas>
         </>
     )
 }

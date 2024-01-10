@@ -43,7 +43,7 @@ const HeaderLang = ({ deglang, setDeglang }) => {
                 <Dropdown.Toggle variant="light" className={styles.borderFlgcurrency}  aria-label={deglang.title}> 
                     <div className={styles.langFlag}><Icon icon={`flagpack:${deglang.icon}`} width="28" height="19" /> </div>
                     <span className={`${styles.typenameAts} d-lg-none`}>{deglang.title}</span>
-                    <Icon icon={`formkit:down`} className={`${styles.typenameAts} d-lg-none`} width={14} height={14} />
+                    <Icon icon={`formkit:down`} className={`${styles.typenameAtsIcon} d-lg-none`} width={14} height={14} />
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className={styles.dropdownMenu}>

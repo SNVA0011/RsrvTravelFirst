@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import SearchList from './SearchList';
 import AirportData from "../staticJson/AirportData.json";
 import useOutsideClick from "../../hooks/useOutsideClick";
+import Image from "next/image";
 
 const TextBox = ({
   location,
@@ -56,7 +57,7 @@ const TextBox = ({
       >
         <Form.Label>{label}</Form.Label>
         <InputGroup.Text>
-          <img src={`/images/${icon}`} alt={label} />
+          <Image src={`/images/${icon}`} alt={label} width={16} height={35} />
         </InputGroup.Text>
         <Form.Control
           placeholder={value}

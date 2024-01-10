@@ -920,7 +920,7 @@ z-index: 1;
 
   .dropdown-menu {
     width: 100%;
-    @include css3('box-shadow', 0 16px 24px 2px rgba(0,0,0,.10));
+    @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
     animation-duration: 0.5s;
     -webkit-animation-duration: 0.5s;
     animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
@@ -931,7 +931,7 @@ z-index: 1;
     @include css3('border-radius', 0 0 6px 6px);
     padding: 0;
     top: 100% !important;
-    margin-top: 22px;
+    margin-top: 5px;
     border: none;
     inset: auto !important; 
   }

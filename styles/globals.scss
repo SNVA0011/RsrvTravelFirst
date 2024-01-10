@@ -5,10 +5,18 @@
 @import "animate";
 
 /*img*/
-img { max-width: 100%; height: auto; }
-* { image-rendering: -webkit-optimize-contrast; }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-select, textarea, button {
+* {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+select,
+textarea,
+button {
   outline: none;
   appearance: none;
   -webkit-appearance: none;
@@ -16,8 +24,11 @@ select, textarea, button {
   -ms-appearance: none;
   -o-appearance: none;
   border: none;
-} 
-a, .btn,.iconify {
+}
+
+a,
+.btn,
+.iconify {
   transition: all .3s;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
@@ -25,14 +36,25 @@ a, .btn,.iconify {
   -o-transition: all .3s;
 }
 
-select { cursor: pointer;}
+select {
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.flglistfilter-date .nv, .flgdate-card, .offerdeals-card, .engineexp-text.input-group, a, label, .country-list .country, a:focus, a:hover {
+.flglistfilter-date .nv,
+.flgdate-card,
+.offerdeals-card,
+.engineexp-text.input-group,
+a,
+label,
+.country-list .country,
+a:focus,
+a:hover {
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -41,16 +63,17 @@ ul {
   -o-user-select: none;
 }
 
-::-ms-clear, select::-ms-expand {
+::-ms-clear,
+select::-ms-expand {
   display: none;
 }
 
 /*body*/
 body {
-  background-color: #ffffff;
+  background-color: $white;
   color: #000;
   font-size: 14px;
-  font-family:  'Mulish', sans-serif;
+  font-family: $fontDefault;
   font-kerning: none;
   font-display: swap;
   touch-action: pan-x pan-y;
@@ -58,29 +81,36 @@ body {
   line-height: normal;
   word-break: break-word;
 }
-#__next, body, html {
+
+#__next,
+body,
+html {
   height: 100%;
   margin: 0;
 }
 
 /*webkit-scrollbar*/
-@media(min-width:1200px) {
+@include mq('min', 1200px) {
   *::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-  } 
+  }
+
   *::-webkit-scrollbar-track {
     background: #ffffff;
-  } 
+  }
+
   *::-webkit-scrollbar-thumb {
     background-color: #dee1e7;
     border-radius: 60px;
-    border: 2px solid #ffffff; 
-    height: 100px; 
+    border: 2px solid #ffffff;
+    height: 100px;
+
     &:hover {
       background-color: #cfd4dc;
     }
-  } 
+  }
+
   .container {
     max-width: 1260px;
     padding-left: 30px;
@@ -89,29 +119,34 @@ body {
 }
 
 
-@media(min-width:1400px) and (max-width:1500px) { 
+
+@include min-max(1400px, 1500px) {
   .container {
     max-width: 92%;
   }
-}  
-@media(min-width:1200px) and (max-width:1399px) {  
+}
+
+@include min-max(1200px, 1399px) {
   .container {
     max-width: 100%;
   }
 }
 
+
 .clac_active {
   cursor: pointer;
 }
+
 .clac_disable {
   pointer-events: none;
   color: red !important;
 }
+
 .slec_date {
   color: red !important;
 }
 
-//=== import scss files ==== 
+//=== import scss files ====  
 @import "home";
 @import "engine";
 @import "blog";

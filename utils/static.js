@@ -1,83 +1,84 @@
 export const siteid = 4;
 export const siteurl = 'https://www.test.com';
+export const Hostname = "Test.in";
 export const SECRET_KEY = "reSER3103s9vatION";
 
 
-export const BrandLogo =  {
+export const BrandLogo = {
   url: "/",
   imgAlt: "travomint-logo",
   imgPath: "/images/travomint-logo.webp",
 }
 
-export const WhiteBrandLogo =  {
+export const WhiteBrandLogo = {
   url: "/",
   imgAlt: "travomint-logo",
   imgPath: "/images/white-logo-footer.webp",
 }
 
 export const FooterLinks = [
-    {
-      'heading': 'About Travomint',
-      'Urls': [
-        {
-          'title': 'About Us',
-          'url': '#'
-        },
-        {
-          'title': 'Blog',
-          'url': '#'
-        },
-        {
-          'title': 'Media',
-          'url': '#'
-        },
-        {
-          'title': 'FAQ',
-          'url': '#'
-        },
-        {
-          'title': 'Contact Us',
-          'url': '#'
-        },
-        {
-          'title': 'Flights',
-          'url': '#'
-        },
-      ]
-    },
-    {
-      'heading': 'Other Links',
-      'Urls': [
-        {
-          'title': 'Privacy Policy Us',
-          'url': '#'
-        },
-        {
-          'title': 'Terms & Condition',
-          'url': '#'
-        },
-        {
-          'title': 'Travel Companies',
-          'url': '#'
-        },
-        {
-          'title': 'Visa',
-          'url': '#'
-        },
-        {
-          'title': 'Charter Flights',
-          'url': '#'
-        },
-        {
-          'title': 'Check-in',
-          'url': '#'
-        },
-      ]
-    },
-  ]
+  {
+    'heading': 'About',
+    'Urls': [
+      {
+        'title': 'About Us',
+        'url': '#'
+      },
+      {
+        'title': 'Blog',
+        'url': '#'
+      },
+      {
+        'title': 'Media',
+        'url': '#'
+      },
+      {
+        'title': 'FAQ',
+        'url': '#'
+      },
+      {
+        'title': 'Contact Us',
+        'url': '#'
+      },
+      {
+        'title': 'Flights',
+        'url': '#'
+      },
+    ]
+  },
+  {
+    'heading': 'Other Links',
+    'Urls': [
+      {
+        'title': 'Privacy Policy Us',
+        'url': '#'
+      },
+      {
+        'title': 'Terms & Condition',
+        'url': '#'
+      },
+      {
+        'title': 'Travel Companies',
+        'url': '#'
+      },
+      {
+        'title': 'Visa',
+        'url': '#'
+      },
+      {
+        'title': 'Charter Flights',
+        'url': '#'
+      },
+      {
+        'title': 'Check-in',
+        'url': '#'
+      },
+    ]
+  },
+]
 
-  
-export const headerUrl = { 
+
+export const headerUrl = {
   social: [
     {
       title: "cs@travomint.com",
@@ -93,22 +94,27 @@ export const headerUrl = {
   main: [
     {
       title: "Flight",
-      url: "/", 
+      url: "/",
+      icon: "fa-solid:plane-departure",
       disable: false,
     },
     {
       title: "Hotel",
-      url: "/#", 
+      url: "/#",
+      icon: "mdi:hotel",
+
       disable: true,
     },
     {
       title: "Transfer",
-      url: "/#", 
+      url: "/#",
+      icon: "icon-park-outline:transfer", 
       disable: true,
     },
     {
       title: "Contact",
-      url: "/contact-us", 
+      url: "/contact-us",
+      icon: "ri:customer-service-line",
       disable: false,
     }
   ],

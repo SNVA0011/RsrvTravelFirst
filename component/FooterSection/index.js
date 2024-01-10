@@ -12,7 +12,7 @@ const FooterSection = ({ title }) => {
     <footer className={styles.FooterBlock}>
       <Container className={styles.ContBody}>
         <Row>
-          <Col xs={12} md={4} className={styles.FooterLogoCol}>
+          <Col xs={12} xl={4} className={styles.FooterLogoCol}>
 
             <div className={styles.FooterLogoLeft}> 
               <Link href={WhiteBrandLogo.url}>
@@ -49,9 +49,9 @@ const FooterSection = ({ title }) => {
           {FooterLinks?.length > 0 && <>
             {FooterLinks.map((item, index) => {
               return (
-                <Col xs={12} md={3} xl key={index}>
+                <Col xs={6} md={4} xl key={index}>
                   <div className={styles.QuickLinks}>
-                    <h6>{item.heading}</h6>
+                    <h5>{item.heading}</h5>
                     <ul>
                       {item.Urls.map((navitem, index) => {
                         return (
@@ -72,9 +72,10 @@ const FooterSection = ({ title }) => {
             })}
           </>}
 
-          <Col xs={12} md={3} xl>
-            <div className={styles.QuickLinks}>
-              <h6>Contact with us</h6>
+          <Col xs={12} md={4} xl>
+          <hr className={`d-md-none ${styles.ContactLinksHr}`}></hr>
+            <div className={`${styles.QuickLinks}`}>
+              <h5>Contact with us</h5>
 
               <div className={`${styles.animateLabel}`}>
                 <span className={styles.EmailIcon}><Image src={'/images/subs-mail.png'} alt="mail-icon" width={16} height={16} /> </span>
@@ -107,13 +108,13 @@ const FooterSection = ({ title }) => {
       <Container className={styles.ContFooter}>
         <hr></hr>
         <Row className={styles.CRowFooter}>
-          <Col xs={12} md={6}>
+          <Col xs={12} sm={6}>
             <span className={styles.ContFtCopyrt}>
               <Image src={'/images/icoutline-copyright.webp'} alt="copyright" width={20} height={20} />
             </span>
             {new Date().getFullYear()}. All Rights Reserved.
           </Col>
-          <Col xs={12} md={6} className='text-end'>
+          <Col xs={12} sm={6} className='text-sm-end'>
             (DBA of SNVA Traveltech Pvt. Ltd.)
           </Col>
         </Row>

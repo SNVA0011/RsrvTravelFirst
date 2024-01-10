@@ -567,9 +567,8 @@ img.swap-desg {
 .engineexp-text.input-group.focus,
 .travellers-class .show.dropdown {
     position: relative;
-    z-index: 10;
-    border-radius: 10px;
-
+    z-index: 11;
+    border-radius: 10px; 
 }
 
 .travellers-class .dropdown,
@@ -765,11 +764,8 @@ img.swap-desg {
     .dropdown-menu.show,
     .dropdown-menu {
         margin-top: -68px;
-        box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-        -webkit-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-        -moz-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-        -ms-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-        -o-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
+        @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
+
         overflow: hidden;
         @include css3('border-radius', 10px);
         border: none;
@@ -958,11 +954,7 @@ img.swap-desg {
     left: -62px !important;
     text-align: center;
     @include css3('border-radius', 10px);
-    box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-    -webkit-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-    -moz-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-    -ms-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
-    -o-box-shadow: 0 0 24px 2px rgba(0, 0, 0, .08);
+    @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
     font-size: 14px;
     padding-top: 0;
     @include css3('user-select', none);
@@ -1262,9 +1254,9 @@ img.swap-desg {
 .MuiPaper-root.both-fielderr,
 .both-fielderr {
     position: absolute;
-    width: 100%;
-    z-index: 2;
-    left: 0;
+    left: 1.5%;
+    width: 97%;
+    z-index: 2; 
     top: 100%;
     border-radius: 4px;
     font-size: 12px;
@@ -1327,7 +1319,7 @@ img.swap-desg {
 
     .form-control.returnby-dt,
     &.menutrv .form-control.returnby-dt {
-        opacity: 0.6;
+        opacity: 0.5;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.4px;
@@ -1471,11 +1463,7 @@ img.swap-desg {
         width: 100%;
     }
 
-    &,
-    .seachbycity-code,
-    .iconify {
-        @include css3('transition', all 0.2s);
-    }
+  
 }
 
 

@@ -11,15 +11,17 @@ import LatestBlogs from '../component/LatestBlogs'
 import DownloadApp from '../component/DownloadApp'
 import ExploreTravel from '../component/ExploreTravel'
 import Image from 'next/image'
+import { Hostname } from '../utils/static'
 
 
 const index = () => {
   return (
     <>
       <PageHead
-        title={`Best Travel Website`}
-        description={``}
-        keywords={``} />
+        title={`ReservationsDeal : Hotels, Vacations & Travel Deals`}
+        description={`Book Tickets, luxury hotels tickets with best deals from your destinations & Get Best Price Guarantee @ ${Hostname}`}
+        keywords={`${Hostname}, Hotels, Travel Deals`}
+      />
 
       <ExploreTravel />
 

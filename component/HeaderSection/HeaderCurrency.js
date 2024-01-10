@@ -49,6 +49,7 @@ const HeaderCurrency = ({ allcurrency, setAllcurrency }) => {
       value: item.value,
     });
   };
+ 
 
   return (
     <>
@@ -62,9 +63,9 @@ const HeaderCurrency = ({ allcurrency, setAllcurrency }) => {
             {currency.currencyCode === "AED" ? (
               <span style={{ fontSize: "10px", padding: "5px" }}>AED</span>
             ) : (
-              <Icon icon={currency.currencylogo} />
+              <Icon icon={currency.currencylogo} className={styles.currencylogoIk} />
             )}
-            <span className="d-lg-none">{currency.title}</span>
+            <span className="d-lg-none">{currency.currencyCode}</span>
             <Icon
               icon={`formkit:down`}
               className="type-down-ats d-lg-none"
@@ -77,10 +78,10 @@ const HeaderCurrency = ({ allcurrency, setAllcurrency }) => {
         <Dropdown.Menu className={styles.dropdownMenu}>
         <div className={`w-100 ${styles.wFullw}`}>
             <h5>Most-Used Currencies</h5>
-            <Row>
+            <Row className={styles.FlexRowurrency}>
               {mostused.slice(0, 6).map((item, index) => {
                 return (
-                  <Col xs={12} lg={4} key={index}>
+                  <Col xs={12} lg={4} key={index} className={styles.MostUsCol}>
                     <Dropdown.Item
                       as={`button`}
                       onClick={() => handleCurrency(item, index)}
@@ -101,10 +102,10 @@ const HeaderCurrency = ({ allcurrency, setAllcurrency }) => {
 
           <div className={`w-100 ${styles.wFullw}`}>
             <h5>All Currencies</h5>
-            <Row>
+            <Row className={styles.FlexRowurrency}>
               {mostused.map((item, index) => {
                 return (
-                  <Col xs={12} lg={4} key={index}>
+                  <Col xs={12} lg={4} key={index} className={styles.MostUsCol}>
                     <Dropdown.Item
                       as={`button`}
                       onClick={() => {

@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { siteurl } from "../utils/static";
 
 class MyDocument extends Document {
 
@@ -7,6 +8,7 @@ class MyDocument extends Document {
       <Html lang={'en'}>
         <Head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <link rel="icon" href={`${siteurl}/favicon.ico`} type="image/ico" /> 
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

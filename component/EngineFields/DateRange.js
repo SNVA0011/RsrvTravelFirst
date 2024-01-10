@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { Col, Row } from "react-bootstrap";
 import moment from "moment";
 import Alert from "@mui/material/Alert";
+import Image from "next/image";
 
 export default function DateRange({
   className,
@@ -48,7 +49,7 @@ export default function DateRange({
           >
             <Form.Label>Departure</Form.Label>
             <InputGroup.Text>
-              <img src={`/images/${icon}`} alt="Departure" />
+              <Image width={24} height={24} src={`/images/${icon}`} alt="Departure" />
             </InputGroup.Text>
             <Form.Control
               value={moment(startDate).format("DD MMM, YYYY")}
@@ -63,7 +64,7 @@ export default function DateRange({
           >
             <Form.Label>Return</Form.Label>
             <InputGroup.Text>
-              <img src={`/images/${icon}`}  alt="Return" />
+              <Image width={24} height={24} src={`/images/${icon}`}  alt="Return" />
             </InputGroup.Text>
 
             {tripType === "1" ? (

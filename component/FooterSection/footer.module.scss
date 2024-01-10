@@ -7,22 +7,49 @@
     @include bgPath('footer-arrow-line.webp');
     background-repeat: no-repeat;
     background-position: bottom 110px left;
+    @include mq('max', 575px) {
+      background-size: 300px;
+    }
+    
+    @include mq('max', 425px) {
+        background-size: 250px; 
+    }
 }
 
 .ContBody {
     padding-top: 50px;
     padding-bottom: 84px;
     color: $white;
+
+    @include mq('max', 1199px) {
+        padding-bottom: 50px;
+    }
+
+    @include mq('max', 575px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .QuickLinks {
-    h6 {
+    h5 {
         position: relative;
         color: $white;
         font-size: 20px;
         font-style: normal;
         font-weight: 600;
         line-height: 20px;
+        @include mq('max', 767px) {
+            font-size: 18px;
+        }
+    
+        @include mq('max', 575px) {
+            font-size: 16px;
+        }
+        
+        @include mq('max', 425px) {
+            font-size: 15px;
+        }
 
         &::after {
             content: "";
@@ -33,6 +60,15 @@
             width: 50px;
             margin-top: 10px;
             margin-bottom: 30px;
+            @include mq('max', 575px) {
+                margin-bottom: 25x;
+                margin-top: 8px; 
+            }
+            
+            @include mq('max', 425px) {
+                margin-bottom: 20px;
+                margin-top: 6px;  
+            }
         }
     }
 
@@ -43,8 +79,10 @@
                     padding-top: 0;
                 }
             }
-
-            margin-bottom: 4px;
+ 
+            @include mq('min', 576px) {
+                margin-bottom: 4px;
+            } 
 
             &:last-child {
                 margin-bottom: 0;
@@ -69,14 +107,15 @@
             &:hover {
                 a {
                     color: $primary;
-                }
-
+                } 
+                @include mq('min', 576px) { 
                 .QuickLinksArw {
                     width: 10px;
                     margin-right: 6px;
                     position: relative;
                     top: -1px;
                 }
+            } 
             }
         }
     }
@@ -103,21 +142,33 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    @include mq('max',1399px){ 
+
+    @include mq('max', 1399px) {
         font-size: 15px;
-    } 
-    @include mq('max',1299px){ 
+    }
+
+    @include mq('max', 1299px) {
         font-size: 14px;
-    }  
+    }
+
     hr {
         border-top: solid 2px $lightgray;
         margin: 0;
         opacity: 1;
+
+        @include mq('max', 1199px) {
+            border-top: solid 1px #2f2e2e;
+        }
     }
 
     .CRowFooter {
         padding-top: 21px;
         padding-bottom: 21px;
+
+        @include mq('max', 575px) {
+            text-align: center;
+            line-height: 1.8;
+        }
     }
 }
 
@@ -125,12 +176,14 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 8px;
-    @include mq('max',1399px){ 
-       width: 15px;
-    } 
-    @include mq('max',1299px){ 
-       width: 14px;
-    }  
+
+    @include mq('max', 1399px) {
+        width: 15px;
+    }
+
+    @include mq('max', 1299px) {
+        width: 14px;
+    }
 }
 
 
@@ -138,36 +191,42 @@
 .AppPlayFooter {
     display: inline-block;
     vertical-align: middle;
- span{
-    position: relative; 
-    overflow: hidden;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.45);
-        -webkit-transition: none;
-        -moz-transition: none;
-        transition: none; 
-        @include css3('transform', skewX(-20deg));
-        @include css3('transform-origin', top);
-        @include css3('filter', blur(4px));  
-    } 
-    &:hover:after {
-        width: 150%;
-        background-color: rgba(255, 255, 255, 0); 
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
+
+    span {
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.45);
+            -webkit-transition: none;
+            -moz-transition: none;
+            transition: none;
+            @include css3('transform', skewX(-20deg));
+            @include css3('transform-origin', top);
+            @include css3('filter', blur(4px));
+        }
+
+        &:hover:after {
+            width: 150%;
+            background-color: rgba(255, 255, 255, 0);
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
     }
- }
 }
 
 .AppPlayFooter {
     margin-right: 20px;
+    @include mq('max', 425px) {
+        margin-right: 16px;
+    } 
 }
 
 .FooterLogo {
@@ -220,7 +279,10 @@
 
 .QuickMaster {
     margin-top: 30px;
-    margin-bottom: 32px;
+    margin-bottom: 32px; 
+    @include mq('max', 991px) {
+        margin-top: 60px; 
+    }
 }
 
 .SubsCrbBtn {
@@ -232,9 +294,10 @@
     position: relative;
     border-radius: 10px;
     margin-top: 30px;
-    background-color: $white; 
+    background-color: $white;
 
-    &,label{
+    &,
+    label {
         padding-left: 28px;
     }
 
@@ -244,14 +307,16 @@
         box-shadow: none;
         border: none;
         padding-left: 10px;
+        font-weight: 500;
     }
 
-    .EmailIcon{
+    .EmailIcon {
         position: absolute;
         left: 12px;
         z-index: 2;
         top: 16px;
     }
+
     label {
         position: absolute;
         bottom: 50%;
@@ -263,7 +328,7 @@
         pointer-events: none;
         background-color: $white;
         font-style: normal;
-        font-weight: 500;  
+        font-weight: 500;
     }
 
     input:valid+label,
@@ -282,10 +347,31 @@
 }
 
 
-.FooterLogoCol{
-    @include columnGrid(30%);
+
+.FooterLogoCol {
+    @include mq('min', 1200px) {
+        @include columnGrid(30%);
+    }
 }
 
-.FooterLogoLeft{
-    max-width: 282px;
+.FooterLogoLeft {
+    @include mq('min', 1200px) {
+        max-width: 282px;
+    }
+
+    @include mq('max', 1199px) {
+        border-bottom: solid 1px #2f2e2e;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+    }
+    @include mq('max', 425px) {
+      text-align: center;
+    }
+}
+
+.ContactLinksHr {
+    border-color: #2f2e2e;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    opacity: 1;
 }

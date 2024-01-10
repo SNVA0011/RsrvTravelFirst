@@ -2,6 +2,7 @@ import React from 'react'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Image from 'next/image';
 
 
 export default function TravelClass({icon, label, value, className,menuclass, children }) {
@@ -11,11 +12,11 @@ export default function TravelClass({icon, label, value, className,menuclass, ch
       <InputGroup className={`engineexp-text ${className}`}>
         <Form.Label>{label}</Form.Label>
         <InputGroup.Text className='first'>
-          <img src={`/images/${icon}`} alt={label} />
+          <Image width="16" height="16" src={`/images/${icon}`} alt={label} />
         </InputGroup.Text>
         <Form.Control value={value} readOnly={true} className='pe-0' />
         <InputGroup.Text className='last'>
-          <img src={`/images/clstrv-arrow.png`} />
+          <Image width="16" height="16" src={`/images/clstrv-arrow.png`} alt='arrow' />
         </InputGroup.Text>
       </InputGroup>
     </Dropdown.Toggle>

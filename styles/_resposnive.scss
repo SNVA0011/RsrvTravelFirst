@@ -321,7 +321,7 @@
     }
     .offcanvas-body {
       hr {
-        margin: 20px 0;
+        margin: 25px 0;
       }
     }
   }
@@ -503,6 +503,9 @@
   .slidenav-url-group a {
     padding-top: 16px;
     padding-bottom: 16px;
+    &:hover{
+      background-color: $primary;
+    }
   }
 }
 
@@ -555,12 +558,7 @@
     a {
       padding-left: 20px;
       padding-right: 20px;
-    }
-    .offcanvas-body {
-      hr {
-        margin: 16px 0;
-      }
-    }
+    } 
   }
   .footer-body-top {
     text-align: center;
@@ -812,7 +810,7 @@
     width: 170px;
   }
   .btn.sidenav-btn {
-    width: 22px;
+    margin-right: 10px;
     .nvt-2 {
       margin: 5px 0;
     }
@@ -1016,10 +1014,14 @@
     }
     .ft-supportsocial,
     .offcanvas-footer,
-    .offcanvas-header,
     a {
       padding-left: 16px;
       padding-right: 16px;
+    }
+    
+    .offcanvas-header{
+      padding-left: 16px;
+      padding-right: 22px;
     }
   }
   .ft-supportsocial {

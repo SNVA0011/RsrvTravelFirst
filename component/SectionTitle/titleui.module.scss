@@ -20,4 +20,20 @@
         font-size: 28px;
         margin-bottom: 30px;
     }
+    @include mq('max', 1199px) {
+        font-size: 26px;
+        margin-bottom: 28px;
+    }
+    @include mq('max', 991px) {
+        font-size: 24px;
+        margin-bottom: 26px;
+    }
+    @include mq('max', 767px) {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+    @include mq('max', 575px) {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
 }

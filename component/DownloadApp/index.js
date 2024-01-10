@@ -20,8 +20,8 @@ const DownloadApp = ({ Title, SubTitle, AppTitle, PlayStoreUrl, AppleStoreUrl })
 
       <Container className={styles.DownloadAppCont}>
         <Row className={styles.DownloadAppRow}>
-          <Col xs={12} md={7} className={styles.ColAppOne}>
-            <div className={`d-flex ${styles.AppFlex}`}>
+          <Col xs={12} lg={9} xl={7} className={styles.ColAppOne}>
+            <div className={`d-flex flex-column flex-md-row ${styles.AppFlex}`}>
               <div className={styles.AppFlexImg}>
                 <Image src={`/images/travomint-app.webp`} width={168} height={138} alt={Title} />
               </div>
@@ -41,7 +41,7 @@ const DownloadApp = ({ Title, SubTitle, AppTitle, PlayStoreUrl, AppleStoreUrl })
                       onChange={(e) => { setval(e) }}
                       className={styles.PhoneAutocomBx}
                     />
-                    <div>
+                    <div className={styles.PhoneAutoBtnStyle}>
                       <ButtonStyle
                         content={'Get App Link'}
                         outline={false}
@@ -59,7 +59,7 @@ const DownloadApp = ({ Title, SubTitle, AppTitle, PlayStoreUrl, AppleStoreUrl })
           </Col>
 
 
-          <Col xs={12} md={5} className={styles.ColAppThree}>
+          <Col xs={12} lg={3} xl={5} className={styles.ColAppThree}>
             <div className={styles.ColAppTbox}>
               <div className={styles.ColAppPlane}>
                 <Image src={`/images/plane-right-app.webp`} width={256} height={120} alt={'Airplane Dotted'} />
