@@ -4,13 +4,16 @@ import { Col, Container, Row } from 'react-bootstrap'
 import styles from './airlinedl.module.scss';
 import Image from 'next/image';
 
-const TopAirlineDeal = ({ Title, Routes }) => {
+const TopAirlineDeal = ({ Title, Routes, ViewALLBtn }) => {
     return (
         <>
             <div className={styles.TopAirlineWave}></div>
             <section className={styles.TopAirlineBlock}>
                 <Container className={styles.TopAirlineCont}>
-                    <SectionTitle title={Title} />
+                    <SectionTitle
+                        title={Title}
+                        ViewALLBtn={ViewALLBtn}
+                    />
                     {Routes?.length > 0 && <Row className={styles.TopAirlineRow}>
                         {Routes.map((item, index) => {
                             return (
@@ -18,7 +21,7 @@ const TopAirlineDeal = ({ Title, Routes }) => {
                                     <div className={`${styles.TopAirlineCard}`}>
 
                                         <div className={styles.TopAirlineThumb}>
-                                            <Image src={`/images/${item.thumbnail}`}  
+                                            <Image src={`/images/${item.thumbnail}`}
                                                 fill={true}
                                                 layout={'fill'}
                                                 objectFit={'contain'}
@@ -41,7 +44,7 @@ const TopAirlineDeal = ({ Title, Routes }) => {
 
                                         <div className={`${styles.TopAirlinePrice}`}>
                                             {item.price}
-                                        </div> 
+                                        </div>
 
                                     </div>
                                 </Col>
@@ -49,6 +52,13 @@ const TopAirlineDeal = ({ Title, Routes }) => {
                         })}
 
                     </Row>}
+
+                    <ul className={`d-xl-none PopularRtsUl`}>
+                        <li className={'PopularRtsLi'}></li>
+                        <li className={`PopularRtsLi PopularRtsLiAct`}></li>
+                        <li className={'PopularRtsLi'}></li>
+                    </ul>
+
                 </Container>
             </section>
         </>

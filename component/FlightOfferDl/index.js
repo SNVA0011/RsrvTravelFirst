@@ -9,7 +9,7 @@ const FlightOfferDl = ({ Title, Routes }) => {
 
     return (
         <section className={styles.FlightOfdeal}>
-            <Container>
+            <Container className='position-relative'>
                 <SectionTitle title={Title} />
                 {Routes?.length > 0 && <Row className={styles.FlightOfdealRow}>
                     {Routes.map((item, index) => {
@@ -24,7 +24,7 @@ const FlightOfferDl = ({ Title, Routes }) => {
                                         objectFit={'cover'}
                                         className={styles.FlgdtSrcImg}
                                     />
-                                    <div className={`d-flex ${styles.FlightOCardInr}`}>
+                                    <div className={`d-flex flex-column flex-xl-row ${styles.FlightOCardInr}`}>
                                         <div className={styles.emptySpace}></div>
                                         <div className={`flex-grow-1 ${styles.FlightCardGrow}`}>
 
@@ -33,6 +33,7 @@ const FlightOfferDl = ({ Title, Routes }) => {
                                                 <div className={styles.DateField}>{item.date}</div>
                                                 <div className={styles.Class}>
                                                     {item.class}
+                                                    <div className="d-sm-none my-2"></div>
                                                     {item.offerapply && <span className={styles.Offerapply}>Offer Apply*</span>}
                                                 </div>
                                                 <div className={styles.Price}>{item.price}</div>
@@ -57,6 +58,12 @@ const FlightOfferDl = ({ Title, Routes }) => {
                     })}
 
                 </Row>}
+
+                <ul className={`d-lg-none PopularRtsUl`}>
+            <li className={'PopularRtsLi'}></li>
+            <li className={`PopularRtsLi PopularRtsLiAct`}></li>
+            <li className={'PopularRtsLi'}></li>
+          </ul>
             </Container>
         </section>
     )

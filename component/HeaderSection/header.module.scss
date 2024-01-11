@@ -129,7 +129,7 @@
     }
 
     @include mq('max', 425px) {
-      font-size: 30px;
+      font-size: 28px;
       position: relative;
       top: 4px;
     }
@@ -719,8 +719,8 @@
     padding-right: 20px;
   }
   @include mq('max', 575px) {
-    margin-right: 20px;
-    padding-right: 12px;
+    margin-right: 16px;
+    padding-right: 8px;
   }
 
   &::after {

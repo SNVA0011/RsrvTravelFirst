@@ -7,7 +7,7 @@ const PartnerBrands = ({ BrandsImage }) => {
   return (
     <>
       {BrandsImage?.length > 0 && <section className={`text-center ${styles.BrandsSection}`}>
-        <Container>
+        <Container className='position-relative'>
           <div className={styles.BrandsCardRow}>
 
             {BrandsImage.map((item, index) => {
@@ -29,6 +29,11 @@ const PartnerBrands = ({ BrandsImage }) => {
             })}
           </div>
 
+          <ul className={`d-lg-none PopularRtsUl`}>
+            <li className={'PopularRtsLi'}></li>
+            <li className={`PopularRtsLi PopularRtsLiAct`}></li>
+            <li className={'PopularRtsLi'}></li>
+          </ul>
         </Container>
       </section>}
     </>

@@ -1,5 +1,5 @@
 @import "../../styles/variable";
-@import "../../styles/mediaprefix";
+@import "../../styles/mixins";
 
 .TopBlogWave {
     @include bgPath('top-airline-lgred.webp');
@@ -102,6 +102,9 @@
     @include mq('max', 1299px) {
         margin: 0 -10px;
     } 
+    @include mq('max', 991px) {
+       @include scrollHorizontal;
+    } 
 }
 
 .TopBlogCol {
@@ -113,11 +116,15 @@
     @include mq('max', 1299px) {
         padding: 0 10px;
     }
+    @include mq('max', 991px) {
+        @include columnGrid(230px);
+    } 
 }
 
 .BlogDate, .BlogTitle{
     font-size: 16px;
     font-style: normal;
+   @include SixteenFontMedia;
 }
 
 .BlogDate {
@@ -127,14 +134,30 @@
 }
 
 .BlogTitle {
-    color: $lightgray; 
+    color: $charcoal; 
     font-weight: 500;
     line-height: 26px;
     margin-top: 6px;
+    letter-spacing: 0.4px;
+    @include mq('max', 991px) {
+        line-height: 1.5;
+       
+    }
 }
 
 .BlogDateImg {
     margin-right: 12px;
     display: inline-block;
     vertical-align: middle;
+    @include mq('max', 1199px) {
+        margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -2px;
+    }
+    @include mq('max', 991px) {
+        width: 14px;
+        height: 14px;
+      }
 }

@@ -1,5 +1,5 @@
 @import "../../styles/variable";
-@import "../../styles/mediaprefix";
+@import "../../styles/mixins";
 
 .AdventureStart {
   padding-left: 12px;
@@ -13,8 +13,7 @@
   background-repeat: no-repeat;
   background-position: top center;
   border-radius: 20px;
-  padding: 0;
-  max-width: 995px;
+  padding: 0; 
   overflow: hidden;
   cursor: pointer;
   overflow: hidden;
@@ -23,32 +22,34 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  -o-user-select: none;
+  -o-user-select: none; 
 
-  &:after {
-    content: "";
-    display: inline-block;
-    width: 20%;
-    height: 300%;
-    position: absolute;
-    top: -60%;
-    left: -50%;
-    background-color: rgb(255 233 229 / 20%);
-    -webkit-transform: rotate(30deg);
-    transform: rotate(30deg);
-    -webkit-animation-name: flashattradv;
-    animation-name: flashattradv;
-    -webkit-animation-duration: 1.8s;
-    animation-duration: 1.8s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    -moz-filter: blur(8px);
-    -ms-filter: blur(8px);
-    -o-filter: blur(8px);
+  @include mq("min", 1200px) {
+  max-width: 995px;
+  } 
+
+  &:after { 
+    @include mq('min', 768px) {
+      content: "";
+      display: inline-block;
+      width: 20%;
+      height: 300%;
+      position: absolute;
+      top: -60%;
+      left: -50%;
+      background-color: rgb(255 233 229 / 18%);
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+      -webkit-animation-name: flashattradv;
+      animation-name: flashattradv;
+      -webkit-animation-duration: 1.8s;
+      animation-duration: 1.8s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite; 
+      @include css3('filter',  blur(8px)); 
+    }
   }
 }
 
@@ -82,7 +83,9 @@
   display: inline-block;
   position: relative;
   top: 5px;
-
+  @include mq('max', 767px) {
+ width: 180px;
+}
   span {
     display: block;
     float: left;
@@ -101,17 +104,28 @@
   background-color: $primary;
   border-radius: 6px;
   padding: 5px 30px;
+  @include SixteenFontMedia;
 }
 
 .BtnStartTrs {
   color: $charcoal;
   text-align: center;
-  font-family: Overlock;
+  font-family: "Overlock", sans-serif;
   font-size: 26px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
   margin: 15px 0 10px;
+  @include mq('max', 1199px) {
+    font-size: 24px;
+  }
+
+  @include mq('max', 991px) {
+    font-size: 22px;
+  }
+  @include mq('max', 767px) {
+    font-size: 20px;
+  }
 }
 
 .BtnStart {
@@ -124,4 +138,5 @@
   background-color: $primary;
   border-radius: 10px;
   padding: 5px 30px;
+  @include SixteenFontMedia;
 }

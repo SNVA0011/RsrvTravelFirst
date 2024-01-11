@@ -48,6 +48,7 @@ const index = () => {
 
       <TopAirlineDeal
         Title="Top Airline Deals"
+        ViewALLBtn={'/airlines'}  
         Routes={[
           { 'thumbnail': 'airline-blcimg-1.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'BOM', 'price': '$ 3574' }, { 'thumbnail': 'airline-blcimg-2.jpg', 'from': 'DEL', 'date': '07 Dec 2023', 'to': 'NWK', 'price': '$ 9825' }, { 'thumbnail': 'airline-blcimg-3.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'BOM', 'price': '$ 3574' }, { 'thumbnail': 'airline-blcimg-4.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'NWK', 'price': '$ 9825' }, { 'thumbnail': 'airline-blcimg-1.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'BOM', 'price': '$ 3574' }, { 'thumbnail': 'airline-blcimg-3.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'NWK', 'price': '$ 9825' }
         ]}
@@ -63,18 +64,18 @@ const index = () => {
 
 
       <PopularRoutes
-        Title="Popular Domestic Route"
+        Title="Popular Domestic Route" 
         Routes={[
           { 'thumbnail': 'popular-rtdom-1.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'BOM', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-2.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'IXJ', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-3.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'BOM', 'to': 'PAT', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-4.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'UDR', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-5.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'IXJ', 'to': 'IXD', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-6.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'UDR', 'to': 'BHJ', 'class': 'Economy', 'price': '$ 3574', },
         ]}
       />
 
-
-      <PopularRoutes
-        Title="Popular International Route"
+       <PopularRoutes
+        Title="Popular International Route" 
         Routes={[
           { 'thumbnail': 'popular-rtint-1.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'LCY', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-2.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'NYC', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-3.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'BOM', 'to': 'PAR', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-4.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'MAD', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-5.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'IXJ', 'to': 'SIN', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-6.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'UDR', 'to': 'GPA', 'class': 'Economy', 'price': '$ 3574', },
         ]}
+        SecondTab={true}
       />
 
 
@@ -89,6 +90,7 @@ const index = () => {
 
       <LatestBlogs
         Title="Blogs"
+        ViewALLBtn={'/blog'} 
         BlogsItems={[
           { 'thumbnail': 'blog-src-1.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-2.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-3.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-4.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }
         ]}

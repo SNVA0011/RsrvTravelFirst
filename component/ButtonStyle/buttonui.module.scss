@@ -11,7 +11,10 @@
     padding-right: 30px;
     border-radius: 10px; 
     position: relative; 
-    overflow: hidden;
+    overflow: hidden; 
+      @include mq('max', 991px) {
+        font-size: 15px;
+      }
     &:after {
         content: '';
         position: absolute;

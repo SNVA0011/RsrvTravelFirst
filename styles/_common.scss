@@ -1130,3 +1130,27 @@ input[type="number"] {
   margin-left: 8px;
   opacity: 0.5;
 }
+
+
+.PopularRtsUl {
+  text-align: center;
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+}
+
+.PopularRtsLi {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  transition: opacity .2s ease;
+  border-radius: 30px;
+  display: inline-block; 
+  &.PopularRtsLiAct {
+      background-color: $primary;
+      width: 30px;
+  }
+}

@@ -1,8 +1,16 @@
-@import "../../styles/mediaprefix";
+@import "../../styles/mixins";
    
 .BrandsSection {
     padding-top: 30px;
     padding-bottom: 30px;
+ 
+    @include mq('max', 1199px) {
+        padding-bottom: 60px;
+    } 
+    @include mq('max', 991px) {
+        padding-bottom: 70px;
+        overflow: hidden;
+    }  
 }
 
 .BrandsCardInner {
@@ -16,15 +24,33 @@
         @include css3(filter, none); 
         @include css3(transform, scale(1.06)); 
         opacity: 1;
-    }
+    } 
 }
+
+
+.BrandsCardRow {
+    margin: 0 -20px;
+    @include mq('max', 1199px) {
+        margin: 0 -20px -20px;
+    } 
+    @include mq('max', 991px) { 
+        @include scrollHorizontal;
+        padding-top: 60px;
+        padding-bottom: 68px; 
+        margin: -60px -20px -25px;
+        position: relative;
+    } 
+}
+
 
 .BrandsCard {
     display: inline-block;
     vertical-align: middle;
     padding: 0 20px;
-}
-
-.BrandsCardRow {
-    margin: 0 -20px;
+    @include mq('max', 1199px) {
+        padding: 0 20px 20px;
+    } 
+    @include mq('max', 991px) {
+        padding: 0 20px;
+    } 
 }

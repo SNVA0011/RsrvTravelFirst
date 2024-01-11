@@ -9,7 +9,7 @@ const AdventureStarts = ({Title, SubTitle, BtnTitle}) => {
         <section className={`text-center ${styles.AdventureStart}`}>
             <Container className={styles.AdventureCont}>
                 <Row className={`align-items-end mx-0 ${styles.AdvThRow}`}>
-                    <Col md={3} className='px-0  text-start'>
+                    <Col md={3} className='px-0 text-md-start'>
                        <div className={styles.AdvTh}>
                         <Image src={"/images/adv-start-left.png"}
                             width={261.5}
@@ -26,7 +26,7 @@ const AdventureStarts = ({Title, SubTitle, BtnTitle}) => {
                            {BtnTitle}
                         </div>
                     </Col>
-                    <Col md={3} className='px-0 text-end'>
+                    <Col md={3} className='px-0 text-md-end mt-4 mt-md-0'>
                         <div className={styles.AdvTh}>
                         <Image src={"/images/adv-start-right.png"}
                             width={224}

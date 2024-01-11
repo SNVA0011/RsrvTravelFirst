@@ -5,13 +5,16 @@ import styles from './blogtop.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const LatestBlogs = ({ Title, BlogsItems }) => {
+const LatestBlogs = ({ Title, BlogsItems,ViewALLBtn }) => {
     return (
         <>
             <div className={styles.TopBlogWave}></div>
             <section className={styles.TopBlogBlock}>
                 <Container className={styles.TopBlogCont}>
-                    <SectionTitle title={Title} />
+                    <SectionTitle
+                        title={Title}
+                        ViewALLBtn={ViewALLBtn}
+                    />
                     {BlogsItems?.length > 0 && <Row className={styles.TopBlogRow}>
                         {BlogsItems.map((item, index) => {
                             return (

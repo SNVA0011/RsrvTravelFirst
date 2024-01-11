@@ -1,5 +1,5 @@
 @import "../../styles/variable";
-@import "../../styles/mediaprefix";
+@import "../../styles/mixins";
 
 
 .PopularRtsCard {
@@ -13,6 +13,18 @@
 
 .PopularRts {
     padding-bottom: 60px;
+}
+
+.PopularRtsTop {
+    @include mq('max', 1199px) {
+        margin-top: 30px;
+    }
+    @include mq('max', 991px) {
+        margin-bottom: 15px;
+    }
+    @include mq('max', 767px) {
+        margin-bottom: 30px;
+    }
 }
 
 .PopularRtsWrp {
@@ -106,23 +118,39 @@
 
 .PopularRtsRow {
     margin: 0 -15px;
-      @include mq('max', 1299px) {
+
+    @include mq('max', 1299px) {
         margin: 0 -12px;
     }
 
     @include mq('max', 1299px) {
         margin: 0 -10px;
-    } 
+    }
+
+    @include mq('max', 1199px) {
+        @include scrollHorizontal;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        margin-top: -60px;
+        margin-bottom: -60px;
+        position: relative;
+    }
 }
+
 
 .PopularRtsCol {
     padding: 0 15px;
-       @include mq('max', 1299px) {
+
+    @include mq('max', 1299px) {
         padding: 0 12px;
     }
 
     @include mq('max', 1299px) {
         padding: 0 10px;
+    }
+
+    @include mq('max', 1199px) {
+        @include columnGrid(190px);
     }
 }
 
@@ -134,7 +162,13 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+
+    @include mq('max', 1199px) {
+        width: 80px;
+        height: 80px;
+    }
+
     &:after {
         content: '';
         position: absolute;
@@ -142,8 +176,8 @@
         left: 0;
         width: 0;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.60); 
-        @include css3('filter', blur(6px)); 
+        background-color: rgba(255, 255, 255, 0.60);
+        @include css3('filter', blur(6px));
         -webkit-transition: none;
         -moz-transition: none;
         transition: none;
@@ -171,7 +205,12 @@
 .PFootRtsFrom {
     font-size: 16px;
     font-weight: 700;
-
+    @include mq('max', 1199px) {
+        font-size: 15px;
+      }
+    @include mq('max', 991px) {
+        font-size: 14px;
+      }
     span {
         display: inline-block;
         margin: 0 12px;
@@ -182,6 +221,12 @@
     color: $primary;
     font-size: 14px;
     font-weight: 400;
+    @include mq('max', 1199px) {
+        font-size: 13px;
+      }
+    @include mq('max', 991px) {
+        font-size: 12px;
+      }
 }
 
 .PFootRtsPrice {
@@ -189,6 +234,12 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    @include mq('max', 1199px) {
+        font-size: 15px;
+      }
+    @include mq('max', 991px) {
+        font-size: 14px;
+      }
 }
 
 .PFootRtsRow {
@@ -197,4 +248,19 @@
 
 .PFootRtsCol {
     padding: 0 4px;
+}
+
+.PopularRtsCont {
+    position: relative;
+}
+
+.PFootSwap{
+    @include mq('max', 1399px) {
+      width: 25px;
+      position: relative;
+      top: 2px;
+    }
+    @include mq('max', 1199px) {
+      width: 20px; 
+    }
 }
