@@ -10,7 +10,7 @@ const ExploreTravel = ({ Title, SubTitle, ImgAlt }) => {
     <section className={styles.ExploreTravel}>
       <Container>
         <Row>
-          <Col md={6}>
+          <Col md={7} lg={6}>
             <div className={styles.TrvWrp}>
               <h1>
                 Explore life
@@ -21,13 +21,9 @@ const ExploreTravel = ({ Title, SubTitle, ImgAlt }) => {
               <p>Lorem ipsum dolor sit amet consectetur. Eu malesuada aliquet leo varius purus risus amet sagittis at. Parturient cras blandit</p>
             </div>
           </Col>
-          <Col md={6}>
-
-            <div className={styles.TrvWrpRight}>
-
-              <span className={styles.TrvWrpRightBck}></span>
-
-
+          <Col md={5} lg={6} className='d-none d-md-block'> 
+            <div className={styles.TrvWrpRight}> 
+              <span className={styles.TrvWrpRightBck}></span> 
               <Image
                 src={'/images/life-travel.webp'}
                 alt={'Explore life Travel where you want'}
@@ -40,7 +36,7 @@ const ExploreTravel = ({ Title, SubTitle, ImgAlt }) => {
 
           <Col xs={12}>
             <div className={styles.TrvEngWrp}>
-              <EngineFields />
+              <EngineFields MobRadioCenter={true} />
             </div>
           </Col>
         </Row>

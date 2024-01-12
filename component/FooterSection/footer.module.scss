@@ -7,6 +7,8 @@
     @include bgPath('footer-arrow-line.webp');
     background-repeat: no-repeat;
     background-position: bottom 110px left;
+    position: relative;
+    z-index: 0;
     @include mq('max', 575px) {
       background-size: 300px;
     }

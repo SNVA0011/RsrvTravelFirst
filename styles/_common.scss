@@ -180,6 +180,7 @@ input[type="number"] {
 
   input:checked+.label+.radiocustom-text {
     color: $primary;
+    font-weight: 700;
   }
 
   input:checked+.label:after {
@@ -197,6 +198,7 @@ input[type="number"] {
 
   .radiocustom-text {
     @include css3('transition', all 0.2s);
+    font-weight: 500;
   }
 
   .hidden {
@@ -876,7 +878,7 @@ input[type="number"] {
   overflow: hidden;
   position: relative;
   border-radius: 0;
-  z-index: 4;
+  z-index: 2;
 
   &::before,
   &::after {
@@ -1141,8 +1143,8 @@ input[type="number"] {
 }
 
 .PopularRtsLi {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   margin: 5px 7px;
   background: #D6D6D6;
   display: block;

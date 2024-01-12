@@ -321,11 +321,7 @@
 }
 
 .engineexp-radio {
-    margin-bottom: 30px;
-
-    @include mq('max', 767px) {
-        margin-bottom: 25px;
-    }
+    margin-bottom: 22px;
 
     &.light {
         color: $white;
@@ -372,33 +368,56 @@
 }
 
 .engineexp-btn {
-    @include mq('max', 991px) {
+    @include mq('max', 767px) {
         padding-top: 8px;
         padding-bottom: 10px;
     }
 
-    .btn.btn-site {
-        width: auto;
+    .btn.btn-site { 
         padding: 4px;
-        letter-spacing: 0.4px;
-        font-size: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-        border-radius: 60px !important;
-
+        letter-spacing: 0.4px;  
+        @include mq('min', 1200px) {
+            width: 50px;
+            height: 50px;
+            border-radius: 60px !important;  
+        }
         @include mq('max', 1199px) {
             font-size: 15px;
+            width: 100%;
+            height: 60px;
         }
+        &:hover{
+            .iconify{
+                @include mq('min', 1200px) {
+                    @include css3(transform, scale(0.8)); 
+                }
+                @include mq('max', 1199px) {
+                    @include css3(transform, scale(1.2)); 
+                }
 
+             
+            }
+        }
+       
         @include mq('max', 767px) {
             width: 100%;
-            height: 50px;
-            font-size: 15px;
-            font-weight: 600;
-            @include css3('box-shadow', 0 4px 10px rgb(0 0 0 / 30%));
+            height: 50px;  
             padding-left: 10px;
             padding-right: 10px;
+        }
+        
+        .iconify { 
+            @include css3('transition', all 0.3s); 
+            font-size: 30px;
+            @include mq('max', 1199px) {
+                font-size: 22px;
+                margin-top: -8px;
+                position: relative;
+                top: 4px;
+            }
+            @include mq('max', 991px) {
+                font-size: 18px; 
+            }
         }
     }
 
@@ -491,28 +510,84 @@
     }
 }
 
-.engineexp-fields {
+.wroweng-wrap,
+.engineexp-fields,
+.engineexp-fields::after {
     border-radius: 20px;
+}
+
+.wroweng-wrap {
     background: #2C3134;
-    @include css3('box-shadow', 0px 0px 30px 2px rgb(220 57 27 / 22%));
     padding: 15px 8px;
     position: relative;
     z-index: 1;
 
-    .row {
-        margin: 0 0;
+    @include mq('max', 1199px) {
+        padding: 15px;
+    }
+    @include mq('max', 425px) {
+        padding: 15px 10px;
+    }
+}
+
+.engineexp-fields {
+    position: relative;
+    @include css3('box-shadow', 0px 0px 30px 2px rgb(220 57 27 / 22%));
+    @include mq('max', 767px) { 
+        @include css3('box-shadow',  0 20px 50px -10px rgba(0, 0, 0, 0.40));
     }
 
-    .col-12 {
-        position: relative;
-        padding: 0 0;
+    @include mq('min', 992px) {
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 60%;
+            @include css3('box-shadow', 0 0 43px 4px rgb(0 0 0 / 75%));
+        }
     }
 
+    
     .travmenu.row {
-        margin: 0 -6px;
-
+        margin: 0 -6px; 
         .col-6 {
             padding: 0 6px;
+        }
+    }
+
+    .row {
+        margin: 0 0; 
+        @include mq('max', 1199px) {
+            margin: 0 -10px;
+        }
+         @include mq('max', 991px) {
+            margin: 0 -6px;
+        }
+    }
+
+    .col-12, .engineexp-btn.searchmodf {
+        position: relative;
+        padding: 0 0; 
+        @include mq('max', 1199px) {
+            padding: 0 10px;
+        }
+          @include mq('max', 991px) {
+            padding: 0 6px;
+        }
+    }
+
+
+    .wroweng-mb-row.row {
+        @include mq('max', 1199px) {
+            margin-bottom: -18px;
+        }
+    }
+
+    .wroweng-mb {
+        @include mq('max', 1199px) {
+            margin-bottom: 18px;
         }
     }
 }
@@ -539,11 +614,14 @@ img.swap-desg {
     -ms-transition: all .25s cubic-bezier(.5, 0, 0, 1.25);
     -o-transition: all .25s cubic-bezier(.5, 0, 0, 1.25);
 
+    @include mq('max', 1199px) {
+        right: -21px;
+        top: 9px;
+    }
+
     @include mq('max', 767px) {
-        right: 7px;
-        top: 36px;
-        width: 65px;
-        height: 65px;
+        right: 22px;
+        top: 47px;
     }
 }
 
@@ -564,11 +642,12 @@ img.swap-desg {
 
 }
 
+[aria-expanded="true"] .engineexp-text.input-group,
 .engineexp-text.input-group.focus,
 .travellers-class .show.dropdown {
     position: relative;
     z-index: 11;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .travellers-class .dropdown,
@@ -587,6 +666,11 @@ img.swap-desg {
     }
 
     @include mq('min', 768px) {
+        &.to {
+            border-left: solid 12px transparent;
+        }
+    }
+    @include mq('min', 1200px) {
         &.to {
             border-left: solid 24px transparent;
         }
@@ -613,9 +697,10 @@ img.swap-desg {
         font-weight: 400;
 
         @include mq('max', 1199px) {
-            color: #a5a5a5;
-            letter-spacing: 0.3px;
+            color: lighten(#2C3134, 46%);
+            letter-spacing: 0.4px;
             left: 37px;
+            font-weight: 500;
         }
     }
 
@@ -674,7 +759,11 @@ img.swap-desg {
 
 
     }
-
+    .input-group-text{
+        @include mq('max', 1199px) {
+            width: 40px;
+        }
+    }
     .input-group-text,
     .form-control {
         background: transparent;
@@ -712,7 +801,7 @@ img.swap-desg {
                 height: 2px;
                 top: auto;
                 bottom: -1px;
-                background: $secondary;
+                background: #2c3134;
             }
         }
     }
@@ -763,19 +852,16 @@ img.swap-desg {
 
     .dropdown-menu.show,
     .dropdown-menu {
-        margin-top: -68px;
-        @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
-
+        margin-top: 5px;
+        @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58)); 
         overflow: hidden;
-        @include css3('border-radius', 10px);
+        @include css3('border-radius', 15px);
         border: none;
         width: 320px;
         left: auto !important;
         right: 0 !important;
-        @include mq('max', 991px) {
-            margin-top: -341px;
-            @include css3('transform-origin', center);
-        }
+
+         
 
         &::after {
             display: none;
@@ -805,6 +891,7 @@ img.swap-desg {
     font-size: 17px;
     font-weight: 900;
     border-bottom: 1px solid #f5f5f5;
+
     @include mq('max', 1199px) {
         font-size: 16px;
         padding: 17px;
@@ -953,16 +1040,17 @@ img.swap-desg {
     top: -8px !important;
     left: -62px !important;
     text-align: center;
-    @include css3('border-radius', 10px);
+    @include css3('border-radius', 15px);
     @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
     font-size: 14px;
     padding-top: 0;
     @include css3('user-select', none);
 
-    @include mq('max', 991px) {
-        left: -37px !important;
-        top: -268px !important
-    }
+    @include mq('max', 1199px) {
+        top: -93px !important;
+        right: auto !important;
+        left: -12px !important;
+    }  
 
     @include mq('max', 767px) {
         height: 100%;
@@ -1014,7 +1102,8 @@ img.swap-desg {
 
     .table {
         margin: 0;
-        border-spacing: 5px; 
+        border-spacing: 5px;
+
         th {
             font-weight: 300;
             color: #aaa;
@@ -1024,8 +1113,9 @@ img.swap-desg {
             cursor: pointer;
             border: solid 2px #fff;
             @include css3('border-radius', 10px);
-            color: #212121; 
-            @include css3('transition', all 0.3s); 
+            color: #212121;
+            @include css3('transition', all 0.3s);
+
             &:hover {
                 background-color: lighten($primary, 48%);
                 color: $primary;
@@ -1095,7 +1185,8 @@ img.swap-desg {
         }
 
         .iconify {
-            color: $primary; 
+            color: $primary;
+
             path {
                 stroke: $primary;
             }
@@ -1253,10 +1344,10 @@ img.swap-desg {
 
 .MuiPaper-root.both-fielderr,
 .both-fielderr {
-    position: absolute;
-    left: 1.5%;
-    width: 97%;
-    z-index: 2; 
+    position: absolute; 
+    left: 0;
+    width: 100%;
+    z-index: 2;
     top: 100%;
     border-radius: 4px;
     font-size: 12px;
@@ -1273,7 +1364,17 @@ img.swap-desg {
     @include css3('animation-name', fadeInUpperx);
     @include css3('animation-fill-mode', both);
     @include css3('transform-origin', top left);
-
+    background-color: $primary;
+    &.MuiPaper-root::before{
+        border-bottom-color: $primary;
+    }
+    @include mq('min', 1200px) {
+        left: 1.5%;
+        width: 97%;
+    }
+    @include mq('max', 1199px) {
+        position: relative;
+    }
     &::before {
         bottom: 100%;
         left: auto;
@@ -1319,7 +1420,7 @@ img.swap-desg {
 
     .form-control.returnby-dt,
     &.menutrv .form-control.returnby-dt {
-        opacity: 0.5;
+        opacity: 0.35;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.4px;
@@ -1370,6 +1471,7 @@ img.swap-desg {
     .travellers-class .dropdown-menu.show,
     .travellers-class .dropdown-menu {
         @include css3('border-radius', 15px 15px 0 0);
+        z-index: 11;
     }
 
 
@@ -1381,7 +1483,7 @@ img.swap-desg {
     width: 452px;
     max-height: 400px;
     overflow: auto;
-    @include css3('border-radius', 10px);
+    @include css3('border-radius', 15px);
 
     @include mq('max', 991px) {
         width: 355px;
@@ -1391,6 +1493,8 @@ img.swap-desg {
         width: 100%;
         z-index: 12;
         @include css3('border-radius', 6px);
+        width: 104%;
+        left: -2% !important;
     }
 
     .flex-grow-1 {
@@ -1403,12 +1507,12 @@ img.swap-desg {
 }
 
 
-.suggest-text {  
-    color: $black; 
+.suggest-text {
+    color: $black;
     background-color: #f9f9f9;
     padding: 8px 15px;
     font-size: 12px;
-    font-weight: 500; 
+    font-weight: 500;
 }
 
 .seachbycity-wrp,
@@ -1463,7 +1567,7 @@ img.swap-desg {
         width: 100%;
     }
 
-  
+
 }
 
 
@@ -1532,12 +1636,37 @@ img.swap-desg {
     color: #777777
 }
 
+.MobRadioCenter{
+    @include mq('max', 767px) {
+      text-align: center
+    }
+}
+
 .engineexp-btn.searchmodf {
     @include columnGrid(74px);
+    @include mq('max', 1199px) {
+        @include columnGrid(18%);
+    }
+        @include mq('max', 767px) {
+        @include columnGrid(100%);
+    }
 }
-.col.trvclassCol,.trvclassCol {
+
+.col.trvclassCol,
+.trvclassCol {
     @include columnGrid(235px);
+    @include mq('max', 1199px) {
+        @include columnGrid(32%);
+    }
+      @include mq('max', 767px) {
+        @include columnGrid(100%);
+    }
 }
-.col.depretEnCol,.depretEnCol {
-    @include columnGrid(322px);
+
+.col.depretEnCol,
+.depretEnCol { 
+    @include mq('min', 1200px) {
+        @include columnGrid(322px);
+    }
 }
+

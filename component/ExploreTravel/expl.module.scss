@@ -11,6 +11,43 @@
     bottom: -23px;
     left: -7px;
     min-width: 164px;
+
+    @include mq('max', 1299px) {
+        min-width: 155px;
+        width: 155px;
+        bottom: -20px;
+    }
+
+    @include mq('max', 1199px) {
+        min-width: 120px;
+        width: 120px;
+        bottom: -18px;
+    }
+
+    @include mq('max', 991px) {
+        min-width: 100px;
+        width: 100px;
+        bottom: -15px;
+    }
+
+    @include mq('max', 767px) {
+        min-width: 90px;
+        width: 90px;
+        bottom: -14px;
+    }
+
+    @include mq('max', 575px) {
+        min-width: 80px;
+        width: 80px;
+        bottom: -12px;
+        left: 0px;
+    }
+    @include mq('max', 425px) {
+        min-width: 72px;
+    width: 72px;
+    bottom: -12px;
+    left: 1px;
+    }
 }
 
 .TrvWrp {
@@ -22,6 +59,43 @@
         font-size: 56px;
         font-style: normal;
         font-weight: 700;
+        margin-bottom: 17px;
+
+        @include mq('max', 1299px) {
+            font-size: 50px;
+        }
+
+        @include mq('max', 1199px) {
+            font-size: 40px;
+            line-height: 1.3;
+            max-width: 377px;
+            margin-bottom: 13px;
+        }
+
+        @include mq('max', 991px) {
+            font-size: 35px;
+            max-width: 337px;
+            margin-bottom: 9px;
+        }
+
+        @include mq('max', 767px) {
+            font-size: 30px;
+            max-width: none;
+            text-align: center;
+        }
+
+        @include mq('max', 460px) {
+            max-width: 277px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 28px;
+        }
+
+        @include mq('max', 425px) {
+            font-size: 26px;
+            max-width: 257px;
+        }
     }
 
     p {
@@ -29,12 +103,32 @@
         font-style: normal;
         font-weight: 400;
         line-height: 24px;
+        letter-spacing: 0.4px;
+
+        @include mq('max', 991px) {
+            display: none;
+        }
+
+
     }
 }
 
 .ExploreTravel {
     background-color: #111111;
     padding: 50px 0 66px;
+
+    @include mq('max', 991px) {
+        padding-top: 40px; 
+    }
+
+    @include mq('max', 767px) {
+        padding-bottom: 0;
+        margin-bottom: 120px;
+    }
+
+    @include mq('max', 575px) {
+        @include css3('border-radius', 0 0 8% 8%);
+    }
 }
 
 .TrvWrpRight,
@@ -53,24 +147,51 @@
     background-color: #4e3b10;
     z-index: 0;
     @include css3('box-shadow', 0px 0px 50px 52px rgb(79 61 21));
+
+    @include mq('max', 767px) {
+        display: none;
+    }
+
 }
 
 .TrvEngWrp {
     margin-top: -184px;
     position: relative;
     z-index: 2;
-    max-width: 1091px;
 
+    @include mq('min', 1200px) {
+        max-width: 1091px;
+    }
+
+    @include mq('max', 1299px) {
+        margin-top: -154px;
+    }
+
+    @include mq('max', 1199px) {
+        margin-top: -124px;
+    }
+
+    @include mq('max', 991px) {
+        margin-top: -90px;
+    }
+
+    @include mq('max', 767px) {
+        margin-top: 24px;
+        margin-bottom: -120px;
+    } 
     &::before {
-        content: "";
-        position: absolute;
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        background-color: #291612;
-        z-index: 0;
-        left: -50px;
-        top: 60px;
-        @include css3('box-shadow', 0px 0px 60px 2px rgba(220, 57, 27, 0.22));
+        @include mq('min', 768px) {
+            content: "";
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: #291612;
+            z-index: 0;
+            left: -55px;
+            top: 60px;
+            @include css3('box-shadow', 0px 0px 60px 2px rgba(220, 57, 27, 0.22));
+            opacity: 0.7;
+        }
     }
 }

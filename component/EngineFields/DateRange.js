@@ -28,7 +28,7 @@ export default function DateRange({
       payload: "2",
       toDate: "",
     });
-  console.log("sdsadsadasdasdsadasdsadsad")
+ 
     setCalpress(true);
     setActive("ret");
   };
@@ -49,11 +49,12 @@ export default function DateRange({
           >
             <Form.Label>Departure</Form.Label>
             <InputGroup.Text>
-              <Image width={24} height={24} src={`/images/${icon}`} alt="Departure" />
+              <Image width={18} height={18} src={`/images/${icon}`} alt="Departure" />
             </InputGroup.Text>
             <Form.Control
               value={moment(startDate).format("DD MMM, YYYY")}
               readOnly={true}
+              aria-labelledby="Departure"
             />
           </Col>
           <Col
@@ -64,7 +65,7 @@ export default function DateRange({
           >
             <Form.Label>Return</Form.Label>
             <InputGroup.Text>
-              <Image width={24} height={24} src={`/images/${icon}`}  alt="Return" />
+              <Image width={18} height={18} src={`/images/${icon}`}  alt="Return" />
             </InputGroup.Text>
 
             {tripType === "1" ? (
@@ -80,6 +81,7 @@ export default function DateRange({
                   endDate === "" ? "" : moment(endDate).format("DD MMM, YYYY")
                 }
                 readOnly={true}
+                aria-labelledby="Return"
               />
             )}
           </Col>

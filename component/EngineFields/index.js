@@ -16,7 +16,7 @@ import { Alert } from '@mui/material';
 import { Icon } from '@iconify/react';
 
 
-const EngineFields = () => {
+const EngineFields = ({MobRadioCenter}) => {
   const { inputField } = useSelector((state) => state.InputField);
   const dispatch = useDispatch();
   const router = useRouter();
@@ -50,7 +50,7 @@ const EngineFields = () => {
   }, [showRef]);
   return (
     <div>
-      <div className="engineexp-radio light">
+      <div className={`engineexp-radio light ${MobRadioCenter ? 'MobRadioCenter' : ''}`}>
         <FlightTripType
           serachData={serachData}
           serachDataDispatch={serachDataDispatch}
@@ -66,8 +66,9 @@ const EngineFields = () => {
       </div>
 
       <div className="engineexp-fields">
-        <Row>
-          <Col xs={12} lg={6} xl>
+      <div className='wroweng-wrap'>
+      <Row className='engineexp-wrow wroweng-mb-row'>
+          <Col xs={12} md={6} xl className='wroweng-mb'>
 
             <TextBox
               location={serachData.from}
@@ -88,7 +89,7 @@ const EngineFields = () => {
               }
             />
           </Col>
-          <Col xs={12} lg={6} xl>
+          <Col xs={12} md={6} xl className='wroweng-mb'>
             <div className="position-relative">
               <TextBox
                 location={serachData.to}
@@ -114,7 +115,7 @@ const EngineFields = () => {
               )}
             </div>
           </Col>
-          <Col xs={12} lg={6} xl ref={showMenu} className='depretEnCol'>
+          <Col xs={12} md={6} xl ref={showMenu} className='wroweng-mb depretEnCol'>
             <div className="exp-menustv position-relative">
               <DateRange
                 className={`menutrv datearv`}
@@ -147,7 +148,7 @@ const EngineFields = () => {
             </div>
           </Col>
 
-          <Col xs={12} lg={6} xl className='trvclassCol'>
+          <Col xs={12} md={6} xl className='wroweng-mb trvclassCol'>
             <div className="travellers-class">
               <DropMenus
                 icon="trav-class.png"
@@ -165,20 +166,22 @@ const EngineFields = () => {
             </div>
           </Col>
  
-          <Col xl={2} className="engineexp-btn align-self-center searchmodf">
+          <Col xl={2} className="engineexp-btn align-self-center searchmodf wroweng-mb ">
             <button
               className="btn btn-site ripple-wv"
               type="button"
-              // onClick={() => handlesumbit()}
+              aria-label="Search" 
               onClick={() => {
                 Searchsumbit(serachData, router);
                 setmodifysort(false);
               }}
             >
-              <span><Icon icon="ic:round-search" color="white" /></span>
+              <span><b className='sermodf me-1 me-md-0 me-lg-1 d-xl-none'>Search</b> <Icon icon="ic:round-search" color="white" /></span>
             </button>
           </Col>
         </Row>
+      </div>
+       
       </div>
     </div>
   )
