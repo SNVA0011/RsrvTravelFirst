@@ -231,6 +231,7 @@ const PriceReview = ({
                     </tbody>
                   </table>
                 </div>
+                
                 <hr className="sepr-hrprice"></hr>
                 <div className="traveller-price-total">
                   <table className="table">
