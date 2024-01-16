@@ -119,7 +119,8 @@ const Calendar = ({
   useEffect(() => {
     if (size.width < 768) {
       try {
-        document.body.classList.add("modal-open");
+        size.width >= 767 ? window.scrollTo(0, 0) : null;
+        document.body.classList.add("modal-open"); 
         return () => {
           document.body.classList.remove("modal-open");
         };

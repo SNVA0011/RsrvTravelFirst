@@ -8,21 +8,22 @@ import TravelerInfo from "../../component/flightconfirm/TravelerInfo";
 import PageHead from "../../component/common/PageHead";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
-import { getBookingDetails } from "../../ApiCall/CheckoutRelatedApi";
+import { getBookingDetails } from "../api/CheckoutRelatedApi";
 import moment from "moment";
 import AirportData from "../../component/staticJson/AirportData.json";
 import FlightErrorMsg from "../../component/flightlist/FlightErrorMsg";
 import Image from "next/image";
+import { BrandLogo } from "../../utils/static";
 
 const FlgBookingConfirm = () => {
   const router = useRouter();
-  console.log("router", router);
+
   const [bookingData, setBookingData] = useState({
     loading: true,
     data: null,
     err: null,
   });
-  console.log("bookingData", bookingData);
+
   const PrintScreen = () => {
     try {
       window.print();
@@ -63,26 +64,26 @@ const FlgBookingConfirm = () => {
         <div className="flight-loaderr wf-100">
           <div className="container">
             <div className="loader-bgb d-flex align-ites-center flex-column justify-content-end">
-              <Image
+                <img
                 src="/images/loader-plane-flight.gif"
                 className="loader-pic"
-                width={240}
-                height={229}
-                alt="loader-pic"
               />
             </div>
             <h5>Please Wait...</h5>
             <p>
               We Are Searching for the best Flights,<br></br> The Best Fares For
               You
-            </p>
-            <Image
-              src="/images/reservationsdeal-logo.png"
-              className="brand-logo"
-              height={36}
-              width={204}
-              alt="brand-logo"
-            />
+            </p> 
+            
+            <div className={`mainLogoArea`}>
+              <Image
+                src={BrandLogo.imgPath}
+                alt={BrandLogo.imgAlt}
+                width={146}
+                height={30}
+              />
+            </div>
+
           </div>
         </div>
       ) : bookingData.err !== null ? (
@@ -96,81 +97,80 @@ const FlgBookingConfirm = () => {
         </FlightErrorMsg>
       ) : (
         <div className="flightbook-confirm">
-          <Container className="spcmy-60">
+          <Container className="spcmy-60 overflow-hidden">
             <BookingConfirm
               status={"pending"}
               data={{
                 bookingid: bookingData.data.bookingRes.BookingNo,
                 pnr: bookingData.data.bookingRes.PNR,
-                price: `${Math.round(bookingData.data.paymentInfo.amount)} ${
-                  bookingData.data.paymentInfo.currency
-                }`,
+                price: `${Math.round(bookingData.data.paymentInfo.amount)} ${bookingData.data.paymentInfo.currency
+                  }`,
                 info:
                   inBound.length > 0
                     ? [
-                        {
-                          title: "Reference No. : ",
-                          content: bookingData.data.bookingRes.BookingNo,
-                        },
-                        {
-                          title: "Date Booked : ",
-                          content: moment().format("ll"),
-                        },
-                        {
-                          title: "Departure : ",
-                          content: moment(startDate).format("ll"),
-                        },
-                        {
-                          title: "Return : ",
-                          content: moment(endDate).format("ll"),
-                        },
-                        {
-                          title: "Origin : ",
-                          content: `${fromAirport.airportName} (${fromAirport.cityName})`,
-                        },
-                        {
-                          title: "Destination : ",
-                          content: `${toAirport.airportName} (${toAirport.cityName})`,
-                        },
-                        {
-                          title: "Journey Type : ",
-                          content: inBound.length > 0 ? "Round Way" : "One Way",
-                        },
-                        {
-                          title: "Passengers : ",
-                          content: totalPassanger,
-                        },
-                      ]
+                      {
+                        title: "Reference No. : ",
+                        content: bookingData.data.bookingRes.BookingNo,
+                      },
+                      {
+                        title: "Date Booked : ",
+                        content: moment().format("ll"),
+                      },
+                      {
+                        title: "Departure : ",
+                        content: moment(startDate).format("ll"),
+                      },
+                      {
+                        title: "Return : ",
+                        content: moment(endDate).format("ll"),
+                      },
+                      {
+                        title: "Origin : ",
+                        content: `${fromAirport.airportName} (${fromAirport.cityName})`,
+                      },
+                      {
+                        title: "Destination : ",
+                        content: `${toAirport.airportName} (${toAirport.cityName})`,
+                      },
+                      {
+                        title: "Journey Type : ",
+                        content: inBound.length > 0 ? "Round Way" : "One Way",
+                      },
+                      {
+                        title: "Passengers : ",
+                        content: totalPassanger,
+                      },
+                    ]
                     : [
-                        {
-                          title: "Reference No. : ",
-                          content: bookingData.data.bookingRes.BookingNo,
-                        },
-                        {
-                          title: "Date Booked : ",
-                          content: moment().format("ll"),
-                        },
-                        {
-                          title: "Departure : ",
-                          content: moment(startDate).format("ll"),
-                        },
-                        {
-                          title: "Origin : ",
-                          content: `${fromAirport.airportName} (${fromAirport.cityName})`,
-                        },
-                        {
-                          title: "Destination : ",
-                          content: `${toAirport.airportName} (${toAirport.cityName})`,
-                        },
-                        {
-                          title: "Journey Type : ",
-                          content: "One Way",
-                        },
-                        {
-                          title: "Passengers : ",
-                          content: totalPassanger,
-                        },
-                      ],
+                      {
+                        title: "Reference No. : ",
+                        content: bookingData.data.bookingRes.BookingNo,
+                      },
+                      {
+                        title: "Date Booked : ",
+                        content: moment().format("ll"),
+                      },
+                      {
+                        title: "Departure : ",
+                        content: moment(startDate).format("ll"),
+                      },
+                      {
+                        title: "Origin : ",
+                        content: `${fromAirport.airportName} (${fromAirport.cityName})`,
+                      },
+                      {
+                        title: "Destination : ",
+                        content: `${toAirport.airportName} (${toAirport.cityName})`,
+                      },
+                      {
+                        title: "Journey Type : ",
+                        content: "One Way",
+                      },
+                      {
+                        title: "Passengers : ",
+                        content: totalPassanger,
+                      },
+                    ],
               }}
             />
 

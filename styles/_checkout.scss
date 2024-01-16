@@ -82,10 +82,8 @@
     }
 
     &.stickyasd {
-        padding: 15px 0;
-        border-radius: 0 0 10px 10px;
-        top: 78px;
-
+        padding: 15px 0; 
+ 
         @include mq('min', 992px) {
             position: -moz-sticky;
             position: -webkit-sticky;
@@ -93,7 +91,10 @@
             position: -o-sticky;
             position: sticky;
             z-index: 5;
-        }
+            top: 70px; 
+            @include css3("box-shadow", -10px 0px 0 0 #fafbff);
+
+        } 
 
         @include min-max(992px, 1199px) {
             top: 72px;
@@ -448,6 +449,9 @@ hr.sepr-hrprice {
 
 .traveller-price-total {
     margin: 14px 0;
+    &:last-child{
+        margin-bottom: 0;
+    }
 
     .table {
         margin: 0;
@@ -506,6 +510,7 @@ hr.sepr-hrprice {
         line-height: 17px;
         margin-bottom: 20px;
         padding: 0 10px;
+        font-weight: 600;
 
         @include mq('max', 1199px) {
             font-size: 15px;
@@ -684,6 +689,8 @@ hr.sepr-hrprice {
     }
 }
 
+
+
 .collapse-clp {
     .routechk-heading {
         @include mq('max', 767px) {
@@ -742,6 +749,19 @@ hr.sepr-hrprice {
 
             @include mq("max", 475px) {
                 margin-left: -16px;
+            }
+
+            &.sumr{
+                left: 9px;
+                @include mq("max", 991px) {
+                    left: 4px;
+                }
+                @include mq("max", 575px) {
+                    left: -1px;
+                }
+                @include mq("max", 425px) {
+                    left: -5px;
+                }
             }
         }
 
@@ -1033,6 +1053,9 @@ a.terms-conditions-link {
         margin-bottom: 12px;
         position: relative;
         z-index: 2;
+        @include mq("max", 991px) {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -1156,7 +1179,7 @@ a.terms-conditions-link {
     font-weight: 500;
 }
 
-
+.MuiPaper-rounded .MuiPickersCalendarHeader-label, .MuiPaper-rounded .MuiPickersYear-yearButton,
 .MuiTypography-h4,
 .MuiPickersDay-root,
 .MuiTypography-root,
@@ -1196,6 +1219,7 @@ a.terms-conditions-link {
         font-size: 9px;
         font-weight: 500;
         color: #a1a1a1;
+        font-family: $fontDefault;
     }
 
     .MuiTypography-h4 {
@@ -1243,23 +1267,31 @@ a.terms-conditions-link {
 
     .MuiPickersCalendarHeader-label,
     .MuiPickersYear-yearButton {
-        font-size: 15px;
+        font-size: 15px; 
         @include mq('max', 767px) {
             font-size: 14px;
         }
     }
 
+    .MuiButtonBase-root .MuiPickersDay-root .Mui-selected, 
     .Mui-selected {
-        background-color: $primary;
+        background-color: $primary !important;
+        color: $white !important;
 
         &:hover,
         &:focus,
         &:active {
-            background-color: #ff7f29;
+            background-color: $primary !important;
+            color: $white !important;
         }
     }
 }
 
+body{
+    .MuiButtonBase-root{
+        font-family: $fontDefault;
+    }
+}
 
 .mui-textfield label.MuiFormLabel-root {
     background-color: #fff;
@@ -1368,10 +1400,7 @@ li.list-allpsn-item.child label.datehg-label {
         position: relative;
         top: -2px;
         margin-right: 8px;
-
-        @include mq('max', 1199px) {
-            font-size: 15px;
-        }
+        color: $primary; 
     }
 }
 
@@ -1543,6 +1572,9 @@ ul.MuiList-root.MuiMenu-list {
 .flight-loaderr.inprog {
     min-height: 65vh;
     padding: 30px 0;
+     h5.blue{
+        color: $primary;
+    }
 }
 
 .spinner-chk {
@@ -1567,7 +1599,7 @@ ul.MuiList-root.MuiMenu-list {
         height: 70px;
         width: 70px;
         border-color: #ebebeb;
-        border-right-color: #0076ed;
+        border-right-color: $primary;
 
         @include mq('max', 575px) {
             height: 60px;
@@ -1590,7 +1622,7 @@ ul.MuiList-root.MuiMenu-list {
         }
 
         hr.sepr-hrprice {
-            margin: 13px 0;
+            margin: 13px -15px 23px !important;
 
             @include mq('max', 575px) {
                 display: none;
@@ -1600,15 +1632,12 @@ ul.MuiList-root.MuiMenu-list {
 
     .routechk-heading img {
         position: relative;
-        top: -1px;
+    top: -3px;
     }
 
     .flighteng-mobile {
-
-
         .title {
             margin-bottom: 14px;
-            color: #1b55a5;
             margin-top: 3px;
 
             @include mq('max', 575px) {
@@ -1627,11 +1656,11 @@ ul.MuiList-root.MuiMenu-list {
 
             .iconify.iconify--lucide {
                 font-size: 18px;
-                color: #1b55a5;
+                color:  $primary;
             }
 
             .iconify.iconify--clarity {
-                color: #adadad;
+                color: $primary;
             }
         }
     }
@@ -1700,12 +1729,12 @@ ul.MuiList-root.MuiMenu-list {
         }
 
         b.badge {
-            background-color: #1b55a5;
+            background-color: $primary;
             margin-right: 4px;
             vertical-align: middle;
             position: relative;
             top: -1px;
-            border-radius: 50px;
+            border-radius: 4px;
             padding: 2px 6px;
             line-height: normal;
         }
@@ -1735,9 +1764,12 @@ ul.MuiList-root.MuiMenu-list {
 }
 
 .flgak {
+    .flgak-col {
+margin-bottom: 30px;
+    }
     @include mq('max', 1399px) {
         margin-left: -8px;
-        margin-right: -8px;
+        margin-right: -8px; 
 
         .flgak-col {
             padding-left: 8px;
@@ -1747,7 +1779,7 @@ ul.MuiList-root.MuiMenu-list {
 
     @include mq('max', 1199px) {
         margin-left: -6px;
-        margin-right: -6px;
+        margin-right: -6px; 
 
         .flgak-col {
             padding-left: 6px;
@@ -1913,4 +1945,68 @@ ul.MuiList-root.MuiMenu-list {
             }
         }
     }
+}
+
+.price-review h4.depr-sumr {
+    font-weight: 800;
+    font-family: "Overlock", sans-serif;
+    margin-top: 11px;
+    margin-bottom: 8px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.collapse-clp.lgblue.shadow-0{
+    @include css3("box-shadow",none); 
+}
+
+.phnPadding {
+    &.react-tel-input{
+        .special-label, input.form-control{
+            font-family: $fontDefault; 
+        }
+        input.form-control{
+            font-size: 14px; 
+            border-color: #d2d2d2;
+            @include mq("min", 1200px) {
+                border-width: 2px;
+            }
+            &:focus,&:active{
+                box-shadow: none;
+            }
+        }
+        .selected-flag{
+            padding-left: 14px;
+        }
+        
+      .special-label{
+        color: #4f4f4f;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 0 9px;
+        left: 10px;
+        @include mq("max", 1199px) {
+            left: 5px;
+        }
+      }
+    }
+ 
+    input.form-control {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 66px;
+        padding-right: 14px;
+        width: 100%;
+      height: 50px;
+      }
+
+}
+
+
+  
+body{
+.MuiPaper-rounded .MuiTypography-h4 {
+    font-family: "Overlock", sans-serif;
+}
+
 }

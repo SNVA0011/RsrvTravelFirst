@@ -1,4 +1,4 @@
-import { stop } from "../static/EngineHead";
+import { stop } from "./static";
 
 export const findStopResult = (data) => {
   const totallength = data.length;
@@ -6,7 +6,7 @@ export const findStopResult = (data) => {
   const dataArraylist = data.map((item) => {
     return {
       stop: item.outBound.length,
-      price: item.fare.adultFare + item.fare.adultTax + item.fare.adultMarkup,
+      price: item.fare.adultFare + item.fare.adultTax,
     };
   });
 
@@ -14,7 +14,7 @@ export const findStopResult = (data) => {
   const all = {
     value: 0,
     title: "All",
-    price: overAllMin.toFixed(2),
+    price: Math.round(overAllMin),
     count: totallength,
   };
 
@@ -55,7 +55,7 @@ export const findStopResult = (data) => {
   const newStop = filterStop.map((item, i) => ({
     value: item.value,
     title: item.title,
-    price: Object.values(maxObj)[i].toFixed(2),
+    price: Math.round(Object.values(maxObj)[i]),
     count: Object.values(newlength)[i],
   }));
 
@@ -81,9 +81,7 @@ export const findAirlinePrice = (flightResponse) => {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].valCarrier) {
         newObject[arr[i]?.valCarrier]?.push(
-          arr[i]?.fare?.adultFare +
-            arr[i]?.fare?.adultTax +
-            arr[i]?.fare?.adultMarkup
+          arr[i]?.fare?.adultFare + arr[i]?.fare?.adultTax
         );
         lenAirline[arr[i].valCarrier]++;
       }
@@ -99,7 +97,7 @@ export const findAirlinePrice = (flightResponse) => {
       price:
         Object.values(maxObj)[i] === Infinity
           ? 0
-          : Object.values(maxObj)[i].toFixed(2),
+          : Math.round(Object.values(maxObj)[i]),
       count:
         Object.values(lenAirline)[i] === 0 ? 0 : Object.values(lenAirline)[i],
     }));
@@ -118,7 +116,6 @@ export const travelDuration = (flightResponse, tripType) => {
     const MinoutEft = Math.min(...outEft);
     return [MinoutEft, MaxoutEft];
   } else {
-    console.log("outEFT");
     const inEft = flightResponse.map((item) => item.inEFT);
     const MaxinEft = Math.max(...inEft);
     const MininEft = Math.min(...inEft);
@@ -127,6 +124,6 @@ export const travelDuration = (flightResponse, tripType) => {
     const MinoutEft = Math.min(...outEft);
     const inB = `${MininEft}-${MaxinEft}`;
     const outB = `${MinoutEft}-${MaxoutEft}`;
-    return [inB, outB];
+    return [outB, inB];
   }
 };

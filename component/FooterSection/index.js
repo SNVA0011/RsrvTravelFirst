@@ -57,7 +57,7 @@ const FooterSection = ({ title }) => {
                         return (
                           <li key={index}>
                             <Link href={navitem.url}>
-                              <a className='d-flex align-items-center'>
+                              <a className='d-flex align-items-center' target='_blank'>
                                 <span className={styles.QuickLinksArw}><Image src={'/images/angle-double.webp'} alt="angle" width={32} height={26} /></span>
                                 <span className='flex-grow-1'>{navitem.title}</span>
                               </a>

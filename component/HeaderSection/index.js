@@ -174,7 +174,7 @@ const HeaderSection = () => {
                                 height={30}
                             />
                         </div>
-                    </Offcanvas.Title>
+                    </Offcanvas.Title> 
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul className="slidenav-url-group">
@@ -212,7 +212,7 @@ const HeaderSection = () => {
                                                         onClick={MenuClose}
                                                     >
                                                         <span>
-                                                            <Icon icon={item.icon} />
+                                                           <b><Icon icon={item.icon} /></b>
                                                             {item.title}
                                                         </span>
                                                     </a>

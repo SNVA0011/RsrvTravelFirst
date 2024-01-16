@@ -20,10 +20,12 @@ import { useRouter } from "next/router";
 import {
   checkoutFlightData,
   fare_Check,
-} from "../../../ApiCall/CheckoutRelatedApi";
+} from "../../api/CheckoutRelatedApi";
 import FlightErrorMsg from "../../../component/flightlist/FlightErrorMsg";
 import SessionTimeOut from "../../../component/flightlist/SessionTimeOut";
 import { fareSoldOutRoute } from "../../../utils/flightCheckoutUtils";
+import { BrandLogo } from "../../../utils/static";
+import Image from "next/image";
 
 const Checkout = () => {
   const router = useRouter();
@@ -217,10 +219,16 @@ const Checkout = () => {
               We Are Searching for the best Flights,<br></br> The Best Fares For
               You
             </p>
-            <img
-              src="/images/reservationsdeal-logo.png"
-              className="brand-logo"
-            ></img>
+  
+                        <div className={`mainLogoArea`}>
+              <Image
+                src={BrandLogo.imgPath}
+                alt={BrandLogo.imgAlt}
+                width={146}
+                height={30}
+              />
+            </div>
+
           </div>
         </div>
       ) : singleFlight.error !== null ? (
@@ -461,7 +469,7 @@ const Checkout = () => {
           <div className="controller-steps-chk-empty d-lg-none"></div>
 
           <SessionTimeOut
-            imag={"/images/time-ticking-red.png"}
+                      imag={"/images/hourglass.gif"}
             searchfrom={`${singleFlight.flights.currentFlight.outBound[0].fromAirport}`}
             searchTo={`${
               singleFlight.flights.currentFlight.outBound[

@@ -30,7 +30,7 @@ const DownloadApp = ({ Title, SubTitle, AppTitle, PlayStoreUrl, AppleStoreUrl })
                 <p className={styles.AppSubHeading}>{SubTitle}</p>
 
 
-                <div className={`${styles.phonetypeAutocom}`}>
+                <div className={`phonetypeStyle ${styles.phonetypeAutocom}`}>
                   <div className={`input-group flex-nowrap align-items-center flex-column flex-md-row`}>
                     <PhoneInput
                       country={'in'}

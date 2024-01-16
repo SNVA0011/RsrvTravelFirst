@@ -2,7 +2,7 @@
 .flightbook-confirm {
     @extend %full-width;
     background-color: #fafbff;
-    min-height: 100%;
+    min-height: 100%; 
 
     @include mq('min', 1250px) {
         .container {
@@ -12,8 +12,8 @@
 
     .spcmy-60.container {
         @include mq('max', 991px) {
-            margin-top: 40px;
-            margin-bottom: 40px;
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
     }
 }
@@ -79,11 +79,12 @@
 
         &,
         ul li strong {
-            color: $black;
+            color: #838383;
         }
 
         ul li {
-            color: #919191;
+            color: $black;
+            font-weight: 800;
         }
 
         p a {
@@ -107,6 +108,8 @@
 
         .total {
             border-top-color: #ededed;
+            color: $black;
+            font-weight: 500;
         }
     }
 
@@ -141,7 +144,7 @@
         }
 
         &.right {
-            border-left: dashed 2px #3b5d85;
+            border-left: dashed 2px lighten($secondary, 10%);
             letter-spacing: 0.2px;
 
             @include mq('min', 1200px) {
@@ -153,7 +156,7 @@
 
             @include mq('max', 767px) {
                 border-left: none;
-                border-top: dashed 2px #3b5d85;
+                border-top: dashed 2px lighten($secondary, 10%);
                 text-align: center;
             }
 
@@ -362,7 +365,7 @@
 
         li {
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
 
             @include mq('max', 767px) {
                 margin-bottom: 25px;
@@ -751,6 +754,7 @@
 .fbkconf-flg-name {
     img {
         width: 36px;
+        border-radius: 6px;
     }
 
     .pl {
@@ -773,7 +777,7 @@
     }
 
     h6 {
-        font-weight: 600;
+        font-weight: 800;
         margin: 0;
     }
 
@@ -836,13 +840,11 @@
         h5 {
             color: $charcoal;
             font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 6px;
-
+            font-weight: 800;
+            margin-bottom: 6px; 
             @include mq('max', 575px) {
                 font-size: 15px;
-            }
-
+            } 
             @include mq("max", 425px) {
                 font-size: 13px;
             }
@@ -923,5 +925,28 @@
 
     @include mq('max', 991px) {
         font-size: 10px;
+    }
+}
+
+.fbkconf-summary{
+    .icvfaresub {
+        background: #0063c7;
+            color: #ffffff;
+            top: -9px;
+            display: -webkit-inline-box;
+            display: -webkit-inline-flex;
+            display: -moz-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+                    justify-content: center;
     }
 }

@@ -26,7 +26,7 @@
     }
     &.spcmy-60 {
         @include mq('max', 575px) {
-            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
     }
@@ -50,7 +50,7 @@
             padding-bottom: 5px;
             color: $charcoal;
             font-size: 24px;
-            font-weight: 600;
+            font-weight: 700;
             word-wrap: break-word;
 
             @include mq('max', 1199px) {
@@ -185,7 +185,7 @@
 
 .contact-info-box {
     .color-black {
-        color: $black;
+        color: $primary;
     }
 }
 
@@ -260,7 +260,7 @@
     h3 {
         font-size: 24px;
         color: $charcoal;
-        font-weight: 600;
+        font-weight: 700;
         margin: 10px 0px;
         word-wrap: break-word;
 
@@ -350,7 +350,7 @@
 
     .form-control:focus {
         outline: none;
-        box-shadow: 0 0 0 0.25rem rgb(255 102 0 / 10%);
+        box-shadow: 0 0 0 1px $primary;
     }
 
     textarea.form-control {
@@ -421,7 +421,7 @@
         border-left: none;
         border-right: none;
         border-radius: 0;
-        border-color: #eaeaea;
+        border-color: #f1f1f1;
         &:first-child{
             border-top: none;
         }
@@ -445,7 +445,7 @@
     .accordion-button { 
         font-size: 16px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1.4;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -458,6 +458,7 @@
         }
         &[aria-expanded='true'] {
             color: $primary;
+            font-weight: 800;
             img {
                 @include css3('transform', rotate(180deg));
             }

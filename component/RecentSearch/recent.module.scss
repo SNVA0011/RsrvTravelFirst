@@ -61,7 +61,10 @@
         -webkit-box-shadow: 0 4px 6px -4px rgba(220, 57, 27, 0.66);
         -moz-box-shadow: 0 4px 6px -4px rgba(220, 57, 27, 0.66);
         box-shadow: 0 4px 6px -4px rgba(220, 57, 27, 0.66);
-        @include css3('transform', scale(1.15));
+
+        @include mq('min', 992px) {
+            @include css3('transform', scale(1.15));
+        }
 
         img {
             @include css3('transform', scale(1.1));
@@ -118,16 +121,14 @@
         @include css3('transform', skewX(-20deg));
         @include css3('transform-origin', top left);
         @include css3('filter', blur(4px));
-    }
-
+    } 
     @include mq('max', 991px) {
         margin-top: -49px;
         margin-bottom: 7px;
         margin-left: 0;
         margin-right: 0;
         @include css3('transform-origin', bottom center);  
-    }  
-
+    }   
     span {
         display: block;
         float: left;
@@ -140,10 +141,7 @@
 
 .TopRecentThumb,
 .TopRecentImg {
-    border-radius: 10px;
-    @include mq('max', 991px) {
-        border-radius: 80px;
-          }
+    border-radius: 10px; 
 }
 
 .TopRecentPlane {

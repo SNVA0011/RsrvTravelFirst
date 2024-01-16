@@ -123,11 +123,7 @@
 
     @include mq('max', 767px) {
         padding-bottom: 0;
-        margin-bottom: 120px;
-    }
-
-    @include mq('max', 575px) {
-        @include css3('border-radius', 0 0 8% 8%);
+        margin-bottom: 120px; 
     }
 }
 
@@ -135,6 +131,12 @@
 .Trv {
     display: inline-block;
     position: relative;
+}
+
+.TrvWrpRight{
+    @include mq('max', 767px) {
+        margin-bottom: -120px;
+      }
 }
 
 .TrvWrpRightBck {
@@ -150,8 +152,7 @@
 
     @include mq('max', 767px) {
         display: none;
-    }
-
+    } 
 }
 
 .TrvEngWrp {
@@ -177,7 +178,7 @@
 
     @include mq('max', 767px) {
         margin-top: 24px;
-        margin-bottom: -120px;
+        margin-bottom: 90px;
     } 
     &::before {
         @include mq('min', 768px) {

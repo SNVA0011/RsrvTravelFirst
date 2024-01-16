@@ -2,7 +2,7 @@
   @extend %full-width;
 
   &.airgray-k {
-    background-color: #fbfbfb;
+    background-color: $primaryoff;
 
     .findoth-tabs {
       @include css3("box-shadow", 0 6px 35px rgb(0 0 0 / 4%));
@@ -11,7 +11,7 @@
 
   &.sch {
     .wf-100.spcmb-60:last-child {
-      margin-bottom: 30px;
+      padding-bottom: 0;
     }
   }
 
@@ -25,12 +25,15 @@
   }
 
   .spcmb-60 {
-    margin-bottom: 60px;
+    padding-bottom: 60px;
   }
 }
 
 .airlines-bgplane {
   @extend %full-width;
+  @include mq("max", 991px) {
+    z-index: 26;
+    }
 
   .sort-right .dropdown-toggle {
     padding: 9px 0px;
@@ -130,7 +133,7 @@
 
   .fbkconf-flg-name h6 {
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 800;
     color: #424141;
 
     @include mq("max", 991px) {
@@ -168,8 +171,8 @@
 .site-breadcrumb {
   @extend %full-width;
   padding: 14px 0;
-  background-color: #233d5c;
-  z-index: 2;
+  background-color: darken(#25292c, 2%);
+  z-index: 0;
 
   &,
   li a,
@@ -212,6 +215,7 @@
 
   .mx-1.iconify {
     font-size: 90%;
+    color: #6d7578 !important;
   }
 }
 
@@ -232,7 +236,7 @@
 }
 
 .page-title-airline {
-  background-color: $secondary;
+  background-color: #2C3134;
   padding-top: 46px;
 
   @include mq("max", 1199px) {
@@ -324,7 +328,7 @@ hr.hr-airline-als {
     min-height: 48px;
     position: relative;
     z-index: 2;
-    @include css3("transition", all 0.5s);
+    @include css3("transition", all 0.2s);
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -365,9 +369,9 @@ hr.hr-airline-als {
     }
 
     &[aria-selected="true"] {
-      color: $primary;
+      color: $white;
       font-weight: 600;
-      background: $white;
+      background: $primary;
       @include css3("border-radius", 10px);
       @include css3("box-shadow", 0 1px 3px 0 rgba(0, 0, 0, 0.1));
     }
@@ -376,7 +380,7 @@ hr.hr-airline-als {
       display: block;
 
       @include mq("max", 425px) {
-        max-width: 77px;
+        max-width: 84px;
       }
     }
 
@@ -396,8 +400,12 @@ hr.hr-airline-als {
         margin-bottom: 9px;
       }
 
+      @include mq("max", 575px) {
+        height: 20px;
+      }
       @include mq("max", 360px) {
         margin-top: 3px;
+        height: 18px;
       }
 
       &.flgroute {
@@ -492,6 +500,8 @@ hr.hr-airline-als {
   margin-left: 7px;
 }
 
+
+
 .findoth-tabs {
   @include css3("box-shadow", 0 1px 3px 0 rgb(0 0 0 / 10%));
   background-color: $white;
@@ -500,9 +510,10 @@ hr.hr-airline-als {
   border: none;
 
   @include mq("max", 767px) {
-    margin-left: -6px;
-    margin-right: -6px;
+    margin-left: -2px;
+    margin-right: -2px;
   }
+
 
   .MuiTabs-root {
     background: #f9f9f9;
@@ -535,6 +546,7 @@ hr.hr-airline-als {
   @include mq("min", 1200px) {
     .offcanvas.offcanvas-sidenav.offcanvas-top {
       @include offcanvasnormal;
+      z-index: 4;
     }
   }
 
@@ -554,6 +566,7 @@ hr.hr-airline-als {
       bottom: 0;
       visibility: hidden;
       @include css3("transform", translateY(-130%));
+      background: rgba(0, 0, 0, 0.30);
       background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0)));
       background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
       background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
@@ -573,7 +586,7 @@ hr.hr-airline-als {
     }
 
     .offcanvas-header {
-      background: #213b5b;
+      background: darken(#25292c, 2%);
       color: $white;
       padding-left: 0;
       padding-right: 0;
@@ -610,18 +623,18 @@ hr.hr-airline-als {
 
     &.is-sticky {
       position: fixed;
-      top: 0;
+      top: -1px;
       left: 0;
       width: 100%;
       z-index: 25;
       -webkit-animation-name: slideInDownhd;
       animation-name: slideInDownhd;
-      -webkit-animation-duration: 0.3s;
-      animation-duration: 0.3s;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
-      -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+      -webkit-transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
       @include css3("box-shadow", 0px 3px 4px 0px rgba(0, 0, 0, 0.04));
     }
   }
@@ -629,19 +642,25 @@ hr.hr-airline-als {
 
 .modfflight-empt {
   @include mq("max", 1199px) {
-    min-height: 88.83px;
+    min-height: 72.69px;
   }
 
   @include mq("max", 991px) {
-    min-height: 76.3px;
+    min-height: 76.69px;
+  }
+  @include mq("max", 575px) {
+    min-height: 70.69px;
   }
 }
 
 .flighteng-mobile {
   padding: 16px 0 14px;
   @include mq('max', 991px) {
-    padding: 13px 0 11px;
+    padding: 18px 0 16px;
  }
+ @include mq('max', 575px) {
+  padding: 15px 0 13px;
+}
 
   .row {
     margin-left: -12px;
@@ -750,6 +769,9 @@ hr.hr-airline-als {
 }
 
 .airlines-details {
+  @include mq("max", 991px) {
+  z-index: 26;
+  }
   .getlow-disc {
     padding: 0;
     background: transparent;
@@ -862,18 +884,20 @@ hr.hr-airline-als {
 
     span {
       position: absolute;
-      bottom: -11px;
+      top: 100%;
       left: 50%;
       font-size: 11px;
       padding: 4px 10px;
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
       width: 89px;
-      background: #f9f9f9;
-      color: #585858;
+      background: $white;
+      border: solid 1px $primary;
+      color: $primary;
       margin: 0;
-      border-radius: 50px;
-      @include css3("box-shadow", 0 0 0 8px #fff);
+      margin-top: -6px;
+      border-radius: 8px;
+      @include css3("box-shadow", 0px 8px 15px rgb(220 57 27 / 06%));
       @include css3("transform", translateX(-50%));
     }
   }
@@ -888,6 +912,7 @@ hr.hr-airline-als {
 
     .swiper-slide {
       padding: 0;
+      padding-bottom: 20px;
     }
   }
 
@@ -970,23 +995,39 @@ hr.hr-airline-als {
   background: -webkit-gradient(linear,
       left top,
       right top,
-      from(rgba(255, 102, 0, 1)),
-      to(rgba(234, 58, 0, 1)));
+      from($secondary),
+      to(lighten($secondary, 12%)));
   background: -webkit-linear-gradient(left,
-      rgba(255, 102, 0, 1) 0%,
-      rgba(234, 58, 0, 1) 100%);
+      $secondary 0%,
+      lighten($secondary, 12%) 100%);
   background: -moz-linear-gradient(left,
-      rgba(255, 102, 0, 1) 0%,
-      rgba(234, 58, 0, 1) 100%);
+      $secondary 0%,
+      lighten($secondary, 12%) 100%);
   background: -o-linear-gradient(left,
-      rgba(255, 102, 0, 1) 0%,
-      rgba(234, 58, 0, 1) 100%);
+      $secondary 0%,
+      lighten($secondary, 12%) 100%);
   background: linear-gradient(to right,
-      rgba(255, 102, 0, 1) 0%,
-      rgba(234, 58, 0, 1) 100%);
+      $secondary 0%,
+      lighten($secondary, 12%) 100%);
 }
 
 .flg-list-row.airline {
+
+  .findoth-tabs {
+    &.gs-3{
+      .flg-airline-card{
+        &::after,
+        &::before { 
+          bottom: 75px;
+          @include mq("max", 575px) {
+            bottom: 72px;
+          }
+        }
+      } 
+    }
+    
+  }
+
   .findoth-route {
     .tabpanel {
       padding: 0;
@@ -998,13 +1039,15 @@ hr.hr-airline-als {
 
     .MuiTabs-scroller button {
       color: $charcoal;
+      font-weight: 700;
 
       @include mq("min", 992px) {
         max-width: 220px;
       }
 
       &[aria-selected="true"] {
-        color: $primary;
+        color: $white;
+        font-weight: 800;
       }
     }
   }
@@ -1127,7 +1170,9 @@ hr.hr-airline-als {
     }
 
     .row-2 .btn.btn-site {
-      min-width: 110px;
+      max-width: 110px;
+      width: 100%;
+      min-width: auto;
 
       @include mq("max", 575px) {
         font-size: 14px;
@@ -1160,7 +1205,7 @@ hr.hr-airline-als {
   .showflg-footer {
     background: transparent;
     border: solid 1px $davgray;
-    font-weight: 600;
+    font-weight: 700;
     width: auto;
     padding: 13px 20px;
     margin-top: 15px;
@@ -1261,6 +1306,13 @@ img.rounded-lg {
 
 
 .flight-listing.mdf {
+
+  @include mq("min", 1200px) {
+    z-index: 1; 
+    }
+  @include mq("max", 991px) {
+    z-index: 28;
+    }
   .flgmodf-engine {
     @include mq("min", 992px) {
       padding-top: 28px;
@@ -1325,6 +1377,9 @@ hr.my-done-mladv {
       width: 100%;
       z-index: 12;
       @include css3('border-radius', 6px);
+    }
+    @include mq('max', 575px) {
+      width: 104%;
     }
   }
 

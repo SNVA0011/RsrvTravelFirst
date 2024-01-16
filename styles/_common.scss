@@ -51,7 +51,7 @@ input[type="number"] {
   p {
     color: $primary;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 12px;
 
@@ -64,7 +64,7 @@ input[type="number"] {
   h3 {
     color: $charcoal;
     font-size: 22px;
-    font-weight: 600;
+    font-weight:800 !important;
     margin-bottom: 0;
     text-transform: capitalize;
     letter-spacing: 0.4px;
@@ -80,18 +80,18 @@ input[type="number"] {
 }
 
 .spcmy-60 {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   @include clearfix;
 }
 
 .spcmb-60 {
-  margin-bottom: 60px;
+  padding-bottom: 60px;
   @include clearfix;
 }
 
 .spcmt-60 {
-  margin-top: 60px;
+  padding-top: 60px;
   @include clearfix;
 }
 
@@ -179,8 +179,7 @@ input[type="number"] {
   }
 
   input:checked+.label+.radiocustom-text {
-    color: $primary;
-    font-weight: 700;
+    color: $primary; 
   }
 
   input:checked+.label:after {
@@ -198,7 +197,7 @@ input[type="number"] {
 
   .radiocustom-text {
     @include css3('transition', all 0.2s);
-    font-weight: 500;
+    font-weight: 800;
   }
 
   .hidden {
@@ -207,7 +206,7 @@ input[type="number"] {
 
   .label {
     position: relative;
-    top: -3px;
+    top: -2px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 16px;
@@ -421,7 +420,7 @@ input[type="number"] {
   // Coloured alternate styles
   .checkbox-material {
     .check {
-      color: $primaryoff;
+      color: #b3b3b3;
     }
 
     &:before {
@@ -648,7 +647,7 @@ input[type="number"] {
   padding: 70px 0;
   color: $davgray;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center;
   background-size: cover;
   background-color: #173153;
   position: relative;
@@ -690,7 +689,7 @@ input[type="number"] {
 
     li {
       color: $white;
-      font-weight: 500;
+      font-weight: 800;
       text-transform: none;
     }
 
@@ -718,8 +717,7 @@ input[type="number"] {
     }
 
     p {
-      color: $primary;
-      font-weight: 600;
+      color: $primary; 
       margin: 0;
     }
 
@@ -751,7 +749,7 @@ input[type="number"] {
     color: $white;
     font-size: 30px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 900;
     line-height: normal;
     margin-bottom: 20px;
 
@@ -969,6 +967,10 @@ input[type="number"] {
   @include css3('transform-origin', left center);
   overflow: hidden;
 
+  .offcanvas-header{
+    border-bottom: 1px solid #efefef;
+  }
+
   .offcanvas-footer {
     padding-top: 6px;
 
@@ -1024,7 +1026,7 @@ input[type="number"] {
 
 
   .offcanvas-body {
-    padding: 0 0 20px;
+    padding: 26px 0 20px;
 
     hr {
       border-top: 1px solid #c7c7c7;
@@ -1106,13 +1108,15 @@ input[type="number"] {
     overflow: hidden;
 
     li {
-      margin-bottom: 8px;
+      border-bottom: solid 1px #f1f1f1;
+      &:last-child{
+        border-bottom: 0;
+      }
     }
 
     a {
-      padding: 16px;
+      padding: 15px 14px;
       background-color: rgb(157 157 157 / 6%);
-      border-radius: 6px;
 
       svg {
         margin-right: 6px;
@@ -1156,3 +1160,179 @@ input[type="number"] {
       width: 30px;
   }
 }
+
+
+ .zindex-0{
+  z-index: 0;
+ }
+
+
+ .mv-chp{
+  margin-bottom: -0.5rem;
+  margin-right: -0.5rem;
+ }
+
+ .phonetypeStyle{
+
+  &.cnvfull{
+    .react-tel-input .country-list{
+      width: 390.5px;
+      left: 0;
+      margin-top: 3px;
+      @include css3('box-shadow', 0 20px 105px rgb(0 0 0 / 18%));
+      @include mq('max', 1199px) {
+        width: 330px;
+     }
+      @include mq('max', 991px) {
+        width: 301px;
+        margin-top: auto;
+        margin-bottom: 14px;
+        top: auto;
+        bottom: 100%;
+        @include css3('transform-origin', bottom left);
+        @include css3('box-shadow', 0 -20px 405px rgb(0 0 0 / 30%));
+
+     }
+      @include mq('max', 767px) {
+        width: 484px;
+     }
+      @include mq('max', 575px) {
+        width: 100%;
+     }
+    }
+  }
+
+  .react-tel-input {
+    font-family: $fontDefault;
+  
+    @include mq('max', 767px) {
+        margin-top: 4px;
+        margin-bottom: 12px;
+    }
+  
+    .flag-dropdown{
+        @include mq('max', 575px) {
+           position: static;
+        }
+    }
+  
+    .country-list {
+        color: $black;
+        @include css3('box-shadow', 0px 18px 50px 2px rgb(220 57 27 / 12%));
+        animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s;
+        border-radius: 5px;
+        animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+        -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1.25);
+        @include css3('animation-name', fadeInUpperxPhone);
+        @include css3('animation-fill-mode', both);
+        @include css3('transform-origin', top center);
+        padding: 4px;
+        font-size: 14px;
+        max-height: 300px;
+        margin-bottom: 0;
+        margin-top: 13px;
+        width: 536px;
+        left: -7px;
+  
+        @include mq('max', 1199px) {
+            width: 483px;
+        }
+  
+        @include mq('max', 991px) {
+            width: 530px;
+        }
+  
+        @include mq('max', 767px) {
+            width: 516px;
+            margin-top: 11px;
+        }
+        @include mq('max', 575px) {
+            width: 104%;
+            left: -2%; 
+        }
+  
+  
+        .country:hover {
+            background-color: #f8f9fa;
+            color: $black;
+        }
+  
+        .country.highlight {
+            background-color: $secondary;
+            color: $white;
+  
+            .dial-code {
+                color: transparentize($white, 0.4);
+            }
+  
+            .flag {
+                background-color: darken($secondary, 10%);
+                @include css3('box-shadow', 0px 2px 0 1px darken($secondary, 10%));
+            }
+        }
+  
+        .country-name {
+            font-weight: 500;
+            padding-left: 2px;
+        }
+  
+        .flag {
+            border-radius: 4px;
+  
+            @include mq('max', 575px) {
+             top: 10px;
+            }
+        }
+  
+        .country {
+            border-top: solid 1px #f7f7f7;
+            @include css3('transition', all 0.15s);
+            border-radius: 4px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            text-align: left;
+            @include mq('max', 575px) {
+                padding-top: 15px;
+                padding-bottom: 15px; 
+            }
+            &:first-child {
+                border-top: 0;
+            }
+        }
+    } 
+  
+    .selected-flag {
+        width: 66px;
+        @include mq('max', 575px) {
+            position: relative;
+            top: -23px; 
+        }
+    
+        .arrow {
+            color: $black;
+            @include bgPath('caret-flg.png');
+            width: 10px;
+            height: 10px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin: 0 4px;
+            @include css3('transition', all 0.3s cubic-bezier(0.5, 0, 0, 1.25));
+  
+            &,
+            &.up {
+                border: none !important;
+            }
+  
+            &.up {
+                @include css3('transform', rotate(180deg));
+                margin-top: -5px;
+            }
+        }
+    }
+  }
+ }
+
+ .bldextra{
+  font-weight: 900;
+ }

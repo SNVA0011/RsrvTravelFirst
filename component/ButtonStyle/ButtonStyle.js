@@ -8,8 +8,7 @@ const ButtonStyle = ({ content, outline, fullwidth, onClick, className = null })
         <Button   
             variant={`${outline ? 'outline-' : ''}danger`} onClick={onClick}
             className={`bt ${outline ? styles.OutlineClr : styles.FillClr} ${fullwidth ? 'w-100' : ''} ${styles.FlightOfdealBtn} ${className}`}> 
-            {content}
-
+            {content} 
         </Button>
     )
 }

@@ -11,10 +11,14 @@ import LatestBlogs from '../component/LatestBlogs'
 import DownloadApp from '../component/DownloadApp'
 import ExploreTravel from '../component/ExploreTravel'
 import Image from 'next/image'
-import { Hostname } from '../utils/static'
+import { Hostname, siteid } from '../utils/static'
+import { getApiData } from './api/GetApiResp'
 
 
-const index = () => {
+const index = ({ allblog }) => {
+
+  const blogFouritem = allblog?.slice(0, 4).filter((item) => item.status === "Active") || [];
+
   return (
     <>
       <PageHead
@@ -48,7 +52,7 @@ const index = () => {
 
       <TopAirlineDeal
         Title="Top Airline Deals"
-        ViewALLBtn={'/airlines'}  
+        ViewALLBtn={'/airlines'}
         Routes={[
           { 'thumbnail': 'airline-blcimg-1.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'BOM', 'price': '$ 3574' }, { 'thumbnail': 'airline-blcimg-2.jpg', 'from': 'DEL', 'date': '07 Dec 2023', 'to': 'NWK', 'price': '$ 9825' }, { 'thumbnail': 'airline-blcimg-3.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'BOM', 'price': '$ 3574' }, { 'thumbnail': 'airline-blcimg-4.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'NWK', 'price': '$ 9825' }, { 'thumbnail': 'airline-blcimg-1.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'BOM', 'price': '$ 3574' }, { 'thumbnail': 'airline-blcimg-3.jpg', 'from': 'DEL', 'date': '02 Dec 2023', 'to': 'NWK', 'price': '$ 9825' }
         ]}
@@ -64,14 +68,14 @@ const index = () => {
 
 
       <PopularRoutes
-        Title="Popular Domestic Route" 
+        Title="Popular Domestic Route"
         Routes={[
           { 'thumbnail': 'popular-rtdom-1.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'BOM', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-2.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'IXJ', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-3.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'BOM', 'to': 'PAT', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-4.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'UDR', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-5.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'IXJ', 'to': 'IXD', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtdom-6.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'UDR', 'to': 'BHJ', 'class': 'Economy', 'price': '$ 3574', },
         ]}
       />
 
-       <PopularRoutes
-        Title="Popular International Route" 
+      <PopularRoutes
+        Title="Popular International Route"
         Routes={[
           { 'thumbnail': 'popular-rtint-1.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'LCY', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-2.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'NYC', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-3.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'BOM', 'to': 'PAR', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-4.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'DEL', 'to': 'MAD', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-5.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'IXJ', 'to': 'SIN', 'class': 'Economy', 'price': '$ 3574', }, { 'thumbnail': 'popular-rtint-6.webp', 'date': '02 Dec 2023 - 06 Dec 2023', 'from': 'UDR', 'to': 'GPA', 'class': 'Economy', 'price': '$ 3574', },
         ]}
@@ -90,10 +94,9 @@ const index = () => {
 
       <LatestBlogs
         Title="Blogs"
-        ViewALLBtn={'/blog'} 
-        BlogsItems={[
-          { 'thumbnail': 'blog-src-1.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-2.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-3.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }, { 'thumbnail': 'blog-src-4.webp', 'date': '12 Dec 2023', 'title': 'How can I download my flight ticket from the PNR number?', 'url': 'test' }
-        ]}
+        ViewALLBtn={'/blog'}
+        BlogsItems={blogFouritem}
+        error={`Sorry ! No blogs items found`}
       />
 
       <PartnerBrands BrandsImage={[
@@ -106,3 +109,45 @@ const index = () => {
 }
 
 export default index
+
+
+
+
+export const getStaticProps = async ({ params }) => {
+  // All blogs
+  const GetBlogData = await getApiData(`https://cms.travomint.com/travoles-content/showblogdata?authcode=Trav3103s987876`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      id: "",
+      title: "",
+      titleUrl: "",
+      content: "",
+      description: "",
+      keywords: "",
+      posttime: "",
+      status: "",
+      heading: "",
+      img_url: "",
+      siteId: siteid,
+      categoryName: "",
+      blogdes2: "",
+      blogTagsName2: "",
+      extarTag: "",
+      tfnHeader: "",
+      tfnFooter1: "",
+      tfnFooter2: "",
+      tfnFooter3: "",
+      tfnPopup: "",
+    }),
+    redirect: 'follow'
+  });
+
+
+  return {
+    props: {
+      allblog: GetBlogData.response || [],
+    },
+    revalidate: 60,
+  };
+};

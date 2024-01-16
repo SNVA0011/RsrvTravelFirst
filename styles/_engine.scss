@@ -4,15 +4,15 @@
 
     &.spcmy-60 {
         @include mq('max', 991px) {
-            margin-top: 30px;
+            padding-top: 30px;
         }
 
         @include mq('max', 767px) {
-            margin-top: 20px;
+            padding-top: 20px;
         }
 
         @include mq('max', 575px) {
-            margin-top: 0;
+            padding-top: 0;
         }
     }
 
@@ -335,8 +335,8 @@
             font-size: 15px;
         }
 
-        @include mq('max', 767px) {
-            font-size: 14px;
+        @include mq('max', 767px) { 
+            margin-right: 34px;
         }
 
         &:last-child {
@@ -349,7 +349,7 @@
 
         .label {
             border-color: $white;
-            margin-right: 12px;
+            margin-right: 10px;
 
             &::after {
                 background: $white;
@@ -373,50 +373,56 @@
         padding-bottom: 10px;
     }
 
-    .btn.btn-site { 
+    .btn.btn-site {
         padding: 4px;
-        letter-spacing: 0.4px;  
+        letter-spacing: 0.4px;
+
         @include mq('min', 1200px) {
             width: 50px;
             height: 50px;
-            border-radius: 60px !important;  
+            border-radius: 60px !important;
         }
+
         @include mq('max', 1199px) {
             font-size: 15px;
             width: 100%;
             height: 60px;
         }
-        &:hover{
-            .iconify{
+
+        &:hover {
+            .iconify {
                 @include mq('min', 1200px) {
-                    @include css3(transform, scale(0.8)); 
-                }
-                @include mq('max', 1199px) {
-                    @include css3(transform, scale(1.2)); 
+                    @include css3(transform, scale(0.8));
                 }
 
-             
+                @include mq('max', 1199px) {
+                    @include css3(transform, scale(1.2));
+                }
+
+
             }
         }
-       
+
         @include mq('max', 767px) {
             width: 100%;
-            height: 50px;  
+            height: 50px;
             padding-left: 10px;
             padding-right: 10px;
         }
-        
-        .iconify { 
-            @include css3('transition', all 0.3s); 
+
+        .iconify {
+            @include css3('transition', all 0.3s);
             font-size: 30px;
+
             @include mq('max', 1199px) {
                 font-size: 22px;
                 margin-top: -8px;
                 position: relative;
                 top: 4px;
             }
+
             @include mq('max', 991px) {
-                font-size: 18px; 
+                font-size: 19px;
             }
         }
     }
@@ -516,6 +522,7 @@
     border-radius: 20px;
 }
 
+
 .wroweng-wrap {
     background: #2C3134;
     padding: 15px 8px;
@@ -525,16 +532,24 @@
     @include mq('max', 1199px) {
         padding: 15px;
     }
+
+    @include min-max(576px, 767px) {
+        padding: 25px;
+        margin-top: 10px;
+    }
+
     @include mq('max', 425px) {
         padding: 15px 10px;
     }
 }
 
+
 .engineexp-fields {
     position: relative;
     @include css3('box-shadow', 0px 0px 30px 2px rgb(220 57 27 / 22%));
-    @include mq('max', 767px) { 
-        @include css3('box-shadow',  0 20px 50px -10px rgba(0, 0, 0, 0.40));
+
+    @include mq('max', 767px) {
+        @include css3('box-shadow', 0 20px 50px -10px rgba(0, 0, 0, 0.40));
     }
 
     @include mq('min', 992px) {
@@ -549,31 +564,37 @@
         }
     }
 
-    
+
     .travmenu.row {
-        margin: 0 -6px; 
+        margin: 0 -6px;
+
         .col-6 {
             padding: 0 6px;
         }
     }
 
     .row {
-        margin: 0 0; 
+        margin: 0 0;
+
         @include mq('max', 1199px) {
             margin: 0 -10px;
         }
-         @include mq('max', 991px) {
+
+        @include mq('max', 991px) {
             margin: 0 -6px;
         }
     }
 
-    .col-12, .engineexp-btn.searchmodf {
+    .col-12,
+    .engineexp-btn.searchmodf {
         position: relative;
-        padding: 0 0; 
+        padding: 0 0;
+
         @include mq('max', 1199px) {
             padding: 0 10px;
         }
-          @include mq('max', 991px) {
+
+        @include mq('max', 991px) {
             padding: 0 6px;
         }
     }
@@ -595,7 +616,7 @@
 img.swap-desg {
     position: absolute;
     right: -26px;
-    top: 8px;
+    top: 10px;
     width: 40px;
     height: 40px;
     z-index: 7;
@@ -642,9 +663,15 @@ img.swap-desg {
 
 }
 
-[aria-expanded="true"] .engineexp-text.input-group,
+
 .engineexp-text.input-group.focus,
 .travellers-class .show.dropdown {
+    position: relative;
+    z-index: 13;
+    border-radius: 10px;
+}
+
+[aria-expanded="true"] .engineexp-text.input-group {
     position: relative;
     z-index: 11;
     border-radius: 10px;
@@ -670,6 +697,7 @@ img.swap-desg {
             border-left: solid 12px transparent;
         }
     }
+
     @include mq('min', 1200px) {
         &.to {
             border-left: solid 24px transparent;
@@ -759,11 +787,13 @@ img.swap-desg {
 
 
     }
-    .input-group-text{
+
+    .input-group-text {
         @include mq('max', 1199px) {
             width: 40px;
         }
     }
+
     .input-group-text,
     .form-control {
         background: transparent;
@@ -853,7 +883,7 @@ img.swap-desg {
     .dropdown-menu.show,
     .dropdown-menu {
         margin-top: 5px;
-        @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58)); 
+        @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
         overflow: hidden;
         @include css3('border-radius', 15px);
         border: none;
@@ -861,7 +891,7 @@ img.swap-desg {
         left: auto !important;
         right: 0 !important;
 
-         
+
 
         &::after {
             display: none;
@@ -1040,7 +1070,7 @@ img.swap-desg {
     top: -8px !important;
     left: -62px !important;
     text-align: center;
-    @include css3('border-radius', 15px);
+    @include css3('border-radius', 10px);
     @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
     font-size: 14px;
     padding-top: 0;
@@ -1050,7 +1080,8 @@ img.swap-desg {
         top: -93px !important;
         right: auto !important;
         left: -12px !important;
-    }  
+        @include css3('border-radius', 6px);
+    }
 
     @include mq('max', 767px) {
         height: 100%;
@@ -1344,7 +1375,7 @@ img.swap-desg {
 
 .MuiPaper-root.both-fielderr,
 .both-fielderr {
-    position: absolute; 
+    position: absolute;
     left: 0;
     width: 100%;
     z-index: 2;
@@ -1365,16 +1396,20 @@ img.swap-desg {
     @include css3('animation-fill-mode', both);
     @include css3('transform-origin', top left);
     background-color: $primary;
-    &.MuiPaper-root::before{
+
+    &.MuiPaper-root::before {
         border-bottom-color: $primary;
     }
+
     @include mq('min', 1200px) {
         left: 1.5%;
         width: 97%;
     }
+
     @include mq('max', 1199px) {
         position: relative;
     }
+
     &::before {
         bottom: 100%;
         left: auto;
@@ -1420,7 +1455,7 @@ img.swap-desg {
 
     .form-control.returnby-dt,
     &.menutrv .form-control.returnby-dt {
-        opacity: 0.35;
+        opacity: 0.5;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.4px;
@@ -1483,7 +1518,7 @@ img.swap-desg {
     width: 452px;
     max-height: 400px;
     overflow: auto;
-    @include css3('border-radius', 15px);
+    @include css3('border-radius', 10px);
 
     @include mq('max', 991px) {
         width: 355px;
@@ -1493,6 +1528,9 @@ img.swap-desg {
         width: 100%;
         z-index: 12;
         @include css3('border-radius', 6px);
+    }
+
+    @include mq('max', 575px) {
         width: 104%;
         left: -2% !important;
     }
@@ -1636,18 +1674,21 @@ img.swap-desg {
     color: #777777
 }
 
-.MobRadioCenter{
+.MobRadioCenter {
     @include mq('max', 767px) {
-      text-align: center
+        text-align: center
     }
 }
 
 .engineexp-btn.searchmodf {
     @include columnGrid(74px);
+    text-align: center;
+
     @include mq('max', 1199px) {
         @include columnGrid(18%);
     }
-        @include mq('max', 767px) {
+
+    @include mq('max', 767px) {
         @include columnGrid(100%);
     }
 }
@@ -1655,18 +1696,19 @@ img.swap-desg {
 .col.trvclassCol,
 .trvclassCol {
     @include columnGrid(235px);
+
     @include mq('max', 1199px) {
         @include columnGrid(32%);
     }
-      @include mq('max', 767px) {
+
+    @include mq('max', 767px) {
         @include columnGrid(100%);
     }
 }
 
 .col.depretEnCol,
-.depretEnCol { 
+.depretEnCol {
     @include mq('min', 1200px) {
         @include columnGrid(322px);
     }
 }
-

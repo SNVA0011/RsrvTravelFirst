@@ -1,7 +1,7 @@
 // flightlisting
 .flgmodf-engine {
    @extend %full-width;
-   background-color: $secondary;
+   background-color: #2C3134;
    padding: 50px 0;
 
    @include mq('max', 1199px) {
@@ -12,7 +12,7 @@
       padding: 42px 0 50px;
       @include css3('border-radius', 0 0 15px 15px);
    }
-
+ 
    @include mqh('max', 640px) {
       @include css3('border-radius', 0);
    }
@@ -41,22 +41,74 @@
       }
    }
 
-   @include mq('max', 991px) {
-      img.swap-desg {
-         right: 7px;
-         top: 36px;
-         width: 65px;
-         height: 65px;
-      }
+   
 
-      .swap-desg {
-         @include css3('transform', rotate(90deg));
+   .engineexp-radio.light{
+      @include mq('max', 767px) {
+       text-align: center;
+      }
+   }
+
+
+
+   .swap-desg {
+      right: -22px;
+
+      @include mq("max", 991px) {
+         @include css3("transform", rotate(90deg));
+         right: 22px;
+         top: 47px;
 
          &.active {
-            @include css3('transform', rotate(-90deg));
+            @include css3("transform", rotate(-90deg));
          }
       }
+   }
 
+
+
+   .engineexp-text {
+      &.input-group {
+         background: rgb(0 0 0 / 35%);
+         @include css3('backdrop-filter', blur(4px));
+      }
+
+      @include mq('min', 768px) {
+         &.to {
+            border-left: solid 12px transparent;
+         }
+      }
+   }
+
+   .row {
+      margin: 0 -10px;
+
+      @include mq('max', 991px) {
+         margin: 0 -6px;
+      }
+   }
+
+   .col-12,
+   .engineexp-btn.searchmodf {
+      padding: 0 10px;
+
+      @include mq('max', 991px) {
+         padding: 0 6px;
+      }
+   }
+
+
+   .engineexp-fields {
+      @include css3('box-shadow', none);
+
+      &::after {
+         display: none;
+      }
+
+      .wroweng-mb-row.row{
+         margin-bottom: 0;
+         margin-top: 0;
+      }
    }
 
 
@@ -96,15 +148,16 @@
    .container {
       position: relative;
       z-index: 2;
+      @include mq('max', 767px) {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
    }
 
    .col-12.engineexp-btn {
       @include mq('min', 768px) {
-         text-align: right;
-         -webkit-box-flex: 0;
-         -ms-flex: 0 0 20.5%;
-         flex: 0 0 20.5%;
-         max-width: 20.5%;
+         text-align: center;
+         @include columnGrid(74px);
       }
 
       &:last-child {
@@ -137,23 +190,10 @@
    }
 
    .engineexp-btn {
-
       .btn.btn-site {
          @include min-max(768px, 1199px) {
             width: 210px;
             max-width: none;
-         }
-
-         .iconify {
-            font-size: 155%;
-            margin-top: -8px;
-            position: relative;
-            top: 3px;
-            margin-left: 1px;
-
-            @include mq('max', 768px) {
-               margin-left: 3px;
-            }
          }
       }
 
@@ -164,10 +204,7 @@
                max-width: none;
             }
 
-            @include min-max(992px, 1199px) {
-               height: 50px;
-               margin-top: 4px;
-            }
+
 
             @include mq("max", 991px) {
                height: 50px;
@@ -278,7 +315,7 @@
    h4 {
       color: $charcoal;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 0;
 
       @include mq("max", 575px) {
@@ -321,8 +358,7 @@
    }
 
    .checkbox-custom-site .checkbox {
-      margin-bottom: 12px;
-
+      margin-bottom: 16px;
       &:last-child {
          margin-bottom: 0;
       }
@@ -740,12 +776,13 @@
 
    .btn.btn-site {
       width: auto;
-      min-width: 137px; 
+      min-width: 137px;
+
       @include mq('max', 767px) {
          font-size: 12px;
          min-width: 120px;
          height: 36px;
-         min-width: 127px; 
+         min-width: 127px;
       }
    }
 }
@@ -852,7 +889,8 @@
       line-height: 22px;
       padding-left: 0;
       padding-right: 0;
-      @include css3('box-shadow', none); 
+      @include css3('box-shadow', none);
+
       @include mq('max', 575px) {
          font-size: 13px;
       }
@@ -873,10 +911,22 @@
          display: none;
       }
 
-      img {
-         width: 15px;
-         height: 15px;
+      
+    img {
+      width: 15px;
+      height: 15px;
+      margin-left: 6px;
+      @extend %arrowimgAnimated;
+    }
+
+      .sortBy-ar {
+         width: 13px;
+         height: 13px;
          margin-left: 6px;
+         display: inline-block;
+         vertical-align: middle;
+         position: relative;
+         top: -3px;
          @extend %arrowimgAnimated;
       }
 
@@ -1175,7 +1225,7 @@
       strong {
          font-size: 20px;
          font-style: normal;
-         font-weight: 600;
+         font-weight: 800;
          display: inline-block;
       }
    }
@@ -1459,7 +1509,7 @@ hr.hr-airline {
 
 .flight-loaderr {
    text-align: center;
-   padding: 80px 0;
+   padding: 120px 0;
    letter-spacing: 0.2px;
    overflow: hidden;
    line-height: 1.4;
@@ -1479,17 +1529,23 @@ hr.hr-airline {
    -webkit-box-pack: start;
    -ms-flex-pack: start;
    justify-content: flex-start;
-   -webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;
-   min-height: 44vh; 
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   min-height: 44vh;
+
    @include mq('max', 1199px) {
       padding: 60px 0;
-      min-height: 62vh; 
+      min-height: 62vh;
    }
+
    @include mq('max', 767px) {
       min-height: 65vh;
    }
+
    .container {
-      max-width: 500px;
+      max-width: 450px;
       margin: auto;
 
       @include mq('max', 1199px) {
@@ -1517,23 +1573,16 @@ hr.hr-airline {
       margin-left: auto;
       margin-right: auto;
 
-      @include mq('max', 767px) {
-         width: 180px;
-      }
-
-      @include mq('max', 575px) {
-         width: 160px;
-      }
-
       @include mq('max', 325px) {
-         width: 140px;
+         width: 180px;
       }
    }
 
    h4 {
       font-weight: 800;
       font-size: 20px;
-      margin-bottom: 8px; 
+      margin-bottom: 8px;
+
       @include mq('max', 991px) {
          font-size: 18px;
       }
@@ -1548,14 +1597,17 @@ hr.hr-airline {
       color: #777777;
       text-transform: capitalize;
       line-height: 2;
-      border-top: solid 1px #e7e7e7;
+      border-top: solid 1px #f7f7f7;
       padding-top: 20px;
-      &.fnt-12{
+      margin-bottom: 24px;
+
+      &.fnt-12 {
          font-size: 12px;
          max-width: 380px;
          margin-left: auto;
-         margin-right: auto; 
-      } 
+         margin-right: auto;
+      }
+
       @include mq('max', 991px) {
          font-size: 12px;
       }
@@ -1563,7 +1615,7 @@ hr.hr-airline {
 
    .swap,
    .thin {
-      color: #ff6e00;
+      color: $primary;
       font-size: 140%;
       margin: 0 8px;
       position: relative;
@@ -1575,14 +1627,15 @@ hr.hr-airline {
    }
 
    h5 {
-      color: #ff6e00;
+      color: $primary;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 23px;
       margin-top: 30px;
       line-height: 1.6;
-      &.blue{
+
+      &.blue {
          color: #0076ed;
       }
 
@@ -1599,11 +1652,6 @@ hr.hr-airline {
       &.ver-2 {
          font-size: 14px;
       }
-   }
-
-   .loader-bgb {
-      overflow: hidden;
-      height: 53px;
    }
 
    .noflight {
@@ -1967,11 +2015,12 @@ hr.hr-airline.int {
    }
 
    .flg-airline-card {
-      cursor: pointer; 
+      cursor: pointer;
       padding: 21px;
       margin-bottom: 14px;
       overflow: visible;
       border: solid 1px transparent;
+
       @include mq('max', 991px) {
          padding: 16px;
       }
@@ -2062,11 +2111,11 @@ hr.hr-airline.int {
    bottom: 10px;
    width: 895px;
    z-index: 12;
-   background-color: $secondary;
+   background-color: #2C3134;
    border-radius: 10px;
    color: $white;
    margin-left: -5px;
-   outline: 1px dashed #426997;
+   outline: 1px dashed #525659;
    outline-offset: -6px;
    letter-spacing: 0.4px;
 
@@ -2198,7 +2247,7 @@ hr.hr-airline.int {
 
       strong {
          font-weight: inherit;
-         color: #b6d3f7;
+         color: lighten( #2c3134, 52%);
 
          @include mq("max", 991px) {
             display: block;
@@ -2308,7 +2357,8 @@ hr.hr-airline.int {
 
    .fare-for {
       font-size: 9px;
-      color: rgb(255 255 255 / 70%); 
+      color: rgb(255 255 255 / 70%);
+
       @include mq("max", 767px) {
          position: relative;
          top: -3px;
@@ -2338,7 +2388,7 @@ hr.hr-airline.int {
       text-decoration: underline;
       cursor: pointer;
       color: $primary;
-      font-weight: 500;
+      font-weight: 800;
 
       @include mq('max', 767px) {
          font-size: 11px;
@@ -2359,7 +2409,7 @@ hr.hr-airline.int {
          left: 8px;
          top: -26px;
          z-index: 3;
-         background: $secondary;
+         background: #2c3134;
          padding: 5px 11px 5px 15px;
          border-radius: 10px 10px 0 10px;
 
@@ -2390,7 +2440,7 @@ hr.hr-airline.int {
          right: -8px;
          top: -27px;
          z-index: 3;
-         background: #2b4462;
+         background: $secondary;
          padding: 8px 11px 5px 15px;
          border-radius: 10px 10px 0 0;
 
@@ -2471,7 +2521,7 @@ hr.hr-airline.int {
    font-weight: 600;
    display: inline-block;
    padding: 8px 10px 8px 15px;
-   background: #0f488d;
+   background: #2C3134;
    color: #fff;
    position: relative;
    z-index: 2;
@@ -2480,6 +2530,7 @@ hr.hr-airline.int {
    @include css3('transform', skewX(-20deg));
    border-radius: 10px 4px 10px 4px;
    top: 3px;
+
    @include mq('max', 767px) {
       font-size: 12px;
       margin-left: -6px;
@@ -2497,11 +2548,12 @@ hr.hr-airline.int {
       top: 100%;
       width: 0;
       height: 0;
-      border-color: #0f488d #0f488d transparent transparent;
+      border-color: $secondary $secondary transparent transparent;
       border-style: solid;
       border-width: 5px;
       z-index: 0;
       margin-top: -1px;
+
       @include mq('max', 767px) {
          border-width: 3px;
          margin-top: -1px;
@@ -2513,6 +2565,7 @@ hr.hr-airline.int {
    &::after {
       @include css3('transform', skewX(20deg));
       display: inline-block;
+
       @include mq('max', 767px) {
          @include css3('transform', skewX(10deg));
       }
@@ -2601,6 +2654,7 @@ hr.hr-airline.int {
       background-repeat: no-repeat;
       background-position: left -2px top 4px, right 0 top 4px;
       z-index: 2;
+      background-size: auto, 10px;
    }
 }
 
@@ -2711,7 +2765,8 @@ hr.hr-airline.int {
          width: 448px;
          max-width: 96%;
          margin-left: auto;
-         margin-right: auto; 
+         margin-right: auto;
+
          &,
          .flgmodf-filter {
             background-color: $white;
@@ -2724,18 +2779,20 @@ hr.hr-airline.int {
       }
    }
 
-   .offcanvas-title { 
+   .offcanvas-title {
       @include mq("max", 1199px) {
          font-size: 18px;
          font-weight: 600;
          text-align: center;
-     } 
-     @include mq("max", 767px) {
+      }
+
+      @include mq("max", 767px) {
          font-size: 16px;
-     }
-     @include mq("max", 575px) {
+      }
+
+      @include mq("max", 575px) {
          font-size: 15px;
-     }
+      }
 
    }
 
@@ -2763,6 +2820,15 @@ hr.hr-airline.int {
       font-size: 15px;
       border-radius: 6px;
       background-color: #fff7f2;
+      min-width: 110px;
+      -webkit-animation-name: flipInXlaggue;
+      animation-name: flipInXlaggue;
+      -webkit-animation-duration: 800ms;
+      animation-duration: 800ms;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      transform-origin: top center;
+      -webkit-transform-origin: top center;
 
       @include mq("max", 575px) {
          font-size: 14px;
@@ -2786,7 +2852,6 @@ hr.hr-airline.int {
       border-top: solid 1px #e6edf9;
 
       .btn.btn-site {
-         width: 143px;
          font-size: 15px;
          font-weight: 600;
          letter-spacing: 0.4px;
@@ -2798,7 +2863,7 @@ hr.hr-airline.int {
    }
 }
 
- 
+
 .cil-fil {
    font-size: 120%;
 }
@@ -2826,24 +2891,25 @@ hr.hr-airline.int {
       right: auto;
       margin-left: 20px;
       bottom: 20px;
+      background : $primary;
       background: -webkit-gradient(linear,
             left top,
             right top,
-            from(rgba(255, 102, 0, 1)),
-            to(rgba(234, 58, 0, 1)));
+            from(darken($primary, 10%)),
+            to($primary));
       background: -webkit-linear-gradient(left,
-            rgba(255, 102, 0, 1) 0%,
-            rgba(234, 58, 0, 1) 100%);
+            darken($primary, 10%) 0%,
+            $primary 100%);
       background: -moz-linear-gradient(left,
-            rgba(255, 102, 0, 1) 0%,
-            rgba(234, 58, 0, 1) 100%);
+            darken($primary, 10%) 0%,
+            $primary 100%);
       background: -o-linear-gradient(left,
-            rgba(255, 102, 0, 1) 0%,
-            rgba(234, 58, 0, 1) 100%);
+            darken($primary, 10%) 0%,
+            $primary 100%);
       background: linear-gradient(to right,
-            rgba(255, 102, 0, 1) 0%,
-            rgba(234, 58, 0, 1) 100%);
-      @include css3("box-shadow", 0px 5px 12px rgb(236 62 0 / 37%));
+            darken($primary, 10%) 0%,
+            $primary 100%);
+      @include css3("box-shadow", 0px 5px 12px rgb(220 57 27 / 38%));
    }
 
    @include mq("max", 425px) {
@@ -2936,18 +3002,18 @@ hr.hr-airline.int {
 .flightlist-wrapper.h-fullvh {
    .spcmy-60.container {
       @include mq("max", 1199px) {
-         margin-top: 30px;
-         margin-bottom: 30px;
+         padding-top: 30px;
+         padding-bottom: 30px;
       }
 
       @include mq("max", 575px) {
-         margin-top: 25px;
-         margin-bottom: 25px;
+         padding-top: 25px;
+         padding-bottom: 25px;
       }
 
       @include mq("max", 475px) {
-         margin-top: 20px;
-         margin-bottom: 20px;
+         padding-top: 20px;
+         padding-bottom: 20px;
       }
    }
 }
@@ -3074,10 +3140,11 @@ hr.hr-airline.int {
    }
 
    .fbkconf-fromto .content.col {
-      min-width: 116px; 
+      min-width: 116px;
+
       @include mq("max", 575px) {
          margin-top: 11px;
-      } 
+      }
    }
 
    .flight-luggage-info {
@@ -3485,7 +3552,7 @@ img.ret-intplane {
 
    .flight-luggage-info .tab-flginfo .nav-tabs.domint-tab,
    .tab-flginfo .nav-tabs.domint-tab {
-      background: #f7f7f7;
+      background: #f6faff;
       padding: 6px 6px 0;
       border-radius: 20px;
 
@@ -3560,20 +3627,26 @@ img.ret-intplane {
 
       p {
          display: inline-block;
-         border-right: solid 1px #e1e1e1;
-         padding-right: 14px;
-         margin-right: 14px;
-         @include css3('transform', skewX(-12deg));
          color: #8f8f8f;
          font-weight: 400;
          font-size: 12px;
+         @include mq("max", 767px) {
+            border-right: solid 1px #e1e1e1;
+            padding-right: 14px;
+            margin-right: 14px;
+            @include css3('transform', skewX(-12deg));
+         }
+
+
          @include mq("max", 575px) {
             font-size: 11px;
          }
 
          span {
             display: block;
+            @include mq("max", 767px) {
             @include css3('transform', skewX(12deg));
+            }
          }
       }
    }
@@ -3689,10 +3762,11 @@ img.ret-intplane {
          margin-top: 0;
          background: #ebf4ff;
          margin-left: 0;
-         margin-right: 0; 
-      @include mq('min', 1200px) { 
-         padding: 7px 7px 8px
-      }
+         margin-right: 0;
+
+         @include mq('min', 1200px) {
+            padding: 7px 7px 8px
+         }
       }
    }
 
@@ -3702,6 +3776,7 @@ img.ret-intplane {
    .rtrip-departure {
       padding: 0 12px 12px;
    }
+
 
 
    .modal-title {
@@ -3911,4 +3986,96 @@ img.ret-intplane {
          font-size: 13px;
       }
    }
+}
+
+
+
+
+.sessionBody {
+   padding: 18px 30px 46px !important;
+
+   @include mq("max", 600px) {
+      padding:  4px 15px 29px !important
+   }
+
+   & h4 {
+      color: $primary;
+      font-size: 20px;
+      font-weight: 800;
+      max-width: 210px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      border-bottom: solid 1px #ededed;
+      padding-bottom: 19px;
+
+      @include mq("max", 600px) {
+         font-size: 18px;
+      }
+   }
+
+   & h6 {
+      color: #8f8f8f;
+      font-size: 15px;
+      max-width: 390px;
+      margin: 0 auto;
+      line-height: 1.6;
+
+      @include mq("max", 600px) {
+         font-size: 14px;
+      }
+      b{
+         font-weight: 900;
+         font-size: 105%;
+         margin: 0 2px; 
+      }
+   }
+
+   & .sessionBtnWrapper {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+      @include mq("max", 767px) {
+         gap: 20px;
+      }
+   
+      @include mq("max", 575px) {
+         gap: 16px;
+      }
+      button {
+         padding: 10px 20px;
+         color: #fff;
+         background: $primary;
+         border: 1px solid $primary;
+         border-radius: 8px;
+         cursor: pointer;
+         min-width: 120px;
+
+         @include mq("max", 600px) {
+            min-width: auto;
+            padding: 8px 16px;
+            flex-grow: 1;
+         }
+
+         &:first-child {
+            background: transparent;
+            color: $primary;
+         }
+      }
+   }
+}
+ 
+
+.rtrip-departure{
+   .row{
+      margin-bottom: 22px;
+      &:last-child{
+         margin-bottom: 0;
+      }
+   }
+}
+
+.bncont{
+   min-width: 143px
 }

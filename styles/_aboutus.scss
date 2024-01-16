@@ -78,6 +78,11 @@
     border-radius: 6px;
     border: 1px solid #ececec;
     padding: 10px 19px;
+    &:hover{
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+    }
 
     @include mq('max', 1299px) {
         font-size: 15px;
@@ -271,16 +276,16 @@
 
     .spcmy-60{
            @include mq('max', 767px) {
-        margin-top: 0;
-        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
                 }
     }
 
     .col-6 {
-        border-right: solid 1px #3a5476; 
+        border-right: solid 1px darken($primary, 14%); 
         @include mq('max', 767px) {
-            border-right: solid 1px #344b69; 
-            border-bottom: solid 1px #344b69; 
+            border-right: solid 1px darken($primary, 19%); 
+            border-bottom: solid 1px darken($primary, 19%); 
             padding-top: 40px;
             padding-bottom: 40px;
             &:nth-child(2){
@@ -334,7 +339,7 @@
 
         &,
         hr {
-            border-color: $primaryoff
+            border-color: #ffefed
         }
     }
 

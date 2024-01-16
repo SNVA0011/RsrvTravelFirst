@@ -5,7 +5,7 @@ import PageHead from "../../component/common/PageHead";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { GET_SESSION_STROAGE } from "../../utils/clientStorage";
-import { flightSearchApi } from "../../ApiCall/FlightSearchApi";
+import { flightSearchApi } from "../api/FlightSearchApi";
 import Result from "../../component/flightlist/Result";
 import RoundResult from "../../component/flightlist/RoundResult";
 import { createurlObj } from "../../utils/flightSearch";
@@ -102,7 +102,7 @@ const Listing = () => {
                     )}
 
                     <SessionTimeOut
-                      imag={"/images/hourglass.png"}
+                      imag={"/images/hourglass.gif"}
                       searchfrom={search.originAirport}
                       searchTo={search.destinationAirport}
                       time={1200000} //millisecond

@@ -11,4 +11,4 @@ export const getApiData = async (url, requestOptions = {
         console.log("error", error.message);
         return [];
     }
-};
+}
