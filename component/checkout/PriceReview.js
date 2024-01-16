@@ -3,6 +3,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 import { Icon } from "@iconify/react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { mostused } from "../../utils/staticCurrency";
+import AnimatebyNumber from "../aboutus/AnimatebyNumber";
 
 const PriceReview = ({
   type,
@@ -49,9 +50,23 @@ const PriceReview = ({
             ) : (
               <Icon icon={currencyLogo} className="lsc-currency ms-0" />
             )}
-            {Object.keys(latestfare).length > 0
-              ? Math.round(latestfare.BookingFlightDetails[0].fare.grandTotal)
-              : Math.round(singleFlight.currentFlight.fare.grandTotal)}
+
+            <span className="d-inline-block">
+              <AnimatebyNumber
+                number={Object.keys(latestfare).length > 0
+                  ? Math.round(latestfare.BookingFlightDetails[0].fare.grandTotal)
+                  : Math.round(singleFlight.currentFlight.fare.grandTotal)}
+                configs={[
+                  { mass: 1, tension: 220, friction: 100 },
+                  { mass: 1, tension: 180, friction: 130 },
+                  { mass: 1, tension: 280, friction: 90 },
+                  { mass: 1, tension: 180, friction: 135 },
+                  { mass: 1, tension: 260, friction: 100 },
+                  { mass: 1, tension: 210, friction: 180 },
+                ]}
+              />
+            </span>
+
             <Icon icon={`ph:caret-${modalview ? "up" : "down"}-bold`} />
           </div>
           <div className="sub-title">View Details</div>
@@ -61,9 +76,8 @@ const PriceReview = ({
       {size.width < 992 && type === "popup" && (
         <>
           <div
-            className={`fade offcanvas-backdrop ${
-              modifysort ? "show" : "d-none"
-            } fadeanim-offcanvas`}
+            className={`fade offcanvas-backdrop ${modifysort ? "show" : "d-none"
+              } fadeanim-offcanvas`}
             onClick={() => {
               setmodifysort(!modifysort);
             }}
@@ -148,12 +162,12 @@ const PriceReview = ({
                           )}
                           {Object.keys(latestfare).length > 0
                             ? Math.round(
-                                latestfare.BookingFlightDetails[0].fare
-                                  .adultFare
-                              ) * singleFlight.adultsCount
+                              latestfare.BookingFlightDetails[0].fare
+                                .adultFare
+                            ) * singleFlight.adultsCount
                             : Math.round(
-                                singleFlight.currentFlight.fare.adultFare
-                              ) * singleFlight.adultsCount}
+                              singleFlight.currentFlight.fare.adultFare
+                            ) * singleFlight.adultsCount}
                         </td>
                       </tr>
                       {singleFlight.childrenCount > 0 && (
@@ -166,12 +180,12 @@ const PriceReview = ({
                             />{" "}
                             {Object.keys(latestfare).length > 0
                               ? Math.round(
-                                  latestfare.BookingFlightDetails[0].fare
-                                    .childFare
-                                ) * singleFlight.childrenCount
+                                latestfare.BookingFlightDetails[0].fare
+                                  .childFare
+                              ) * singleFlight.childrenCount
                               : Math.round(
-                                  singleFlight.currentFlight.fare.childFare
-                                ) * singleFlight.childrenCount}
+                                singleFlight.currentFlight.fare.childFare
+                              ) * singleFlight.childrenCount}
                           </td>
                         </tr>
                       )}
@@ -185,12 +199,12 @@ const PriceReview = ({
                             />{" "}
                             {Object.keys(latestfare).length > 0
                               ? Math.round(
-                                  latestfare.BookingFlightDetails[0].fare
-                                    .infantFare
-                                ) * singleFlight.infantsCount
+                                latestfare.BookingFlightDetails[0].fare
+                                  .infantFare
+                              ) * singleFlight.infantsCount
                               : Math.round(
-                                  singleFlight.currentFlight.fare.infantFare
-                                ) * singleFlight.infantsCount}
+                                singleFlight.currentFlight.fare.infantFare
+                              ) * singleFlight.infantsCount}
                           </td>
                         </tr>
                       )}
@@ -207,11 +221,11 @@ const PriceReview = ({
                           )}
                           {Object.keys(latestfare).length > 0
                             ? Math.round(
-                                latestfare.BookingFlightDetails[0].fare.totalTax
-                              )
+                              latestfare.BookingFlightDetails[0].fare.totalTax
+                            )
                             : Math.round(
-                                singleFlight.currentFlight.fare.totalTax
-                              )}
+                              singleFlight.currentFlight.fare.totalTax
+                            )}
                         </td>
                       </tr>
                     </tbody>
@@ -232,14 +246,29 @@ const PriceReview = ({
                               className="lsc-currency"
                             />
                           )}
-                          {Object.keys(latestfare).length > 0
-                            ? Math.round(
-                                latestfare.BookingFlightDetails[0].fare
-                                  .grandTotal
-                              )
-                            : Math.round(
-                                singleFlight.currentFlight.fare.grandTotal
-                              )}
+
+                          <span className="d-inline-block">
+                            <AnimatebyNumber
+                              number={Object.keys(latestfare).length > 0
+                                ? Math.round(
+                                  latestfare.BookingFlightDetails[0].fare
+                                    .grandTotal
+                                )
+                                : Math.round(
+                                  singleFlight.currentFlight.fare.grandTotal
+                                )}
+                              configs={[
+                                { mass: 1, tension: 220, friction: 100 },
+                                { mass: 1, tension: 180, friction: 130 },
+                                { mass: 1, tension: 280, friction: 90 },
+                                { mass: 1, tension: 180, friction: 135 },
+                                { mass: 1, tension: 260, friction: 100 },
+                                { mass: 1, tension: 210, friction: 180 },
+                              ]}
+                            />
+                          </span>
+
+
                         </td>
                       </tr>
                     </tbody>
