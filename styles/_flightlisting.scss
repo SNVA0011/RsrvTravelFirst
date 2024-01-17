@@ -3556,6 +3556,12 @@ img.ret-intplane {
       padding: 6px 6px 0;
       border-radius: 20px;
 
+  .nav-item .nav-link{
+   @include mq("max", 991px) {
+         padding-bottom: 18px;
+   }
+      }
+
       .icvfaresub {
          background-color: $white;
       }

@@ -209,7 +209,7 @@ const FlgLuggageInfo = ({
                           </>
                         }
                       >
-                        <section className="rtrip-return">
+                        <section className="rtrip-departure rtrip-return">
                           {flightDatInBound.map((items, ind) => {
                             const airlineName = airline.find(
                               (item) => item.code === items.airline

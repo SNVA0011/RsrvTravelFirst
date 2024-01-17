@@ -65,6 +65,7 @@ const contact = () => {
                         href="http://maps.google.com/?q=SNVA LLC, 2 Industrial Park DR, Waldorf MD 20602, United States"
                         target="_blank"
                         className="find-us"
+                        rel="noreferrer" 
                       >
                         Find us on Google Map{" "}
                         <Icon icon="fluent:share-28-filled" />
