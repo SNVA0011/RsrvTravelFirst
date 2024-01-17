@@ -22,8 +22,7 @@ const RoundFilter = ({ flightResponse, waytrip, search, setFilterData }) => {
     () => findAirlinePrice(flightResponse),
     [flightResponse]
   );
-  const duration = useMemo(
-    () =>
+  const duration = useMemo(() =>
       travelDuration(flightResponse.flightData.flightResult, search.tripType),
     [flightResponse.flightData.flightResult]
   );
