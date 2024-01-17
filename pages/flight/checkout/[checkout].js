@@ -212,6 +212,7 @@ const Checkout = () => {
               <img
                 src="/images/loader-plane-flight.gif"
                 className="loader-pic"
+                alt="loader-plane"
               />
             </div>
             <h5>Please Wait...</h5>
