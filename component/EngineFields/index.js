@@ -39,6 +39,7 @@ const EngineFields = ({MobRadioCenter}) => {
 
 
   useEffect(() => {
+
     const handleClickOutside = (event) => {
       if (showMenu.current && !showMenu.current.contains(event.target)) {
         setShowRef(false);

@@ -117,17 +117,23 @@ const Calendar = ({
   }, []);
 
   useEffect(() => {
-    if (size.width < 768) {
-      try {
-        size.width >= 767 ? window.scrollTo(0, 0) : null;
-        document.body.classList.add("modal-open"); 
-        return () => {
-          document.body.classList.remove("modal-open");
-        };
-      } catch (e) {
-        console.log(e);
+    try {
+      if (window.innerWidth < 768) {
+        window.scrollTo(0, 0); 
+        try {
+          document.body.classList.add("modal-open");
+          return () => {
+            document.body.classList.remove("modal-open");
+          };
+        } catch (e) {
+          console.log(e);
+        }
       }
+    } catch (e) {
+      console.log(e);
     }
+
+  
   }, [size.width]);
 
   return (
@@ -135,9 +141,8 @@ const Calendar = ({
       <div className="mdrflex-vertical">
         <div className="calender-datechoose">
           <ul
-            className={`d-flex align-items-center ${
-              active === "DEP" ? "departure" : "return"
-            }`}
+            className={`d-flex align-items-center ${active === "DEP" ? "departure" : "return"
+              }`}
           >
             <li className={`d-inline-flex`}>
               <div>
@@ -192,7 +197,7 @@ const Calendar = ({
             <Col xs={12} md={6} className="first">
               <div className="d-flex align-items-center week">
                 {new Date(new Date().getFullYear(), new Date().getMonth()) <
-                new Date(states.getFullYear(), states.getMonth()) ? (
+                  new Date(states.getFullYear(), states.getMonth()) ? (
                   <div className="arrow prev" onClick={() => prevMonths()}>
                     <Icon icon="ph:caret-left" />
                   </div>
@@ -237,11 +242,11 @@ const Calendar = ({
                             : { pointerEvents: "none", color: "#e5e5e5" };
                         const style2 =
                           selctedfirstDate === datecal ||
-                          selectedSecond === datecal
+                            selectedSecond === datecal
                             ? {
-                                color: "white",
-                                backgroundColor: "#dc391b",
-                              }
+                              color: "white",
+                              backgroundColor: "#dc391b",
+                            }
                             : {};
                         const style3 =
                           pressButton === true && smallerDate
@@ -315,11 +320,11 @@ const Calendar = ({
                           moment(selctedfirstDate).isSameOrAfter(datecal);
                         const style1 =
                           selctedfirstDate === datecal ||
-                          selectedSecond === datecal
+                            selectedSecond === datecal
                             ? {
-                                color: "white",
-                                backgroundColor: "#dc391b",
-                              }
+                              color: "white",
+                              backgroundColor: "#dc391b",
+                            }
                             : {};
 
                         const style2 =
