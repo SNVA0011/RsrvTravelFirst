@@ -10,6 +10,7 @@ import { SelectFlight } from "../../utils/flightCheckoutUtils";
 import { useRouter } from "next/router";
 
 const FlgRoDoFooter = ({ data, airlines, airport, search }) => {
+  console.log("data",data)
   const router = useRouter();
   const size = useWindowSize();
   const scrWidth = size.width;
