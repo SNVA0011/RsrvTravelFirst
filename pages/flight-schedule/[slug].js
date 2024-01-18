@@ -143,7 +143,7 @@ const Slug = ({ airline, desitnation, desitinationDeta }) => {
                 <AirlinesByLocation
                   title="Goa to Miami"
                   flightschedule={true}
-                  airlineImg={"uk"}
+                  airlineImg={"UK"}
                   triptype="Flights from"
                   tabdefault={0}
                   tabshow={{
@@ -156,7 +156,7 @@ const Slug = ({ airline, desitnation, desitinationDeta }) => {
                   title="New Delhi"
                   triptype="Flights to"
                   flightschedule={true}
-                  airlineImg={"uk"}
+                  airlineImg={"UK"}
                   tabdefault={0}
                   tabshow={{
                     domestic: true,
