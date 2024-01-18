@@ -5,6 +5,6 @@ export const Roundreducer = (state, action) => {
     default:
       state;
   }
-};
+}
 
 
