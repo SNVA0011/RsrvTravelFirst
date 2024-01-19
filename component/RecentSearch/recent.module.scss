@@ -20,8 +20,7 @@
     -o-user-select: none;
     @include SixteenFontMedia;
     @include mq('max', 991px) {
-  border: solid 1px $primary;
-  box-shadow: 0 0 7px rgb(0 0 0 / 6%);
+  border: solid 1px $primary; 
     }
 }
 
