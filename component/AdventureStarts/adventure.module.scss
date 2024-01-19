@@ -27,6 +27,9 @@
   @include mq("min", 1200px) {
   max-width: 995px;
   } 
+  @include mq('max', 575px) {
+    padding: 10px 0 0;
+   }
 
   &:after { 
     @include mq('min', 768px) {
@@ -84,13 +87,22 @@
   position: relative;
   top: 5px;
   @include mq('max', 767px) {
- width: 180px;
+ width: 150px;
 }
   span {
     display: block;
     float: left;
     width: 100%;
   }
+}
+
+.BtnStartALign{
+  @include mq('max', 767px) {
+   padding: 20px;
+  } 
+  @include mq('max', 575px) {
+    padding: 0 20px 20px;
+   }
 }
 
 .BtnStartAdv {
@@ -104,7 +116,10 @@
   background-color: $primary;
   border-radius: 6px;
   padding: 5px 30px;
-  @include SixteenFontMedia;
+  @include SixteenFontMedia; 
+  @include mq('max', 575px) {
+    padding: 5px 20px;
+   }
 }
 
 .BtnStartTrs {
@@ -124,7 +139,10 @@
     font-size: 22px;
   }
   @include mq('max', 767px) {
-    font-size: 20px;
+    font-size: 20px; 
+  }
+  @include mq('max', 425px) {
+    font-size: 18px; 
   }
 }
 
@@ -140,3 +158,4 @@
   padding: 5px 30px;
   @include SixteenFontMedia;
 }
+

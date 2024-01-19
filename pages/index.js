@@ -32,7 +32,9 @@ const index = ({ allblog }) => {
       <RecentSearch
         Title="Top / Recent Searches"
         Routes={[
-          { 'from': 'New Delhi', 'to': 'Mumbai', 'date': '28 Nov 2023', 'traveller': 'A-1 C-1 I-1, Economy', 'thumbnail': 'recent-search-1.webp', }, { 'from': 'New Delhi', 'to': 'Kashmir', 'date': '28 Nov 2023', 'traveller': 'A-1 C-1 I-1, Economy', 'thumbnail': 'recent-search-2.webp', }, { 'from': 'New Delhi', 'to': 'New York', 'date': '28 Nov 2023', 'traveller': 'A-1 C-1 I-1, Economy', 'thumbnail': 'recent-search-3.webp', },
+          { 'from': 'DEL', 'to': 'BOM', 'date': '28 Nov 2023', 'traveller': 'A-1 C-1 I-1, Economy', 'thumbnail': 'recent-search-1.webp', },
+           { 'from': 'DEL', 'to': 'GOI', 'date': '28 Nov 2023', 'traveller': 'A-1 C-1 I-1, Economy', 'thumbnail': 'recent-search-2.webp', },
+            { 'from': 'DEL', 'to': 'NYC', 'date': '28 Nov 2023', 'traveller': 'A-1 C-1 I-1, Economy', 'thumbnail': 'recent-search-3.webp', },
         ]}
       />
 

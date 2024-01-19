@@ -19,10 +19,9 @@
     -ms-user-select: none;
     -o-user-select: none;
     @include SixteenFontMedia;
-
     @include mq('max', 991px) {
-        padding-bottom: 20px;
-        text-align: center;
+  border: solid 1px $primary;
+  box-shadow: 0 0 7px rgb(0 0 0 / 6%);
     }
 }
 
@@ -40,11 +39,9 @@
 
 
 .TopRecentCard:hover {
-    background-color: $primaryoffdark; 
-    @include css3(transform, scale(1.035)); 
-
-    @include mq('max', 991px) {
-        @include css3(transform, scale(1.07));   
+    background-color: $primaryoffdark;  
+    @include mq('min', 992px) {
+        @include css3(transform, scale(1.035)); 
     }
 
 
@@ -91,14 +88,7 @@
 .TopRecentDashed {
     position: relative;
     top: 3px;
-    min-width: 75px;
-
-    @include mq('max', 991px) {
-        margin-top: 12px;
-        margin-bottom: 12px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    min-width: 75px; 
 
 }
 
@@ -106,7 +96,17 @@
     overflow: hidden;
     margin-left: 20px;
     position: relative;
+    min-width: 80px;
+    width: 80px;
+    @include mq('max', 991px) {
+        min-width: 60px;
+        width: 60px;
+    }
 
+    @include mq('max', 575px) {
+        min-width: 55px;
+        width: 55px;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -121,13 +121,6 @@
         @include css3('transform', skewX(-20deg));
         @include css3('transform-origin', top left);
         @include css3('filter', blur(4px));
-    } 
-    @include mq('max', 991px) {
-        margin-top: -49px;
-        margin-bottom: 7px;
-        margin-left: 0;
-        margin-right: 0;
-        @include css3('transform-origin', bottom center);  
     }   
     span {
         display: block;
@@ -150,14 +143,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    @include SixteenFontMedia;
-
-    @include mq('max', 991px) {
-        margin-top: 8px;
-        margin-bottom: 16px;
-        padding-bottom: 14px;
-        border-bottom: solid 1px lighten($primary, 42%);
-    }
+    @include SixteenFontMedia; 
 }
 
 .TopRecentTrv {
@@ -196,9 +182,6 @@
     @include mq('max', 1199px) {
         @include scrollHorizontal;
     }
-    @include mq('max', 991px) {
-        margin: -22px -10px -65px;
-    }
 }
 
 .TopRecentCol {
@@ -217,13 +200,11 @@
     }
 
     @include mq('max', 991px) {
-        @include columnGrid(33.33%);
-        padding-top: 65px;
-        padding-bottom: 65px;
+        @include columnGrid(340px);
     }
 
     @include mq('max', 575px) {
-        @include columnGrid(200px);
+        @include columnGrid(260px);
     }
 }
 
@@ -239,11 +220,8 @@
         margin-bottom: -16px;
     }
     @include mq('max', 991px) {
-        padding-bottom: 26px; 
-    }
-    @include mq('max', 575px) {
-        padding-bottom: 56px;
-    }
+        padding-bottom: 56px; 
+    } 
 }
 
 .PopularRtsUlOp {
@@ -251,13 +229,5 @@
 
     @include mq('max', 1199px) {
         display: block;
-    }
-
-    @include mq('max', 991px) {
-        display: none;
-    }
-
-    @include mq('max', 575px) {
-        display: block;
-    }
+    } 
 }

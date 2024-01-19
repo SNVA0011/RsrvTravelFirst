@@ -13,19 +13,19 @@ const RecentSearch = ({ Title, Routes }) => {
                     {Routes.map((item, index) => {
                         return (
                             <Col xs={12} md={4} key={index} className={styles.TopRecentCol}>
-                                <div className={`d-flex align-items-center flex-column flex-lg-row flex-column-reverse ${styles.TopRecentCard}`}>
+                                <div className={`d-flex align-items-center flex-row ${styles.TopRecentCard}`}>
                                     <div className={`flex-grow-1 ${styles.TopRecentGrow}`}>  
-                                        <div className={`d-flex flex-column flex-lg-row align-ites-center justifyc-ontent-center ${styles.TopRecentPlane}`}>
+                                        <div className={`d-flex flex-row align-ites-center justifyc-ontent-center ${styles.TopRecentPlane}`}>
                                             {item.from}
                                             <div className={`flex-grow-1 text-center px-1 ${styles.TopRecentDashed}`}>
                                             <Image src="/images/plane-dashed-route.png" width={62} height={17} alt={`${item.from}-${item.to}`} />
                                             </div>
-                                           <span className='text-lg-end'>{item.to}</span>
+                                           <span className='text-end'>{item.to}</span>
                                         </div>
  
-                                        <div className={`d-flex flex-column flex-lg-row ${styles.TopRecentTrv}`}>
+                                        <div className={`d-flex flex-row ${styles.TopRecentTrv}`}>
                                             {item.date}
-                                            <div className='flex-grow-1 text-lg-end ps-lg-2 mt-1 mt-lg-0'>
+                                            <div className='flex-grow-1 text-end ps-lg-2'>
                                                 {item.traveller}
                                             </div>
                                         </div>

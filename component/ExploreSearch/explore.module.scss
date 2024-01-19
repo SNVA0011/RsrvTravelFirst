@@ -78,7 +78,7 @@
     }
 
     @include mq('max', 767px) {
-        @include columnGrid(120px);
+        @include columnGrid(110px);
         text-align: center;
         padding: 0 6px 0;
     }
