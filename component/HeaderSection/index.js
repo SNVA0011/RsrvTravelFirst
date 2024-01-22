@@ -13,7 +13,7 @@ import Image from 'next/image'
 import { Icon } from '@iconify/react'
 import { useRouter } from 'next/router'
 
-const HeaderSection = () => {
+const HeaderSection = ({FlightHeader}) => {
     const [sticky, setSticky] = useState("");
     const location = useRouter();
 
@@ -54,7 +54,7 @@ const HeaderSection = () => {
 
     return (
         <>
-            {size.width >= 992 && (
+            {size.width >= 992 && FlightHeader == false && (
                 <div className={styles.navDark}>
                     <Container>
                         <Row>
@@ -81,7 +81,7 @@ const HeaderSection = () => {
                 </div>
             )}
 
-            <header className={`${styles.headerClassic}  ${sticky ? styles.headerClsFix : ''}`}>
+            <header className={`${styles.headerClassic} ${FlightHeader ? styles.FlightHeader : ''} ${sticky ? styles.headerClsFix : ''}`}>
                 <Navbar expand="lg" className={`${styles.headerClsNavbar}`}>
                     <Container>
                         <div className="d-flex align-items-center">
@@ -159,7 +159,8 @@ const HeaderSection = () => {
                     </Container>
                 </Navbar>
             </header>
-            <div className={`${styles.Classicempty} ${sticky ? styles.BlockEmpt : ''}`}></div>
+
+            <div className={`${styles.Classicempty} ${FlightHeader ? styles.FlightHdEmpty : ''} ${sticky ? styles.BlockEmpt : ''}`}></div>
 
 
 

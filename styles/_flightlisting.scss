@@ -2,7 +2,7 @@
 .flgmodf-engine {
    @extend %full-width;
    background-color: #2C3134;
-   padding: 50px 0;
+   padding: 27px 0;
 
    @include mq('max', 1199px) {
       @include css3('border-radius', 0 0 25px 25px);
@@ -146,7 +146,7 @@ background: #2C3134;
    .engineexp-right {
       @include mq('min', 1200px) {
          right: 4%;
-         width: 221px;
+         width: 141px;
          text-align: right;
          opacity: 0.3;
          right: 17%;
