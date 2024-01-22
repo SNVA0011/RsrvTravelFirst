@@ -548,20 +548,11 @@
 
 .engineexp-fields {
     position: relative;
-    box-shadow: 0 25px 90px -8px rgb(0 0 0 / 26%), 9px -9px 10px -8px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 25px 90px -8px rgb(0 0 0 / 26%), 9px -9px 10px -8px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 25px 90px -8px rgb(0 0 0 / 26%), 9px -9px 10px -8px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 25px 90px -8px rgb(0 0 0 / 26%), 9px -9px 10px -8px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 25px 90px -8px rgb(0 0 0 / 26%), 9px -9px 10px -8px rgba(0, 0, 0, 0.1);
-
-    @include mq('max', 1199px) {
-        box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
-        -webkit-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
-        -ms-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
-        -o-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
-    }
-
+   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+        -webkit-box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+        -moz-box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+        -ms-box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+        -o-box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%); 
     .travmenu.row {
         margin: 0 -6px;
 
