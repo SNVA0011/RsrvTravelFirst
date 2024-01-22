@@ -323,9 +323,9 @@
 .engineexp-radio {
     margin-bottom: 22px;
 
-    &.light {
-        color: $white;
-    }
+    // &.light {
+    //     color: $white;
+    // }
 
     .radio-custom-site {
         font-size: 16px;
@@ -347,8 +347,7 @@
             font-weight: 500;
         }
 
-        .label {
-            border-color: $white;
+        .label { 
             margin-right: 10px;
 
             &::after {
@@ -520,11 +519,14 @@
 .engineexp-fields,
 .engineexp-fields::after {
     border-radius: 20px;
+    @include mq('max', 1199px) {
+        border-radius: 10px;
+    }
 }
 
 
 .wroweng-wrap {
-    background: #2C3134;
+    background: $white;
     padding: 15px 8px;
     position: relative;
     z-index: 1;
@@ -546,24 +548,19 @@
 
 .engineexp-fields {
     position: relative;
-    @include css3('box-shadow', 0px 0px 30px 2px rgb(220 57 27 / 22%));
+    box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.1), 9px -9px 10px -8px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.1), 9px -9px 10px -8px rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.1), 9px -9px 10px -8px rgb(0 0 0 / 10%);
+    -ms-box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.1), 9px -9px 10px -8px rgb(0 0 0 / 10%);
+    -o-box-shadow: 0 25px 50px -8px rgba(0, 0, 0, 0.1), 9px -9px 10px -8px rgb(0 0 0 / 10%);
 
-    @include mq('max', 767px) {
-        @include css3('box-shadow', 0 20px 50px -10px rgba(0, 0, 0, 0.40));
+    @include mq('max', 1199px) {
+        box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 25px 50px -8px rgb(0 0 0 / 6%), 3px -6px 7px -8px rgba(0, 0, 0, 0.1);
     }
-
-    @include mq('min', 992px) {
-        &::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 60%;
-            @include css3('box-shadow', 0 0 43px 4px rgb(0 0 0 / 75%));
-        }
-    }
-
 
     .travmenu.row {
         margin: 0 -6px;
@@ -669,12 +666,14 @@ img.swap-desg {
     position: relative;
     z-index: 13;
     border-radius: 10px;
+    background-color: $white;
 }
 
 [aria-expanded="true"] .engineexp-text.input-group {
     position: relative;
     z-index: 11;
     border-radius: 10px;
+    background-color: $white;
 }
 
 .travellers-class .dropdown,
@@ -687,7 +686,7 @@ img.swap-desg {
         border-radius: 10px;
 
         @include mq('max', 1199px) {
-            background: rgb(0 0 0 / 35%);
+            background: #f5f5f5;
             @include css3('backdrop-filter', blur(4px));
         }
     }
@@ -721,11 +720,10 @@ img.swap-desg {
         font-size: 10px;
         font-style: normal;
         line-height: normal;
-        color: $white;
+        color: lighten($black, 60%);
         font-weight: 400;
 
-        @include mq('max', 1199px) {
-            color: lighten(#2C3134, 46%);
+        @include mq('max', 1199px) { 
             letter-spacing: 0.4px;
             left: 37px;
             font-weight: 500;
@@ -744,47 +742,27 @@ img.swap-desg {
         text-overflow: ellipsis;
         white-space: nowrap;
         background-color: transparent;
-        color: $white;
+        color: $charcoal;
         font-size: 16px;
-        line-height: normal;
-
+        line-height: normal; 
+        @include mq('max', 1199px) { 
+            font-size: 14px; 
+        }
         &::-webkit-input-placeholder {
-            color: $white;
+            color: $charcoal;
         }
 
         &::-moz-placeholder {
-            color: $white;
+            color: $charcoal;
         }
 
         &:-ms-input-placeholder {
-            color: $white;
+            color: $charcoal;
         }
 
         &:-moz-placeholder {
-            color: $white;
+            color: $charcoal;
         }
-
-        @include mq('max', 1199px) {
-            color: $white;
-            font-size: 14px;
-
-            &::-webkit-input-placeholder {
-                color: $white;
-            }
-
-            &::-moz-placeholder {
-                color: $white;
-            }
-
-            &:-ms-input-placeholder {
-                color: $white;
-            }
-
-            &:-moz-placeholder {
-                color: $white;
-            }
-        }
-
 
     }
 
@@ -831,7 +809,7 @@ img.swap-desg {
                 height: 2px;
                 top: auto;
                 bottom: -1px;
-                background: #2c3134;
+                background: $white;
             }
         }
     }
@@ -883,16 +861,13 @@ img.swap-desg {
     .dropdown-menu.show,
     .dropdown-menu {
         margin-top: 5px;
-        @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
+        @include css3('box-shadow', 0 16px 824px 259px rgb(0 0 0 / 12%));
         overflow: hidden;
         @include css3('border-radius', 15px);
         border: none;
         width: 320px;
         left: auto !important;
         right: 0 !important;
-
-
-
         &::after {
             display: none;
         }
@@ -1071,7 +1046,7 @@ img.swap-desg {
     left: -62px !important;
     text-align: center;
     @include css3('border-radius', 10px);
-    @include css3('box-shadow', 0 16px 24px 10000px rgba(0, 0, 0, 0.58));
+    @include css3('box-shadow',0 16px 824px 259px rgb(0 0 0 / 12%));
     font-size: 14px;
     padding-top: 0;
     @include css3('user-select', none);
@@ -1455,7 +1430,7 @@ img.swap-desg {
 
     .form-control.returnby-dt,
     &.menutrv .form-control.returnby-dt {
-        opacity: 0.5;
+        opacity: 0.6;
         font-size: 14px;
         font-weight: 500;
         letter-spacing: 0.4px;

@@ -2,12 +2,12 @@
 @import "../../styles/mixins";
 
 .navDark {
-  background-color: #111111;
+  background-color: #f4f6f8;
   padding-top: 13px;
   padding-bottom: 13px;
-
+  border-bottom: solid 1px #e9ecf1;
   a {
-    color: $white;
+    color: $charcoal;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -28,7 +28,7 @@
 }
 
 .headerClassic {
-  background-color: #111111;
+  background-color: #f4f6f8;
 
   &.headerClsFix {
     position: fixed;
@@ -44,6 +44,8 @@
     animation-fill-mode: both;
     -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
     transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    background-color: $white;
+    box-shadow: 0px 6px 34px rgba(215,216,222,.41);
 
     .mainMenu li a::after {
       margin-top: 14px;
@@ -55,6 +57,13 @@
         min-height: 70px;
       }
     }
+
+    .currencyName { 
+      @include mq('min', 992px) {
+        background-color: #FFE8D9;
+        @include css3(box-shadow, 0px 1px 12px 1px rgb(0 0 0 / 6%));  
+      }
+    }    
 
   }
 }
@@ -89,9 +98,6 @@
 
 
 
-
-
-
 .SignInBtn {
   min-width: 145px;
   padding-left: 12px;
@@ -113,13 +119,14 @@
 
   @include mq('max', 425px) {
     font-size: 0;
-    padding: 0 6px;
-    height: 42px;
+    padding: 0;
+    height: 36px;
+    width: 36px;
+    border-radius: 50px;
   }
 
   .accountIcon {
-    font-size: 24px;
-    color: $primary;
+    font-size: 24px; 
     position: relative;
     margin-top: -8px;
     top: 2px;
@@ -161,7 +168,7 @@
     a {
       display: block;
       padding: 0.5rem 1rem;
-      color: $white;
+      color: $charcoal;
       font-size: 16px;
       font-style: normal;
       font-weight: 600;
@@ -629,7 +636,7 @@
 
 
 .currencyName {
-  border-radius: 2px;
+  border-radius: 4px;
   min-width: 24px;
   text-align: center;
   font-size: 13px;
@@ -637,7 +644,8 @@
   line-height: normal;
 
   @include mq('min', 992px) {
-    background-color: #FFE8D9;
+    background-color: $white;
+    @include css3(box-shadow, 0px 1px 12px 1px rgb(0 0 0 / 6%));  
   }
 
   @include mq('max', 991px) {
@@ -659,7 +667,7 @@
 
 .langFlag svg {
   width: 24px;
-  border-radius: 2px;
+  border-radius: 4px;
 
   @include mq('max', 991px) {
     border-radius: 6px;
@@ -720,8 +728,13 @@
   }
   @include mq('max', 575px) {
     margin-right: 18px;
-    padding-right: 10px;
+    padding-right: 18px;
   }
+  @include mq('max', 425px) {
+    margin-right: 15px;
+    padding-right: 15px;
+  }
+
 
   &::after {
     content: "";
@@ -729,7 +742,7 @@
     right: 0;
     top: 10px;
     height: 32px;
-    border-right: solid 1px #494f4c;
+    border-right:solid 1px #dfe2e5;
     @include mq('min', 992px) {
       display: none;
     } 

@@ -42,6 +42,12 @@
    }
 
    
+   .datearv .datearv-0::after{
+      @include mq("max", 991px) {
+background: #2C3134;
+      }
+   }
+
 
    .engineexp-radio.light{
       @include mq('max', 767px) {
@@ -49,6 +55,13 @@
       }
    }
 
+
+   .radio-custom-site{
+      color: $white;
+      .label{
+         border-color: $white;
+      }
+   }
 
 
    .swap-desg {
@@ -77,6 +90,24 @@
          &.to {
             border-left: solid 12px transparent;
          }
+      }
+      .form-control {
+         color: $white;
+         &::-webkit-input-placeholder {
+            color: $white;
+        }
+
+        &::-moz-placeholder {
+            color: $white;
+        }
+
+        &:-ms-input-placeholder {
+            color: $white;
+        }
+
+        &:-moz-placeholder {
+            color: $white;
+        }
       }
    }
 

@@ -1357,6 +1357,7 @@ hr.my-done-mladv {
     }
 
     .dropdown {
+      background-color: transparent;
       @include mq("min", 768px) {
         padding-left: 8px;
         padding-right: 8px;

@@ -127,7 +127,7 @@ const HeaderSection = () => {
                                         <Icon icon={'ic:sharp-account-circle'} className={styles.accountIcon} />
                                         Sign In
                                     </>}
-                                    outline={true}
+                                    outline={false}
                                     fullwidth={false}
                                     onClick={() => { console.log("Click Event") }}
                                     className={styles.SignInBtn}
