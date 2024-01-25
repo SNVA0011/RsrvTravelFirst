@@ -88,10 +88,12 @@
             margin-bottom: 59px;
             margin-top: 16px;
         }
+
         @include mq('max', 575px) {
             margin-bottom: 39px;
             margin-top: 6px;
         }
+
         @include mq('max', 460px) {
             max-width: 277px;
             text-align: center;
@@ -127,8 +129,9 @@
     width: 250px;
     top: 34px;
     left: -300px;
+
     @include mq('min', 1700px) {
-    @include css3('transform', rotate(-45deg) scale(-1));
+        @include css3('transform', rotate(-45deg) scale(-1));
     }
 
     @include mq('max', 1699px) {
@@ -158,8 +161,9 @@
         margin-left: 0;
         width: 220px;
     }
-    @include mq('max', 425px) { 
-        margin-bottom: 20px; 
+
+    @include mq('max', 425px) {
+        margin-bottom: 20px;
         width: 180px;
     }
 }
@@ -184,6 +188,11 @@
         margin-bottom: 0;
         padding-top: 60px;
         background-size: 80%;
+        border-radius: 0 0 20px 20px;
+    }
+
+    @include mq('max', 575px) {
+        background-image: none;
     }
 }
 
@@ -207,13 +216,15 @@
 
     @include mq('max', 991px) {
         margin-top: 0;
-    } 
+    }
+
     @include mq('max', 767px) {
-     width: 75%; 
-    } 
+        width: 75%;
+    }
+
     @include mq('max', 425px) {
-        width: 80%; 
-       } 
+        width: 80%;
+    }
 }
 
 
@@ -244,6 +255,7 @@
         margin-bottom: 30px;
         width: 100%;
     }
+
     @include mq('max', 575px) {
         margin-bottom: 25px;
     }

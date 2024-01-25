@@ -40,17 +40,7 @@ const ExploreTravel = ({ Title, SubTitle, ImgAlt }) => {
                 priority={true}
               /> 
             </div>
-
-            <div className={`d-md-none ${styles.TrvWrpRight}`}>
-            <Image
-                src={'/images/airplane-stewardess-down.webp'}
-                alt={'Explore life Travel where you want'}
-                width={700}
-                height={713}
-                priority={true}
-              />
-            </div>
-
+ 
 
           </Col>
 

@@ -107,7 +107,7 @@
     .currencyName {
       @include mq('min', 992px) {
         background-color: #FFE8D9;
-        @include css3(box-shadow, 0px 1px 12px 1px rgb(0 0 0 / 6%));
+        @include css3(box-shadow, none);
       }
     }
 
