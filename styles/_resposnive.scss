@@ -45,9 +45,7 @@
       min-width: 34%;
     }
   }
-  .start-planning-dics .text-lg-left {
-    text-align: left !important;
-  }
+ 
 }
 
 @include min-max(768px, 1199px) {
@@ -71,19 +69,7 @@
 /* max-width */
 @include mq("max", 1399px) {
 }
-
-@include mq("max", 1299px) {
-  .flg-deals-offer {
-    h3,
-    .price {
-      font-size: 18px;
-    }
-    .date-month,
-    .economy {
-      font-size: 13px;
-    }
-  }
-}
+ 
 
 @include mq("max", 1199px) {
   img.visa-footer {
@@ -181,13 +167,8 @@
       font-size: 20px;
     }
   }
-  .deal-app-now {
-    padding-left: 34px;
-    padding-right: 34px;
-  }
-  .start-planning-dics {
-    background-size: 205px;
-  }
+ 
+ 
   .latest-new-blogs {
     .blog-body-list {
       .mini-description {
@@ -228,20 +209,9 @@
       padding: 24px;
     }
   }
-  .logos-res .partnerlogo-wrapper {
-    padding-bottom: 46px;
-  }
+ 
 
-  .flg-deals-offer {
-    h3,
-    .price {
-      font-size: 16px;
-    }
-    .date-month,
-    .economy {
-      font-size: 12px;
-    }
-  }
+ 
   .back-dfg {
     padding: 8%;
   }
@@ -249,26 +219,13 @@
   .flight-offer-deals {
     .back-dfg,
     .flgoffer-cover-rt,
-    .flgofferover-hide,
-    .offerdeals-card {
+    .flgofferover-hide {
       border-radius: 12px;
     }
-    .offerdeals-card .btn.btn-site {
-      height: 40px;
-      font-size: 15px;
-    }
+ 
   }
 
-  .dealof-lg {
-    .back-dfg h3,
-    .back-dfg .price {
-      font-size: 26px;
-    }
-    .back-dfg .date-month,
-    .back-dfg .economy {
-      font-size: 14px;
-    }
-  }
+ 
 }
 
 @include mq("max", 991px) {
@@ -439,41 +396,14 @@
       }
     }
   }
-  .download-app-input {
-    padding: 10px 0 46px;
-    max-width: none;
-    text-align: center;
-  }
+ 
   .deals-app-down {
     .input-group {
       max-width: none;
       margin-top: 31px;
     }
   }
-  .scan-play-store {
-    .play-store {
-      width: 165px;
-      margin-right: 22px;
-    }
-    .play-scan {
-      width: 165px;
-    }
-  }
-  .start-planning-dics {
-    background-position: bottom right;
-    .section-heading h3 {
-      font-size: 20px;
-    }
-    .client-planing {
-      text-align: center;
-      padding: 48px 0 40px;
-    }
-  }
-  .deal-app-now {
-    h3 {
-      font-size: 22px;
-    }
-  }
+ 
 
   .flight-offer-deals {
     .minifl-spc {
@@ -493,13 +423,7 @@
       padding-right: 108px;
     }
   }
-
-  .flight-offer-deals,
-  .your-grate-destination {
-    .flgoffer-cover-rt {
-      padding-top: 63%;
-    }
-  }
+ 
   .slidenav-url-group a {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -677,18 +601,7 @@
       font-size: 22px;
     }
   }
-  .deal-app-now {
-    padding: 24px;
-    h3 {
-      font-size: 20px;
-      max-width: 307px;
-      margin: 0 auto 18px;
-      line-height: 1.4;
-    }
-    p {
-      line-height: 1.6;
-    }
-  }
+ 
   .deals-app-down {
     .react-tel-input {
       position: relative;
@@ -752,23 +665,8 @@
       }
     }
   }
-  .dealof-lg {
-    .back-dfg h3,
-    .back-dfg .price {
-      font-size: 22px;
-    }
-    .back-dfg .date-month,
-    .back-dfg .economy {
-      font-size: 12px;
-    }
-  }
-  .flight-offer-deals {
-    .offerdeals-card .btn.btn-site {
-      height: 36px;
-      font-size: 14px;
-      min-width: 107px;
-    }
-  }
+ 
+ 
 }
 
 @include mq("max", 575px) {
@@ -861,52 +759,14 @@
     margin-left: -6px;
     margin-right: -6px;
   }
-  .scan-play-store {
-    .play-store {
-      margin-right: 0;
-      margin-bottom: 28px;
-    }
-    .play-scan,
-    .play-store {
-      width: 170px;
-    }
-  }
-  .deal-app-now {
-    padding-left: 18px;
-    padding-right: 18px;
-    padding-bottom: 40px;
-    border-radius: 0;
-    margin: 0 -12px;
-  }
+ 
+ 
   .deals-app-down .react-tel-input .country-list {
     max-height: 396px;
   }
-  .start-planning-dics {
-    background-position: right -28% bottom 6%;
-    background-size: 44%;
-  }
-  .discv-latest-off {
-    .link-cont {
-      margin-left: 0;
-    }
-  }
-  .happy-coustomer {
-    p {
-      font-size: 18px;
-    }
-    span {
-      font-size: 14px;
-    }
-    .user-img img {
-      width: 40px;
-    }
-  }
-  .dealof-lg {
-    .back-dfg h3,
-    .back-dfg .price {
-      font-size: 20px;
-    }
-  }
+ 
+ 
+ 
 }
 
 @include mq("max", 479px) {
@@ -957,10 +817,7 @@
       }
     }
   }
-  .deal-app-now h3 {
-    font-size: 20px;
-    max-width: 277px;
-  }
+ 
   .latest-new-blogs .blog-body-list .paragraph-des {
     display: none;
   }
@@ -986,9 +843,7 @@
     width: 100%;
   }
   .section-heading h3,
-  .deal-app-now h3 {
-    font-size: 17px;
-  }
+ 
   .sidenav-offcanvas .offcanvas-footer .header-lang-menu .dropdown-menu,
   .sidenav-offcanvas .offcanvas-footer .header-currency-menu .dropdown-menu {
     color: #000;
@@ -1031,9 +886,7 @@
       padding-right: 14px;
     }
   }
-  .start-planning-dics {
-    background-position: right -28% bottom 12%;
-  }
+ 
   .slidenav-url-group {
     a {
       font-size: 15px;

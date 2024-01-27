@@ -657,7 +657,7 @@ display: inline-block;
       font-size: 110%;
       position: relative;
       top: -2px;
-
+display: inline-block;
       @include mq('max', 991px) {
         margin-right: 8px;
       }
@@ -708,6 +708,7 @@ display: inline-block;
 
   svg {
     font-size: 12px;
+    display: inline-block;
   }
 }
 
