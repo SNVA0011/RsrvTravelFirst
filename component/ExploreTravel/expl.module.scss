@@ -45,16 +45,15 @@
     }
 
     @include mq('max', 425px) {
-        min-width: 68px;
-        width: 68px;
-        bottom: -10px;
-        left: 1px;
+        min-width: 58px;
+        width: 58px;
+        bottom: -9px;
+        left: 3px;
     }
 }
 
 .TrvWrp {
-    color: $charcoal;
-
+    color: $charcoal; 
     h1 {
         max-width: 497px;
         font-family: 'Overlock', sans-serif;
@@ -78,19 +77,19 @@
         @include mq('max', 991px) {
             font-size: 33px;
             max-width: 337px;
-            margin-bottom: 9px;
+            margin-bottom: 32px;
         }
 
         @include mq('max', 767px) {
-            font-size: 30px;
+            font-size: 26px;
             max-width: none;
             text-align: center;
-            margin-bottom: 59px;
+            margin-bottom: 34px;
             margin-top: 16px;
         }
 
         @include mq('max', 575px) {
-            margin-bottom: 39px;
+            margin-bottom: 28px;
             margin-top: 6px;
         }
 
@@ -103,8 +102,8 @@
         }
 
         @include mq('max', 425px) {
-            font-size: 24px;
-            max-width: 257px;
+            font-size: 22px;
+    max-width: 245px;
         }
     }
 
@@ -149,23 +148,12 @@
 
     @include mq('max', 991px) {
         top: -76px;
-        margin-left: 15px;
+        margin-left: 15px; 
     }
 
     @include mq('max', 767px) {
-        @include css3('transform', rotate(-27deg) translateX(-50%));
-        left: 50%;
-        top: auto;
-        bottom: 100%;
-        margin-bottom: 18px;
-        margin-left: 0;
-        width: 220px;
-    }
-
-    @include mq('max', 425px) {
-        margin-bottom: 20px;
-        width: 180px;
-    }
+        display: none
+    } 
 }
 
 .ExploreTravel {
@@ -173,26 +161,27 @@
     @include bgPath('shape-enginebck.webp');
     background-position: bottom center;
     background-size: 72%;
-    background-repeat: repeat-x;
+    background-repeat: repeat-x; 
 
     @include mq('max', 1199px) {
-        margin-bottom: 100px;
+        margin-bottom: 30px;
         background-size: 95%;
     }
 
     @include mq('max', 991px) {
-        margin-bottom: 100px;
+        margin-bottom: 40px;
     }
 
     @include mq('max', 767px) {
-        margin-bottom: 0;
-        padding-top: 60px;
-        background-size: 80%;
-        border-radius: 0 0 20px 20px;
+        margin-bottom: 21px;
+        padding-top: 10px;
+        background-size: 80%; 
     }
 
     @include mq('max', 575px) {
         background-image: none;
+        padding-left: 3px;
+        padding-right: 3px;
     }
 }
 
@@ -235,28 +224,23 @@
     width: 1091px;
 
     @include mq('max', 1299px) {
-        margin-top: 55px;
+        margin-top: 55px; 
     }
 
     @include mq('max', 1199px) {
         margin-top: 45px;
         width: 937px;
-        margin-bottom: -234px;
+        margin-bottom: -120px;
     }
 
     @include mq('max', 991px) {
-        margin-top: 35px;
+        margin-top: 0;
         width: 704px;
-        margin-bottom: -190px;
+        margin-bottom: -120px;
     }
 
     @include mq('max', 767px) {
-        margin-top: 25px;
-        margin-bottom: 30px;
+        margin-bottom: -40px;
         width: 100%;
-    }
-
-    @include mq('max', 575px) {
-        margin-bottom: 25px;
-    }
+    } 
 }

@@ -10,7 +10,7 @@ const ExploreTravel = ({ Title, SubTitle, ImgAlt }) => {
     <section className={styles.ExploreTravel}>
       <Container>
         <Row className='align-items-center'>
-          <Col md={5} lg={6} xl={7} xxl={6} className='pt-md-4 pt-lg-0 pe-lg-3 pt-xl-0 pe-xl-5'>
+          <Col md={5} lg={6} xl={7} xxl={6} className='pe-lg-3 pt-xl-0 pe-xl-5'>
             <div className={styles.TrvWrp}>
               <h1>
                 Explore life
