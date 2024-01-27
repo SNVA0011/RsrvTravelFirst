@@ -799,7 +799,7 @@ display: inline-block;
     }
 
     @include mq('max', 425px) {
-      top: 3px;
+      top: 2px;
     }
   }
 }

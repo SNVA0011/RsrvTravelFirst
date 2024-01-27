@@ -1043,7 +1043,7 @@ img.swap-desg {
     @include css3('user-select', none);
 
     @include mq('max', 1199px) {
-        top: -93px !important;
+        top: -128px !important;
         right: auto !important;
         left: -12px !important;
         @include css3('border-radius', 6px);
