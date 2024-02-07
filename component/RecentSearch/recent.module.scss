@@ -4,6 +4,7 @@
 
 .TopRecentBlock {
     padding: 60px 0;
+    overflow: hidden;
 }
 
 .TopRecentCard {
@@ -168,18 +169,17 @@
 }
 
 .TopRecentRow {
-    margin: 0 -15px;
-
+    margin: 0 -15px; 
     @include mq('max', 1299px) {
         margin: 0 -12px;
-    }
-
-    @include mq('max', 1299px) {
-        margin: 0 -10px;
-    }
-
+    }  
+ 
     @include mq('max', 1199px) {
+        margin: 0 -20px;
         @include scrollHorizontal;
+    }
+    @include mq('max', 575px) {
+        padding: 0 12px; 
     }
 }
 
@@ -193,13 +193,9 @@
     @include mq('max', 1299px) {
         padding: 0 10px;
     }
-
-    @include mq('max', 1199px) {
-        @include columnGrid(380px);
-    }
-
+ 
     @include mq('max', 991px) {
-        @include columnGrid(340px);
+        @include columnGrid(300px);
     }
 
     @include mq('max', 575px) {

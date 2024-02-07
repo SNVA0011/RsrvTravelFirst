@@ -1222,7 +1222,7 @@ input[type="number"] {
   
     .country-list {
         color: $black;
-        @include css3('box-shadow', 0px 18px 50px 2px rgb(220 57 27 / 12%));
+        @include css3('box-shadow', 0px 18px 60px 2px rgb(0 0 0 / 12%));
         animation-duration: 0.5s;
         -webkit-animation-duration: 0.5s;
         border-radius: 5px;

@@ -117,7 +117,7 @@
   border-radius: 6px;
   padding: 5px 30px;
   @include SixteenFontMedia; 
-  @include mq('max', 575px) {
+  @include mq('max', 767px) {
     padding: 5px 20px;
    }
 }
