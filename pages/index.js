@@ -9,8 +9,7 @@ import PopularRoutes from '../component/PopularRoutes/PopularRoutes'
 import PartnerBrands from '../component/PartnerBrands/PartnerBrands'
 import LatestBlogs from '../component/LatestBlogs'
 import DownloadApp from '../component/DownloadApp'
-import ExploreTravel from '../component/ExploreTravel'
-import Image from 'next/image'
+import ExploreTravel from '../component/ExploreTravel' 
 import { Hostname, siteid } from '../utils/static'
 import { getApiData } from './api/GetApiResp'
 
@@ -76,6 +75,7 @@ const index = ({ allblog }) => {
         ]}
       />
 
+      <div className='overflow-hidden'>
       <PopularRoutes
         Title="Popular International Route"
         Routes={[
@@ -104,6 +104,7 @@ const index = ({ allblog }) => {
       <PartnerBrands BrandsImage={[
         'sabre-brand.webp', 'iata-brand.webp', 'sabre-brand.webp', 'iata-brand.webp', 'sabre-brand.webp', 'iata-brand.webp', 'sabre-brand.webp', 'iata-brand.webp',
       ]} />
+      </div>
 
 
     </>
