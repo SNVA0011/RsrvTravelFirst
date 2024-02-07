@@ -273,8 +273,7 @@
 
             @include mq('min', 992px) {
                 max-width: 536px;
-            }
-
+            } 
             .form-control {
                 box-shadow: none;
                 border: none;
