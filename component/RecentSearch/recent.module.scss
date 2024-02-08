@@ -89,7 +89,24 @@
     position: relative;
     top: 3px;
     min-width: 75px; 
-
+    span {
+        display: block; 
+        max-width: 85px;
+        margin: 0 auto;
+        @include mq('max', 1199px) {
+            max-width: 75px;
+            margin: 0 auto;
+        } 
+        @include mq('max', 991px) {
+            max-width: 70px; 
+        } 
+        @include mq('max',767px) {
+            max-width: 60px; 
+        } 
+        @include mq('max', 575px) {
+            max-width: 50px;
+        } 
+    }
 }
 
 .TopRecentThumb {

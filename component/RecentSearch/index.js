@@ -15,10 +15,12 @@ const RecentSearch = ({ Title, Routes }) => {
                             <Col xs={12} md={4} key={index} className={styles.TopRecentCol}>
                                 <div className={`d-flex align-items-center flex-row ${styles.TopRecentCard}`}>
                                     <div className={`flex-grow-1 ${styles.TopRecentGrow}`}>  
-                                        <div className={`d-flex flex-row align-ites-center justifyc-ontent-center ${styles.TopRecentPlane}`}>
+                                        <div className={`d-flex flex-row align-items-center justifyc-ontent-center ${styles.TopRecentPlane}`}>
                                             {item.from}
                                             <div className={`flex-grow-1 text-center px-1 ${styles.TopRecentDashed}`}>
-                                            <Image src="/images/plane-dashed-route.png" width={62} height={17} alt={`${item.from}-${item.to}`} />
+                                              <span>
+                                            <Image src="/images/plane-dashed-route.png" width={90} height={24} alt={`${item.from}-${item.to}`} />
+                                                   </span>
                                             </div>
                                            <span className='text-end'>{item.to}</span>
                                         </div>

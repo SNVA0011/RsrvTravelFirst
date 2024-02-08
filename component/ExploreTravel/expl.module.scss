@@ -160,7 +160,7 @@
     background-color: #f4f6f8;
     @include bgPath('shape-enginebck.webp');
     background-position: bottom center;
-    background-size: 72%;
+    background-size: 70%;
     background-repeat: repeat-x; 
 
     @include mq('max', 1199px) {
