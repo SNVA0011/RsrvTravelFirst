@@ -23,8 +23,7 @@ const PaginateBlog = ({ type, page, total, current }) => {
             <div className='site-paginate-theme spcmt-60'>
                 <ul className={`pagination${current || currentpage == 1 ? ' prevnone' : ''} ${location.asPath == lastpage ? 'nextnone' : ''}`}>
 
-                    {current || currentpage == 1 ? null : <>
-                        <li className="control page-item left-lg">
+                <li className={`control page-item left-lg ${currentpage == 1 ? 'd-none' : ''}`}>
                             <Link href={page}>
                                 <a className="page-link" role="button" tabIndex={0}>
                                     <span aria-hidden="true">
@@ -34,7 +33,7 @@ const PaginateBlog = ({ type, page, total, current }) => {
                                 </a>
                             </Link>
                         </li>
-                        <li className="control page-item left-md">
+                        <li className={`control page-item left-md ${currentpage == 1 ? 'd-none' : ''}`}>
                             <Link href={prev}>
                                 <a className="page-link" role="button" tabIndex={0}>
                                     <span aria-hidden="true">
@@ -43,14 +42,14 @@ const PaginateBlog = ({ type, page, total, current }) => {
                                 </a>
                             </Link>
                         </li>
-                    </>}
 
 
-                    {getllPagi.slice(numleft, numright).map((item, index) => {
+                        {getllPagi.map((item, index) => {
                         const name = item
                         const url = name == 1 ? page : `${type}/${name}`
+                        const between = numleft > item || numright < item ? 'd-none' : ''
                         return (
-                            <li className={`nv page-item${location.asPath === url ? ' active' : ''}`} key={index}>
+                            <li className={`nv page-item ${location.asPath === url ? 'active' : ''} ${between}`} key={index}>
                                 <Link href={url}>
                                     <a className="page-link">
                                         {name}
@@ -60,8 +59,7 @@ const PaginateBlog = ({ type, page, total, current }) => {
                         )
                     })}
 
-                    {location.asPath == lastpage ? null : <>
-                        <li className="control page-item right-md">
+                    <li className={`control page-item right-md ${location.asPath == lastpage ? 'd-none' : ''}`}>
                             <Link href={next}>
                                 <a className="page-link " role="button" tabIndex={0}>
                                     <span aria-hidden="true">
@@ -70,7 +68,7 @@ const PaginateBlog = ({ type, page, total, current }) => {
                                 </a>
                             </Link>
                         </li>
-                        <li className="control page-item right-lg">
+                        <li className={`control page-item right-lg ${location.asPath == lastpage ? 'd-none' : ''}`}>
                             <Link href={lastpage}>
                                 <a className="page-link" role="button" tabIndex={0}>
                                     <span aria-hidden="true">
@@ -79,8 +77,6 @@ const PaginateBlog = ({ type, page, total, current }) => {
                                 </a>
                             </Link>
                         </li>
-                    </>}
-
 
                 </ul>
 
