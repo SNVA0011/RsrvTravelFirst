@@ -21,7 +21,7 @@ const PaginateBlog = ({ type, page, total, current }) => {
     return (
         <>
             <div className='site-paginate-theme spcmt-60'>
-                <ul className={`pagination${current || currentpage == 1 ? ' prevnone' : ''} ${location.asPath == lastpage ? 'nextnone' : ''}`}>
+                <ul className={`pagination ${current || currentpage == 1 ? ' prevnone' : ''} ${location.asPath == lastpage ? 'nextnone' : ''}`}>
 
                 <li className={`control page-item left-lg ${currentpage == 1 ? 'd-none' : ''}`}>
                             <Link href={page}>
