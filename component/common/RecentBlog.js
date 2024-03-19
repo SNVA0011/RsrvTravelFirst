@@ -78,7 +78,7 @@ const RecentBlog = ({ blog, path, searplaceholder, socialUrl }) => {
                                                     <div className="blog-lts-thumbnail">
                                                         <div className="flgofferover-hide">
                                                             <div className="flgoffer-cover-rt"
-                                                             style={{ backgroundImage: `url(/images/${item.imgUrl === null || item.imgUrl  === '' ? 'inflight-aircraft-sm.png' : item.imgUrl})` }}></div>
+                                                             style={{ backgroundImage: `url(${item.imgUrl === null || item.imgUrl  === '' ? '/images/inflight-aircraft-sm.png' : item.imgUrl})` }}></div>
                                                         </div>
                                                     </div>
 

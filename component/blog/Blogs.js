@@ -21,7 +21,7 @@ const Blogs = ({ title, subtitle, content, path, error }) => {
             <div className="large-blog-home">
               <Link href={`/${path}/${content[0].titleUrl}`}>
                 <a className="flgoffer-cover-rt lg">
-                  <div style={{ backgroundImage: `url(/images/${content[0].imgUrl === null || content[0].imgUrl === '' ? 'inflight-aircraft.png' : content[0].imgUrl})` }} className="bg-bck"></div>
+                  <div style={{ backgroundImage: `url(${content[0].imgUrl === null || content[0].imgUrl === '' ? '/images/inflight-aircraft.png' : content[0].imgUrl})` }} className="bg-bck"></div>
                   <div className="info-overlay">
                     <p className="date-with-icon">
                       <img src="/images/blogdatewh-icon.png" />

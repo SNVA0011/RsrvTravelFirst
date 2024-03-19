@@ -28,7 +28,7 @@ export default function BlogTile({ allbloglist, showitem = allbloglist?.length, 
                     <a className="d-flex">
                       <div className="blog-lts-thumbnail">
                         <div className="flgofferover-hide">
-                          <div className="flgoffer-cover-rt" style={{ backgroundImage: `url(/images/${item.imgUrl === null || item.imgUrl === '' ? 'inflight-aircraft.png' : item.imgUrl})` }}></div>
+                          <div className="flgoffer-cover-rt" style={{ backgroundImage: `url(${item.imgUrl === null || item.imgUrl === '' ? '/images/inflight-aircraft.png' : item.imgUrl})` }}></div>
                         </div>
                       </div>
 

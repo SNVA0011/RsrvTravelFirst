@@ -114,15 +114,13 @@
     margin-left: 20px;
     position: relative;
     min-width: 80px;
-    width: 80px;
+    width: 80px; 
     @include mq('max', 991px) {
-        min-width: 60px;
-        width: 60px;
-    }
-
-    @include mq('max', 575px) {
-        min-width: 55px;
-        width: 55px;
+        min-width: 64px;
+        width: 64px;
+    } 
+    @include mq('max', 575px) { 
+        margin-left: 15px;
     }
     &:after {
         content: '';
@@ -242,4 +240,9 @@
     @include mq('max', 1199px) {
         display: block;
     } 
+}
+
+
+.TopRTravelDate{
+    min-width: 70px
 }

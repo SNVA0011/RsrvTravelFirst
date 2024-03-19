@@ -167,6 +167,10 @@
         margin-bottom: -30px;
         position: relative;
     }
+    @include mq('max', 575px) {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
 }
 
 .TopAirlineCol {
@@ -181,7 +185,11 @@
     @include mq('max', 1199px) {
         @include columnGrid(190px);
     }
+    @include mq('max', 575px) {
+        padding: 0 8px;
+    }
 }
+
 
 .TopAirlineThumb {
     position: relative;
